@@ -21,15 +21,15 @@
 ##
 ## @subsubheading Inputs
 ## @table @code
-## @item filename
+## @item @var{filename}
 ## Filename of the sqlite database
-## @item mode
+## @item @var{mode}
 ## mode for the sqlite access 'readonly', 'connect' (default), 'create'.
 ## @end table
 ##
 ## @subsubheading Outputs
 ## @table @code
-## @item db
+## @item @var{db}
 ## a opened SQLITE database as a octave_sqlite object
 ## @end table
 ##
