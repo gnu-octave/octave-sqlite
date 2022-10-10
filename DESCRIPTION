@@ -1,0 +1,13 @@
+Name: sqlite
+Version: 0.0.1
+Date: 2022-10-6
+Author: John Donoghue <john.donoghue@ieee.org>
+Maintainer: John Donoghue <john.donoghue@ieee.org>
+Title: Octave Sqlite Toolkit
+Description: Basic Octave implementation of sqlite toolkit
+Categories: Database
+Depends: octave (>= 4.0.0)
+BuildRequires: libsqlite3-dev
+SystemRequirements: libsqlite3
+License: GPLv3+
+Url: https://sourceforge.net/projects/octave-sqlite/
