@@ -1,0 +1,198 @@
+\input texinfo @c -*-texinfo-*-
+@c Copyright (c) 2022, John Donoghue <john.donoghue@ieee.org>
+@c Octave SQLITE Toolkit - Basic implementation of SQLITE Toolkit
+
+@c For manually generating the documentation use
+@c   LANGUAGE=en makeinfo --html --no-split octave-sqlite.texi
+
+@c %*** Start of HEADER
+@setfilename octave-sqlite.info
+@settitle Octave SQLITE - Basic implementation of SQLITE Toolkit for GNU Octave
+@afourpaper
+@paragraphindent 0
+@finalout
+@set VERSION 0.0.1
+@set COPYRIGHT_DATE 2022
+@c @afourwide
+@c %*** End of the HEADER
+
+@include macros.texi
+
+@c %*** Start of TITLEPAGE
+@titlepage
+@c @center @image{octave-sqlite-logo}
+@vskip 0pt plus 1filll
+@title Octave SQLITE Toolkit @value{VERSION}
+@subtitle SQLITE functions for @acronym{GNU} Octave.
+@author John Donoghue
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} @value{COPYRIGHT_DATE} John Donoghue
+
+Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the entire
+resulting derived work is distributed under the terms of a permission
+notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the same conditions as for modified versions.
+
+@page
+@heading Distribution
+The @acronym{GNU} Octave SQLITE package is @dfn{free} software.
+Free software is a matter of the users' freedom to run, copy, distribute,
+study, change and improve the software.
+This means that everyone is free to use it and free to redistribute it
+on certain conditions.  The @acronym{GNU} Octave SQLITE package
+is not, however, in the public domain.  It is copyrighted and there are
+restrictions on its distribution, but the restrictions are designed to
+ensure that others will have the same freedom to use and redistribute
+Octave that you have.  The precise conditions can be found in the
+@acronym{GNU} General Public License that comes with the @acronym{GNU}
+Octave SQLITE package and that also appears in @ref{Copying}.
+
+To download a copy of the @acronym{GNU} Octave SQLITE package, please visit
+@url{https://sourceforge.net/projects/octave-sqlite/}.
+
+@end titlepage
+@c %*** End of TITLEPAGE
+
+@dircategory Math
+@direntry
+* SQLITE for Octave: (sqlite).         SQLITE Toolbox for Octave 
+@end direntry
+
+@c %*** Start of BODY
+@contents
+@ifnottex
+@node Top
+@top Introduction
+The Octave SQLITE toolkit is a set of SQLITE routines for GNU Octave
+@end ifnottex
+
+@menu
+* Installing and loading::    Installing and loading the toolkit
+* Basic Usage Overview::      Basic Usage Overview
+* Function Reference::        Toolkit functions
+* Copying::                   Copying
+* Index::                     Index
+@end menu
+
+@c -------------------------------------------------------------------------
+@node Installing and loading
+@chapter Installing and loading
+@cindex Installing and loading
+
+The toolkit must be installed and then loaded to be used.
+
+It can be installed in @acronym{GNU} Octave directly from the website,
+or can be installed in an off-line mode via a downloaded tarball.
+
+The toolkit has a dependency on the SQLITE library (@url{https://www.sqlite.org/}), so it must be installed in order
+to successfully install the toolkit.
+
+The toolkit must be then be loaded once per each @acronym{GNU} Octave session in order to use its functionality.
+
+@section Online Direct install
+@cindex Online install
+With an internet connection available, the octave sqlite package can be installed from
+the octave-sqlite website using the following command within @acronym{GNU} Octave:
+
+@example
+pkg install https://sourceforge.net/projects/octave-sqlite/files/v@value{VERSION}/octave-sqlite-@value{VERSION}.tar.gz/download
+@end example
+
+The latest released version of the toolkit will be downloaded and installed.
+
+@section Off-line install
+@cindex Off-line install
+With the toolkit package already downloaded, and in the current directory when running
+@acronym{GNU} Octave, the package can be installed using the following command within @acronym{GNU} Octave:
+
+@example
+pkg install octave-sqlite-@value{VERSION}.tar.gz
+@end example
+
+@section Loading
+@cindex Loading
+Regardless of the method of installing the toolkit, in order to use its functions,
+the toolkit must be loaded using the pkg load command:
+
+@example
+pkg load sqlite
+@end example
+
+The toolkit must be loaded on each @acronym{GNU} Octave session.
+
+@c -------------------------------------------------------------------------
+@node Basic Usage Overview
+@chapter Basic Usage Overview
+@cindex Basic Usage Overview
+
+@section Connection to a sqlite database
+@cindex Connection to a sqlite database
+
+Connection to the database is done using the sqlite function.
+
+@subsubheading Example
+@example
+@code {
+db = sqlite('testdb.db')
+}
+@kbd {
+db =
+ sqlite with properties
+      Database: testdb.db
+    IsReadOnly: 0
+    AutoCommit: on
+}
+@end example
+
+@section Read a table
+@cindex Read a table
+
+To quickly read data from a table, use the sqlread function
+
+@subsubheading Example
+@example
+@code {
+data = sqlread(db, "TestTable")
+}
+@end example
+
+@section Close the database
+@cindex Close the database
+
+To close the database, use the close function
+
+@subsubheading Example
+@example
+@code {
+close(db)
+}
+@end example
+
+@c -------------------------------------------------------------------------
+@node Function Reference
+@chapter Function Reference
+@cindex Function Reference
+
+The functions currently available in the toolkit are described below;
+
+@include functions.texi
+
+@c -------------------------------------------------------------------------
+
+@include gpl.texi
+
+@c -------------------------------------------------------------------------
+@node Index 
+@unnumbered Index 
+ 
+@printindex cp
+ 
+@bye
