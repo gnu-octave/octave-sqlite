@@ -26,7 +26,7 @@
 ## Previously created octave_sqlite object
 ## @end table
 ##
-## @subsubheading Inputs
+## @subsubheading Outputs
 ## None
 ##
 ## @seealso{sqlite}
