@@ -1,0 +1,77 @@
+MKOCTFILE ?= @MKOCTFILE@
+OCTAVE_CONFIG ?= @OCTAVE_CONFIG@
+GREP ?= @GREP@
+SED ?= @SED@
+CXXFLAGS  := @CXXFLAGS@ @CXX11_SWITCH@ @SQLITE_CFLAGS@ @DEFS@
+LIBS      := @LIBS@ @SQLITE_LIBS@
+LDFLAGS   := @LDFLAGS@
+
+PWD := $(shell pwd)
+TOP_BUILD_DIR := @abs_builddir@
+TOP_DIR := @abs_srcdir@
+
+SRC := __sqlite__.cc pkglock.cc octave_sqlite.cc
+OBJ := $(SRC:.cc=.o)
+
+ARCHTESTS = archtests
+ARCHDIR   := "$(shell $(OCTAVE_CONFIG) -p CANONICAL_HOST_TYPE)-$(shell $(OCTAVE_CONFIG) -p API_VERSION)"
+
+CC_TST_SOURCES := $(shell $(GREP) --files-with-matches '^%!' $(SRC))
+TST_SOURCES := $(patsubst %.cc,../inst/$(ARCHDIR)/%.cc-tst,$(CC_TST_SOURCES))
+
+.PHONY: all
+all: __sqlite__.oct $(ARCHTESTS) | Makefile
+	
+%.o: %.cc
+	$(MKOCTFILE) -c $< $(CXXFLAGS)
+
+__sqlite__.oct: $(OBJ)
+	$(MKOCTFILE) -o $@ $(LDFLAGS) $(LIBS) $^
+
+.PHONY: archtests
+archtests:
+#archtests: $(TST_SOURCES)
+
+../inst:
+	@mkdir -p "$@"
+
+../inst/$(ARCHDIR):
+	@mkdir -p "$@"
+
+../inst/$(ARCHDIR)/%.cc-tst: %.cc | ../inst/$(ARCHDIR)
+	@echo "Extracting tests from $< ..."
+	@$(RM) -f "$@" "$@-t"
+	@(      echo "## Generated from $<"; \
+	        $(GREP) '^%!' "$<") > "$@"
+
+$(TOP_DIR)/configure: $(TOP_DIR)/configure.ac
+	cd $(TOP_DIR) && autoconf
+
+config.status: $(TOP_DIR)/configure
+	$(SHELL) ./config.status --recheck
+
+Makefile: $(TOP_DIR)/Makefile.in config.status
+	$(SHELL) ./config.status Makefile
+
+.PHONY: prebuild
+prebuild:
+
+.PHONY: clean
+.PHONY: distclean
+.PHONY: extraclean
+clean:
+	$(RM) -f *.o
+	$(RM) -f *.oct
+	test -e ../inst/$(ARCHDIR) && rm -f $(TST_SOURCES) || true
+	test -e ../inst/$(ARCHDIR) && rmdir ../inst/$(ARCHDIR) || true
+
+distclean: clean
+	$(RM) -rf autom4te.cache
+	$(RM) -f config.status config.log config.h
+	$(RM) -f oct-alt-includes.h
+	$(RM) Makefile
+
+extraclean: distclean
+	$(RM) -r config.h.in
+	$(RM) -r aclocal.m4
+	$(RM) -r configure
