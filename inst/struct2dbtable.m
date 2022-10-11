@@ -16,11 +16,8 @@
 
 ## -*- texinfo -*- 
 ## @deftypefn {} {@var{t} =} struct2dbtable (@var{astruct})
-## Create a table from a struct
+## Create a dbtable from a struct
 ## 
-## If a table function exists, use it to create the table, otherwise, use the 
-## dbtable type to create it.
-##
 ## @subsubheading Inputs:
 ## @table @asis
 ## @item @var{astruct} 
@@ -30,7 +27,7 @@
 ## @subsubheading Outputs:
 ## @table @asis
 ## @item @var{t} 
-## a table (if table exists) or dbtable of the @var{astruct} data
+## a dbtable of the @var{astruct} data
 ## @end table
 ##
 ## @end deftypefn
@@ -43,11 +40,7 @@ function t = struct2dbtable (astruct)
   names = fieldnames(astruct);
   values = struct2cell(astruct);
 
-  if exist("table") == 2
-    t = table (values{:}, 'VariableNames', names);
-  else
-    t = dbtable (values{:}, 'VariableNames', names');
-  endif
+  t = dbtable (values{:}, 'VariableNames', names');
 endfunction
 
 %!test

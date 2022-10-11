@@ -69,6 +69,10 @@ function sqlwrite (db, tablename, data, varargin)
   if isa(data, "struct")
     data = struct2dbtable(data);
   endif
+  if isa(data, "table")
+    data = table2struct(data)
+    data = struct2dbtable(data);
+  endif
   if !isa(data, "dbtable") && !isa(data, "table")
     error ("Expected input data as a table or struct");
   endif
@@ -98,8 +102,7 @@ function sqlwrite (db, tablename, data, varargin)
   sql = [sql ") VALUES \n"];
 
   for idx = 1:length(data)
-    # get each row
-    row = subsref (data, substruct("()", {idx,':'}));
+    row = subsref (data, substruct("{}", {idx,':'}));
     values = "";
     for col=1:numel(cols)
       if col > 1
@@ -142,6 +145,7 @@ function sqlwrite (db, tablename, data, varargin)
   if isempty(s)
     # TODO need to create the table
     # if we have ColumnType property in, use it for the types
+%{
     values = "";
     for col=1:numel(cols)
       coldata = subsref (data, substruct("()", {':', col}))
@@ -149,6 +153,7 @@ function sqlwrite (db, tablename, data, varargin)
       iscellstr(coldata)
       class(coldata(1))
     endfor
+%}
   endif
 
   execute(db, sql);
