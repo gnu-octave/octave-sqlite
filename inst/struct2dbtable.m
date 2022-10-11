@@ -25,13 +25,13 @@
 ## @table @asis
 ## @item @var{astruct} 
 ## A struct with same number of elements in each field
-## @endtable
+## @end table
 ##
 ## @subsubheading Outputs:
 ## @table @asis
 ## @item @var{t} 
-## a table (if table exists) or dbtable of the astruct data
-## @endtable
+## a table (if table exists) or dbtable of the @var{astruct} data
+## @end table
 ##
 ## @end deftypefn
 
