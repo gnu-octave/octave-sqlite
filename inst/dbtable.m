@@ -173,6 +173,11 @@ classdef dbtable
         endif
 
         for idx=1:prop_idx-1
+
+          if isstruct(varargin{idx})
+            error ("dbtable doesnt support columns of structs");
+          endif
+
           n = inputname(idx);
           if isempty(n)
             n = sprintf("Var%d", idx);
@@ -252,7 +257,7 @@ classdef dbtable
             if iscell(d)
               d = d{1};
             endif
-            if !ischar(d)
+            if !isnumeric(d)
              d = num2str(d);
             endif
             w = length(d);
@@ -491,10 +496,6 @@ endclassdef
 %! assert(t{1,1}, [0]);
 %! assert(t{1,2}, [2]);
 %!
-%! assert(t(:,:), {[0;1;3], [2;4;6]});
-%! assert(t(1,:), {[0], [2]});
-%! assert(t(1,1), [0]);
-%!
 %! t.Properties.Description = "Test data";
 %!
 %! t.Properties.VariableNames = {'V1', 'V2'};
@@ -503,20 +504,32 @@ endclassdef
 
 %!test
 %! t = dbtable([0;1;3], [2;4;6]);
+%! assert(istable(t));
+%! t1 = t(:,:);
+%! assert(istable(t1));
+%! assert(size(t1), [3 2])
+%! assert(t1{:,:}, {[0;1;3], [2;4;6]});
+%!
+%! t1 = t(:,1);
+%! assert(istable(t1));
+%! assert(size(t1), [3 1])
+%! assert(t1{:,:}, [0;1;3]);
+%!
+%! t1 = t(:,2);
+%! assert(istable(t1));
+%! assert(size(t1), [3 1])
+%! assert(t1{:,:}, [2;4;6]);
+%!
+%! t1 = t(1,:);
+%! assert(istable(t1));
+%! assert(size(t1), [1 2])
+%! assert(t1{:,:}, {[0], [2]});
+
+%!test
+%! t = dbtable([0;1;3], [2;4;6]);
 %! assert(size(t), [3 2]);
 %! tc = dbtable(t);
 %! assert(size(tc), [3 2]);
-
-%!test
-%! d = struct;
-%! d.name = { 'Name1';'Name2'; 'Name3' };
-%! d.age = [ 30; 21; 17];
-%! d.enrolled = { 1 [] 0 };
-%! d.nullstr = { "S1"; []; "s3" };
-%! t = dbtable(d);
-%! assert(size(t), [3 4]);
-%! assert(t.Properties.VariableNames, {'name', 'age', 'enrolled', 'nullstr'});
-%! assert(t.age, d.age);
 
 %!test
 %! V1 = [0;1;3];
