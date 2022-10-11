@@ -70,7 +70,7 @@ function sqlwrite (db, tablename, data, varargin)
     data = struct2dbtable(data);
   endif
   if isa(data, "table")
-    data = table2struct(data)
+    data = table2struct(data);
     data = struct2dbtable(data);
   endif
   if !isa(data, "dbtable") && !isa(data, "table")

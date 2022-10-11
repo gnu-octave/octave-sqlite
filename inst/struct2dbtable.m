@@ -38,9 +38,15 @@ function t = struct2dbtable (astruct)
   endif
 
   names = fieldnames(astruct);
-  values = struct2cell(astruct);
 
-  t = dbtable (values{:}, 'VariableNames', names');
+  if isscalar (s)
+    values = struct2cell(astruct);
+    t = dbtable (values{:}, 'VariableNames', names');
+  else
+    values = astruct(:);
+    values = struct2cell(values);
+    t = dbtable (values{:}, 'VariableNames', names');
+  endif
 endfunction
 
 %!test
