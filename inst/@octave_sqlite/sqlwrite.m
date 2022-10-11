@@ -148,7 +148,7 @@ function sqlwrite (db, tablename, data, varargin)
 %{
     values = "";
     for col=1:numel(cols)
-      coldata = subsref (data, substruct("()", {':', col}))
+      coldata = subsref (data, substruct("{}", {':', col}))
       class(coldata)
       iscellstr(coldata)
       class(coldata(1))
