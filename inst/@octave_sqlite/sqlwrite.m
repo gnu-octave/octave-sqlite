@@ -67,10 +67,10 @@ function sqlwrite (db, tablename, data, varargin)
   endif
 
   if isa(data, "struct")
-    data = dbtable(data);
+    data = struct2dbtable(data);
   endif
-  if !isa(data, "dbtable")
-    error ("Expected input data as a dbtable or struct");
+  if !isa(data, "dbtable") && !isa(data, "table")
+    error ("Expected input data as a table or struct");
   endif
 
   # for some reason, the subref using '.' on data isnt working here
