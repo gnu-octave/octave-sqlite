@@ -103,7 +103,14 @@ With an internet connection available, the octave sqlite package can be installe
 the octave-sqlite website using the following command within @acronym{GNU} Octave:
 
 @example
-pkg install https://sourceforge.net/projects/octave-sqlite/files/v@value{VERSION}/octave-sqlite-@value{VERSION}.tar.gz/download
+pkg install https://github.com/gnu-octave/octave-sqlite/archive/refs/tags/release-@value{VERSION}.tar.gz
+@end example
+
+On Octave 7.2 and later, the package can be installed using the following command within
+@acronym{GNU} Octave:
+
+@example
+pkg install -forge sqlite
 @end example
 
 The latest released version of the toolkit will be downloaded and installed.
