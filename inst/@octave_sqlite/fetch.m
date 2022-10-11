@@ -79,7 +79,7 @@ function data = fetch (db, query, varargin)
   endfor
   
   data = __sqlite_fetch__(db, query);
-  data = dbtable(data);
+  data = struct2dbtable(data);
 endfunction
 
 %!test

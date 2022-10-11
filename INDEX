@@ -14,3 +14,4 @@ Database Operations
   @octave_sqlite/rollback
 Support Functions
   dbtable
+  struct2dbtable

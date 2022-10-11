@@ -156,25 +156,8 @@ classdef dbtable
       endif
       
       if nargin == 1
-        # special handling here
-        # TODO: we should probally use functions like struct2table and cell2table
-        # so we dont need to handle these here
-        if isstruct (varargin{1})
-	  # size(in, 2) = 1 ?
-          #this._data = varargin{1};
-	  # get var names from the struct
-	  names = fieldnames(varargin{1});
-	  for idx = 1:length(names)
-            this.Properties.VariableNames{end+1} = names{idx};
-            v = varargin{1}.(names{idx});
-            #if iscell(v) 
-            #  v = v{:};
-            #endif
-            this._data2{end+1} = this.fromcell(v);
-	  endfor
-          return;
-	elseif isa (varargin{1}, "dbtable")
-          #this._data = varargin{1}._data;
+        # special handling for copy constructor
+	if isa (varargin{1}, "dbtable")
           this._data2 = varargin{1}._data2;
           this.Properties = varargin{1}.Properties;
           return;
@@ -184,19 +167,18 @@ classdef dbtable
       # if here, we expect to have column data and optional properties as at leats first col isnt properties
       if prop_idx != 1
         data2 = {};
-        #try
-        #  W = evalin('caller','whos'); %or 'base'
-        #catch
-        #  W = struct('name', {});
-        #end_try_catch
 
         if prop_idx < 1
           prop_idx = nargin+1;
         endif
 
         for idx=1:prop_idx-1
+
+          if isstruct(varargin{idx})
+            error ("dbtable doesnt support columns of structs");
+          endif
+
           n = inputname(idx);
-          #doesExist = !isempty(n) && !isempty(W) && ismember(n,{W(:).name});
           if isempty(n)
             n = sprintf("Var%d", idx);
           endif
@@ -275,7 +257,7 @@ classdef dbtable
             if iscell(d)
               d = d{1};
             endif
-            if !ischar(d)
+            if !isnumeric(d)
              d = num2str(d);
             endif
             w = length(d);
@@ -347,7 +329,6 @@ classdef dbtable
           endif
         elseif !isempty(this.Properties.DimensionNames) && strcmp(this.Properties.DimensionNames{2}, n)
           # return all row data
-          #val = this._data2(:);
           subs = substruct('{}',{':'});
           val = subsref(this, subs);
 	elseif this.getcolidx(n) != -1
@@ -378,6 +359,20 @@ classdef dbtable
         if size(val) == [1 1]
           val = val{1};
         endif
+      elseif s(1).type == "()"
+        if numel(s(1).subs) == 1
+          s(1).subs = {s(1).subs{:}, ':'};
+        endif
+        row = s(1).subs{1};
+        col = s(1).subs{2};
+        names = this.Properties.VariableNames(col);
+        cval = this._data2(col);
+        val = {};
+        for idx=1:numel(cval)
+          val{end+1} = cval{idx}(row,:);
+        endfor
+
+        val = dbtable(val{:}, 'VariableNames', names');
       else
         error("unimplemented dbtable.subsref type");
       endif
@@ -439,6 +434,10 @@ classdef dbtable
     endfunction
 
     function y = istable(this)
+      y = true;
+    endfunction
+
+    function y = ismatrix(this)
       y = true;
     endfunction
 
@@ -505,20 +504,32 @@ endclassdef
 
 %!test
 %! t = dbtable([0;1;3], [2;4;6]);
+%! assert(istable(t));
+%! t1 = t(:,:);
+%! assert(istable(t1));
+%! assert(size(t1), [3 2])
+%! assert(t1{:,:}, {[0;1;3], [2;4;6]});
+%!
+%! t1 = t(:,1);
+%! assert(istable(t1));
+%! assert(size(t1), [3 1])
+%! assert(t1{:,:}, [0;1;3]);
+%!
+%! t1 = t(:,2);
+%! assert(istable(t1));
+%! assert(size(t1), [3 1])
+%! assert(t1{:,:}, [2;4;6]);
+%!
+%! t1 = t(1,:);
+%! assert(istable(t1));
+%! assert(size(t1), [1 2])
+%! assert(t1{:,:}, {[0], [2]});
+
+%!test
+%! t = dbtable([0;1;3], [2;4;6]);
 %! assert(size(t), [3 2]);
 %! tc = dbtable(t);
 %! assert(size(tc), [3 2]);
-
-%!test
-%! d = struct;
-%! d.name = { 'Name1';'Name2'; 'Name3' };
-%! d.age = [ 30; 21; 17];
-%! d.enrolled = { 1 [] 0 };
-%! d.nullstr = { "S1"; []; "s3" };
-%! t = dbtable(d);
-%! assert(size(t), [3 4]);
-%! assert(t.Properties.VariableNames, {'name', 'age', 'enrolled', 'nullstr'});
-%! assert(t.age, d.age);
 
 %!test
 %! V1 = [0;1;3];
