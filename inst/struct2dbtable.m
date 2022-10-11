@@ -39,18 +39,32 @@ function t = struct2dbtable (astruct)
 
   names = fieldnames(astruct);
 
-  if isscalar (s)
+  if isscalar (astruct)
     values = struct2cell(astruct);
     t = dbtable (values{:}, 'VariableNames', names');
   else
     values = astruct(:);
     values = struct2cell(values);
-    t = dbtable (values{:}, 'VariableNames', names');
+    values = values';
+    cols = {};
+    for idx=1:size(values, 2)
+      v = values(:,idx);
+      cols{end+1} = v;
+    endfor
+    t = dbtable (cols{:}, 'VariableNames', names');
   endif
 endfunction
 
 %!test
 %! s = struct('a', [1;2;3], 'b', [2;4;6]);
+%! t = struct2dbtable(s);
+%! assert(istable(t));
+%! assert(size(t), [3 2]);
+%! assert(t.Properties.VariableNames, {'a', 'b'});
+%! assert(t.a, [1;2;3]);
+
+%!test
+%! s = struct('a', {[1;2;3]}, 'b', {[2;4;6]});
 %! t = struct2dbtable(s);
 %! assert(istable(t));
 %! assert(size(t), [3 2]);
