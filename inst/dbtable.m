@@ -156,25 +156,8 @@ classdef dbtable
       endif
       
       if nargin == 1
-        # special handling here
-        # TODO: we should probally use functions like struct2table and cell2table
-        # so we dont need to handle these here
-        if isstruct (varargin{1})
-	  # size(in, 2) = 1 ?
-          #this._data = varargin{1};
-	  # get var names from the struct
-	  names = fieldnames(varargin{1});
-	  for idx = 1:length(names)
-            this.Properties.VariableNames{end+1} = names{idx};
-            v = varargin{1}.(names{idx});
-            #if iscell(v) 
-            #  v = v{:};
-            #endif
-            this._data2{end+1} = this.fromcell(v);
-	  endfor
-          return;
-	elseif isa (varargin{1}, "dbtable")
-          #this._data = varargin{1}._data;
+        # special handling for copy constructor
+	if isa (varargin{1}, "dbtable")
           this._data2 = varargin{1}._data2;
           this.Properties = varargin{1}.Properties;
           return;
@@ -341,7 +324,7 @@ classdef dbtable
           endif
         elseif !isempty(this.Properties.DimensionNames) && strcmp(this.Properties.DimensionNames{2}, n)
           # return all row data
-          subs = substruct('()',{':'});
+          subs = substruct('{}',{':'});
           val = subsref(this, subs);
 	elseif this.getcolidx(n) != -1
           # check in variable names
@@ -356,7 +339,7 @@ classdef dbtable
         else
           error("'%s' unknown property name", n);
 	endif
-      elseif s(1).type == "()" || s(1).type == "{}"
+      elseif s(1).type == "{}"
         if numel(s(1).subs) == 1
           s(1).subs = {s(1).subs{:}, ':'};
         endif
@@ -371,6 +354,20 @@ classdef dbtable
         if size(val) == [1 1]
           val = val{1};
         endif
+      elseif s(1).type == "()"
+        if numel(s(1).subs) == 1
+          s(1).subs = {s(1).subs{:}, ':'};
+        endif
+        row = s(1).subs{1};
+        col = s(1).subs{2};
+        names = this.Properties.VariableNames(col);
+        cval = this._data2(col);
+        val = {};
+        for idx=1:numel(cval)
+          val{end+1} = cval{idx}(row,:);
+        endfor
+
+        val = dbtable(val{:}, 'VariableNames', names');
       else
         error("unimplemented dbtable.subsref type");
       endif
@@ -446,7 +443,7 @@ classdef dbtable
         rows = nrows;
       endif
       names = this.Properties.VariableNames;
-      data = this.subsref(substruct('()', {1:rows, ':'}));
+      data = this.subsref(substruct('{}', {1:rows, ':'}));
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
 
@@ -458,7 +455,7 @@ classdef dbtable
         rows = nrows - rows + 1;
       endif
       names = this.Properties.VariableNames;
-      data = this.subsref(substruct('()', {rows:nrows, ':'}));
+      data = this.subsref(substruct('{}', {rows:nrows, ':'}));
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
 
