@@ -9,14 +9,15 @@ the Matlab Native SQLITE interface.
 
 It provides functionality for the following functions:
 
-* sqlite
-* fetch
-* execute
-* sqlread
-* sqlwrite
-* commit
-* rollback
-* isopen
+* sqlite - create a sqlite database connection
+* close - close a sqlite database connection
+* fetch - fetch data from a connection using sql
+* execute - execute a non selecting sql statement 
+* sqlread - read a sqlite table
+* sqlwrite - write to a sqlite table
+* commit - commit transaction when not in autocommit mode
+* rollback - rollback a transaction when not in autocommit mode
+* isopen - verify the database is open
 
 ## Installing the Toolkit
 
