@@ -184,11 +184,6 @@ classdef dbtable
       # if here, we expect to have column data and optional properties as at leats first col isnt properties
       if prop_idx != 1
         data2 = {};
-        #try
-        #  W = evalin('caller','whos'); %or 'base'
-        #catch
-        #  W = struct('name', {});
-        #end_try_catch
 
         if prop_idx < 1
           prop_idx = nargin+1;
@@ -196,7 +191,6 @@ classdef dbtable
 
         for idx=1:prop_idx-1
           n = inputname(idx);
-          #doesExist = !isempty(n) && !isempty(W) && ismember(n,{W(:).name});
           if isempty(n)
             n = sprintf("Var%d", idx);
           endif
@@ -347,8 +341,7 @@ classdef dbtable
           endif
         elseif !isempty(this.Properties.DimensionNames) && strcmp(this.Properties.DimensionNames{2}, n)
           # return all row data
-          #val = this._data2(:);
-          subs = substruct('{}',{':'});
+          subs = substruct('()',{':'});
           val = subsref(this, subs);
 	elseif this.getcolidx(n) != -1
           # check in variable names
@@ -363,7 +356,7 @@ classdef dbtable
         else
           error("'%s' unknown property name", n);
 	endif
-      elseif s(1).type == "{}"
+      elseif s(1).type == "()" || s(1).type == "{}"
         if numel(s(1).subs) == 1
           s(1).subs = {s(1).subs{:}, ':'};
         endif
@@ -442,6 +435,10 @@ classdef dbtable
       y = true;
     endfunction
 
+    function y = ismatrix(this)
+      y = true;
+    endfunction
+
     # head tail - create sub tables
     function tdata = head(this, rows)
       nrows = size(this, 1);
@@ -449,7 +446,7 @@ classdef dbtable
         rows = nrows;
       endif
       names = this.Properties.VariableNames;
-      data = this.subsref(substruct('{}', {1:rows, ':'}));
+      data = this.subsref(substruct('()', {1:rows, ':'}));
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
 
@@ -461,7 +458,7 @@ classdef dbtable
         rows = nrows - rows + 1;
       endif
       names = this.Properties.VariableNames;
-      data = this.subsref(substruct('{}', {rows:nrows, ':'}));
+      data = this.subsref(substruct('()', {rows:nrows, ':'}));
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
 
@@ -496,6 +493,10 @@ endclassdef
 %! assert(t{1,:}, {[0], [2]});
 %! assert(t{1,1}, [0]);
 %! assert(t{1,2}, [2]);
+%!
+%! assert(t(:,:), {[0;1;3], [2;4;6]});
+%! assert(t(1,:), {[0], [2]});
+%! assert(t(1,1), [0]);
 %!
 %! t.Properties.Description = "Test data";
 %!

@@ -99,7 +99,7 @@ function sqlwrite (db, tablename, data, varargin)
 
   for idx = 1:length(data)
     # get each row
-    row = subsref (data, substruct("{}", {idx,':'}));
+    row = subsref (data, substruct("()", {idx,':'}));
     values = "";
     for col=1:numel(cols)
       if col > 1
@@ -144,7 +144,7 @@ function sqlwrite (db, tablename, data, varargin)
     # if we have ColumnType property in, use it for the types
     values = "";
     for col=1:numel(cols)
-      coldata = subsref (data, substruct("{}", {':', col}))
+      coldata = subsref (data, substruct("()", {':', col}))
       class(coldata)
       iscellstr(coldata)
       class(coldata(1))

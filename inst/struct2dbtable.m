@@ -49,3 +49,16 @@ function t = struct2dbtable (astruct)
     t = dbtable (values{:}, 'VariableNames', names');
   endif
 endfunction
+
+%!test
+%! s = struct('a', [1;2;3], 'b', [2;4;6]);
+%! t = struct2dbtable(s);
+%! assert(istable(t));
+%! assert(size(t), [3 2]);
+%! assert(t.Properties.VariableNames, {'a', 'b'});
+%! assert(t.a, [1;2;3]);
+
+%!error <Not a struct> struct2dbtable(1);
+
+%!error <Not a struct> struct2dbtable('hello');
+
