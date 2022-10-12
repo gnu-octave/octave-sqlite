@@ -460,8 +460,8 @@ classdef dbtable
   endmethods
 
 %{
-  # when this is defined, a plot window will show :)
-  methods (Access = hidden)
+  # octave ignores hiddent currently
+  methods (Hidden = true)
     function tdata = _RawData(this)
       tdata = this._data;
     endfunction
