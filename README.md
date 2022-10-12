@@ -19,6 +19,9 @@ It provides functionality for the following functions:
 * rollback - rollback a transaction when not in autocommit mode
 * isopen - verify the database is open
 
+It also provides a basic table implementation `dbtable`, but will also use
+a table class if available.
+
 ## Installing the Toolkit
 
 The toolkit can be installed in Octave 6.0 and greater.  It has a dependency 
