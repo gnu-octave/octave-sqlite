@@ -18,6 +18,7 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {@var{data} =} fetch (@var{db}, @var{sqlquery})
+## @deftypefnx {} {@var{data} =} fetch (@var{db}, @var{sqlquery}, @var{propertyname}, @var{propertyvalue} @dots{})
 ## Return rows of data after runnning a sql query on a sqlite database.
 ##
 ## @subsubheading Inputs

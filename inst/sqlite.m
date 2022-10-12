@@ -33,6 +33,20 @@
 ## a opened SQLITE database as a octave_sqlite object
 ## @end table
 ##
+## @subsubheading Object Properties
+## The octave_sqlite object has the following properties:
+##
+## @table @asis
+## @item Database
+## The name of the opened database file (readonly)
+## @item IsOpen
+## Boolean field for if the database is currently open (readonly)
+## @item IsReadOnly
+## Boolean field for if the database was opened in readonly mode. (readonly)
+## @item AutoCommit
+## String flag field for whether database is in auto commit mode. "on" (default) or "off".
+## @end table
+##
 ## @subsubheading Examples
 ## Open a sqlite database, failing if it doesnt exist.
 ## @example
@@ -41,7 +55,7 @@
 ## }
 ## @end example
 ##
-## Open a sqlite database, creating it if it doesnt exist.
+## Open a sqlite database, creating it if it does not exist.
 ## @example
 ## @code {
 ## db = sqlite("mytest.db", "create");
