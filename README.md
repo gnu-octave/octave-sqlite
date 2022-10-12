@@ -21,7 +21,7 @@ It provides functionality for the following functions:
 
 ## Installing the Toolkit
 
-The toolkit can be installed in Octave 4.0 and greater.  It has a dependency 
+The toolkit can be installed in Octave 6.0 and greater.  It has a dependency 
 on the SQLITE library (<https://www.sqlite.org/>), so it must be installed in 
 order to successfully install the toolkit.
 
