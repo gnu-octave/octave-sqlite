@@ -459,11 +459,14 @@ classdef dbtable
     endfunction
   endmethods
 
+%{
+  # when this is defined, a plot window will show :)
   methods (Access = hidden)
     function tdata = _RawData(this)
       tdata = this._data;
     endfunction
   endmethods
+%}
 endclassdef
 
 %!test
