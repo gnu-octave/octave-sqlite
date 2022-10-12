@@ -435,6 +435,14 @@ classdef dbtable
       y = true;
     endfunction
 
+    function st = table2struct(this)
+      names = this.Properties.VariableNames;
+      st = {};
+      for idx=1:numel(names)
+        st.(names{idx}) = this._data{idx};
+      endfor
+    endfunction
+
     # head tail - create sub tables
     function tdata = head(this, rows)
       nrows = size(this, 1);
@@ -541,3 +549,10 @@ endclassdef
 %! assert(t.V1, V1);
 %! assert(t.V2, V2);
 
+%!test
+%! V1 = [0;1;3];
+%! V2 = [2;4;6];
+%! t = dbtable(V1, V2);
+%! s = table2struct(t);
+%! assert(fieldnames(s), {'V1'; 'V2'});
+%! assert(s.V1, [0;1;3]);
