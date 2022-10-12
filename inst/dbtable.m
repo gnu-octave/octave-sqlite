@@ -47,7 +47,7 @@ classdef dbtable
 
   properties (Access = private)
     # internal data store
-    _data2 = {};
+    _data = {};
   endproperties
 
   properties (Access = public)
@@ -128,7 +128,6 @@ classdef dbtable
         if sum(strcmp(n, {"VariableNames", "RowNames", "DimensionNames", "Size"})) > 0
           y = true;
         endif
-        #printf("v %s %d\n", n, y)
       endif
     endfunction
   endmethods
@@ -157,7 +156,7 @@ classdef dbtable
       if nargin == 1
         # special handling for copy constructor
 	if isa (varargin{1}, "dbtable")
-          this._data2 = varargin{1}._data2;
+          this._data = varargin{1}._data;
           this.Properties = varargin{1}.Properties;
           return;
         endif
@@ -191,7 +190,7 @@ classdef dbtable
           this.Properties.VariableNames{end+1} = n;
         endfor
 
-        this._data2 = data2;
+        this._data = data2;
       endif
 
       # some properties to deal with
@@ -219,11 +218,11 @@ classdef dbtable
       endif
 
       # verify col data all same length
-      sz = size(this._data2, 2);
+      sz = size(this._data, 2);
       if sz > 0
-        len1 = size(this._data2{1}, 1);
+        len1 = size(this._data{1}, 1);
         for idx=2:sz
-          len2 = size(this._data2{idx}, 1);
+          len2 = size(this._data{idx}, 1);
           if len2 != len1
             error ("Row data is different length in column %d", idx); 
           endif
@@ -249,7 +248,7 @@ classdef dbtable
           n = this.Properties.VariableNames{col};
           widths(col) = length(n);
           #data = this._data.(n);
-          data = this._data2{col};
+          data = this._data{col};
           for row = 1:sz(1)
             
             d = data(row,:);
@@ -283,9 +282,7 @@ classdef dbtable
         for row = 1:sz(1)
           for col = 1:sz(2)
             printf("  ");
-            #n = this.Properties.VariableNames{col};
-            #data = this._data.(n);
-            data = this._data2{col};
+            data = this._data{col};
   
             d = data(row,:);
             if iscell(d)
@@ -296,14 +293,13 @@ classdef dbtable
             endif
  
             t = sprintf("%%-%d.%ds", widths(col), widths(col));
-            #printf(t, disp(data(row,:)));
             printf(t, d);
           endfor
           printf("\n");
         endfor
 
         if !show_all
-            printf("  <table truncated>");
+          printf("  <table truncated>");
         endif
 
      endif
@@ -333,7 +329,7 @@ classdef dbtable
 	elseif this.getcolidx(n) != -1
           # check in variable names
 	  idx = this.getcolidx(n);
-	  val = this._data2{idx};
+	  val = this._data{idx};
 
           if (numel (s) > 1) && (s(2).type =="()" || s(2).type == "{}")
             if size(s(2).subs, 1) == 1
@@ -349,7 +345,7 @@ classdef dbtable
         endif
         row = s(1).subs{1};
         col = s(1).subs{2};
-        cval = this._data2(col);
+        cval = this._data(col);
         val = {};
         for idx=1:numel(cval)
           val{end+1} = cval{idx}(row,:);
@@ -365,7 +361,7 @@ classdef dbtable
         row = s(1).subs{1};
         col = s(1).subs{2};
         names = this.Properties.VariableNames(col);
-        cval = this._data2(col);
+        cval = this._data(col);
         val = {};
         for idx=1:numel(cval)
           val{end+1} = cval{idx}(row,:);
@@ -387,8 +383,7 @@ classdef dbtable
       printf("Variables:\n");
       for idx = 1:length(this.Properties.VariableNames)
         n = this.Properties.VariableNames{idx};
-        #var = this._data.(n);
-        var = this._data2{idx};
+        var = this._data{idx};
         printf("  %s %dx%d %s\n", n, size(var,1), size(var,2), class(var));
         # Properties
         #  Description
@@ -401,9 +396,9 @@ classdef dbtable
     # rows, columns just calls size
     function varargout = size(this, dimn=1)
       sz0 = 0;
-      sz1 = length(this._data2);
+      sz1 = length(this._data);
       if sz1 > 0
-       sz0 = size(this._data2{1}, 1);
+       sz0 = size(this._data{1}, 1);
       endif
 
       if nargin == 1
@@ -466,7 +461,7 @@ classdef dbtable
 
   methods (Access = hidden)
     function tdata = _RawData(this)
-      tdata = this._data2;
+      tdata = this._data;
     endfunction
   endmethods
 endclassdef
