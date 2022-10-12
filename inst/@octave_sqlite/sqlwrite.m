@@ -143,17 +143,24 @@ function sqlwrite (db, tablename, data, varargin)
   # create table if ne need to ?
   s = fetch(db, sprintf("SELECT name FROM sqlite_master WHERE type='table' AND name='%s';", tablename));
   if isempty(s)
-    # TODO need to create the table
-    # if we have ColumnType property in, use it for the types
-%{
-    values = "";
-    for col=1:numel(cols)
-      coldata = subsref (data, substruct("{}", {':', col}))
-      class(coldata)
-      iscellstr(coldata)
-      class(coldata(1))
-    endfor
-%}
+    if isempty(coltypes)
+      coltypes = {};
+      # currently assign all columns to numeric if not specified as it will
+      # handle all types of data
+      for col=1:numel(cols)
+        coltypes{end+1} = "numeric";
+      endfor
+    endif
+    tsql = sprintf("CREATE TABLE %s (", tablename);
+    for idx=1:numel(coltypes)
+      if idx > 1
+        tsql = [tsql ", "];
+      endif
+      tsql = [tsql sprintf("%s %s", cols{idx}, coltypes{idx})];
+    endfor 
+    tsql = [tsql ")"];
+
+    execute(db, tsql);
   endif
 
   execute(db, sql);
@@ -169,6 +176,47 @@ endfunction
 %!   data = sqlread(db, 'Test');
 %!   data = sqlread(db, 'Test');
 %!   assert(size(data), [0 2]);
+%!   sqlwrite(db, "Test", t);
+%!   data = sqlread(db, 'Test');
+%!   assert(size(data), [2 2]);
+%!   close(db);
+%!
+%! unwind_protect_cleanup
+%!   db = 0;
+%!   
+%!   if exist(testfile, "file")
+%!     delete(testfile);
+%!   endif
+%! end_unwind_protect
+
+%!test
+%! testfile = tempname;
+%! t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', {'Id','Name'});
+%! unwind_protect
+%!   db = sqlite(testfile, "create");
+%!   sqlwrite(db, "Test", t, 'ColumnType', {'numeric', 'text'});
+%!   data = sqlread(db, 'Test');
+%!   assert(size(data), [2 2]);
+%!
+%!   sqlwrite(db, "Test", t);
+%!   data = sqlread(db, 'Test');
+%!   assert(size(data), [4 2]);
+%!
+%!   close(db);
+%!
+%! unwind_protect_cleanup
+%!   db = 0;
+%!   
+%!   if exist(testfile, "file")
+%!     delete(testfile);
+%!   endif
+%! end_unwind_protect
+
+%!test
+%! testfile = tempname;
+%! t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', {'Id','Name'});
+%! unwind_protect
+%!   db = sqlite(testfile, "create");
 %!   sqlwrite(db, "Test", t);
 %!   data = sqlread(db, 'Test');
 %!   assert(size(data), [2 2]);
