@@ -43,6 +43,25 @@ classdef dbtable
   ## @item @var{table}
   ## a dbtable object
   ## @end table
+  ##
+  ## @subsubheading Object Properties
+  ## A dbtable object has the following properties:
+  ## @table @asis
+  ## @item Properties
+  ## A table properties struct.
+  ##
+  ##  The table struct includes fields:
+  ##  @table @asis
+  ##  @item Description
+  ##  Text table description
+  ##  @item DimensionNames
+  ##  Cell array of Row and Variable dimension names
+  ##  @item VariableNames
+  ##  Cell array of variable (column) names
+  ##  @item UserData
+  ##  User data value
+  ##  @end table
+  ## @end table
   ## @end deftypefn
 
   properties (Access = private)
@@ -51,6 +70,7 @@ classdef dbtable
   endproperties
 
   properties (Access = public)
+
     Properties = struct ( ...
       'Description', "", ...
       'DimensionNames', {{'Row' 'Variables'}}, ...
@@ -58,7 +78,7 @@ classdef dbtable
       'VariableDescriptions', {{}}, ...
       'VariableUnits', {{}}, ...
       'RowNames', {{}}, ...
-      'UserData', {{}} ...
+      'UserData', [] ...
     );
   endproperties
 
