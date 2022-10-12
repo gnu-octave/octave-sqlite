@@ -51,7 +51,6 @@ classdef dbtable
   endproperties
 
   properties (Access = public)
-    # TODO need provide a set ?
     Properties = struct ( ...
       'Description', "", ...
       'DimensionNames', {{'Row' 'Variables'}}, ...
@@ -463,12 +462,12 @@ classdef dbtable
       data = this.subsref(substruct('{}', {rows:nrows, ':'}));
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
+  endmethods
 
-    # TODO: hide ?
+  methods (Access = hidden)
     function tdata = _RawData(this)
       tdata = this._data2;
     endfunction
-
   endmethods
 endclassdef
 
