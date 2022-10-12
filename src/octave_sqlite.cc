@@ -369,7 +369,6 @@ bool octave_sqlite::execute (const std::string &query)
 
 bool octave_sqlite::fetch (const std::string &query, octave_value &retval)
 {
-  char * err;
   sqlite3_stmt *stmt;
   
   int rc = sqlite3_prepare_v2(db, query.c_str(), -1, &stmt, NULL);

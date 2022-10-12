@@ -152,7 +152,7 @@ Private function\n \
   if(res)
     return m;
   else
-  return octave_value();
+    return octave_value();
 }
 
 // PKG_ADD: autoload ("__sqlite_commit__", "__sqlite__.oct");
@@ -180,7 +180,7 @@ Private function\n \
   octave_value m;
   bool res = db->commit();
 
-  return octave_value();
+  return octave_value(res);
 }
 
 // PKG_ADD: autoload ("__sqlite_rollback__", "__sqlite__.oct");
@@ -208,7 +208,7 @@ Private function\n \
   octave_value m;
   bool res = db->rollback();
 
-  return octave_value();
+  return octave_value(res);
 }
 
 #if 0
