@@ -18,13 +18,13 @@
 ## @deftypefn {} {@var{t} =} struct2dbtable (@var{astruct})
 ## Create a dbtable from a struct
 ## 
-## @subsubheading Inputs:
+## @subsubheading Inputs
 ## @table @asis
 ## @item @var{astruct} 
 ## A struct with same number of elements in each field
 ## @end table
 ##
-## @subsubheading Outputs:
+## @subsubheading Outputs
 ## @table @asis
 ## @item @var{t} 
 ## a dbtable of the @var{astruct} data

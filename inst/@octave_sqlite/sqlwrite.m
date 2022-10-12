@@ -18,10 +18,11 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} sqlwrite (@var{db}, @var{tablename}, @var{data})
+## @deftypefnx {} {} sqlwrite (@var{db}, @var{tablename}, @var{data}, @var{columntypes})
 ## @deftypefnx {} {} sqlwrite (@var{db}, @var{tablename}, @var{data}, @var{propertyname}, @var{propertyvalue} @dots{})
 ## Insert rows of data from @var{tablename}.
 ##
-## If the table does not exist it will be created, using the COlumnType propery if available
+## If the table does not exist it will be created, using the ColumnType propery if available
 ## otherwise, the type of input data will be used to determine field types.
 ##
 ## @subsubheading Inputs
@@ -32,12 +33,15 @@
 ## Name of table to write data to
 ## @item @var{data}
 ## Table containing data to write to the database. Variables names are expected to match the databse.
+## @item @var{columntypes}
+## Optional cell array of same size as data used if table must be created. The column types may also
+## be passed in using the @var{propertyname}, @var{propertyvalue} syntax.
 ## @item @var{propertyname}, @var{propertyvalue}
 ##  property name/value pairs where known properties are:
 ##  @table @asis
 ##  @item ColumnType
 ##  Optional cell array of same size as the data that may be used
-##  if the table is created as part of the rite operation.
+##  if the table is created as part of the write operation.
 ##  @end table
 ## @end table
 ##
