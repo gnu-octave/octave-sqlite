@@ -18,7 +18,7 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} execute (@var{db}, @var{sqlquery})
-## Execute non select sql query @var{sqlquery} on a sqlite database.
+## Execute non select SQL query @var{sqlquery} on a sqlite database.
 ##
 ## @subsubheading Inputs
 ## @table @asis

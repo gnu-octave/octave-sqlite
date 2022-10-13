@@ -19,7 +19,7 @@ classdef dbtable
   ## @deftypefn {} {@var{table} =} dbtable()
   ## @deftypefnx {} {@var{table} =} dbtable (@var{var1}, @dots{} @var{varn})
   ## @deftypefnx {} {@var{table} =} dbtable (@dots{} @var{propertyname}, @var{propertyvalue})
-  ## Basic implementation of a table type to avoid dependancies on other packages.
+  ## Basic implementation of a table type to avoid dependencies on other packages.
   ##
   ## @subsubheading Inputs
   ## @table @asis
@@ -31,9 +31,9 @@ classdef dbtable
   ## Property name/value pairs, where known property names are:
   ##  @table @asis
   ##  @item VariableNames
-  ##  a cell string matching the number of input columns with the name to use for the
+  ##  A cell string matching the number of input columns with the name to use for the
   ##  @item DimensionNames
-  ##  a cell string matching of length 2 for using as dimesion access. If not specified
+  ##  A cell string matching of length 2 for using as dimension access. If not specified
   ##  it will be "Rows" and "Variables".
   ##  @end table
   ## @end table

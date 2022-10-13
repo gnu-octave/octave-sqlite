@@ -19,14 +19,14 @@
 ## -*- texinfo -*-
 ## @deftypefn {} {@var{data} =} fetch (@var{db}, @var{sqlquery})
 ## @deftypefnx {} {@var{data} =} fetch (@var{db}, @var{sqlquery}, @var{propertyname}, @var{propertyvalue} @dots{})
-## Return rows of data after runnning a sql query on a sqlite database.
+## Return rows of data after running a SQL query on a sqlite database.
 ##
 ## @subsubheading Inputs
 ## @table @asis
 ## @item @var{db}
 ##  currently open sqlite database.
 ## @item @var{sqlquery}
-##  String containing a valid select sqlquery.
+##  String containing a valid select SQL query.
 ## @item @var{propertyname}, @var{propertyvalue}
 ##  property name/value pairs where known properties are:
 ##  @table @asis

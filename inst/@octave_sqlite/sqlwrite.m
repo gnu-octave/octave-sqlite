@@ -22,7 +22,7 @@
 ## @deftypefnx {} {} sqlwrite (@var{db}, @var{tablename}, @var{data}, @var{propertyname}, @var{propertyvalue} @dots{})
 ## Insert rows of data from @var{tablename}.
 ##
-## If the table does not exist it will be created, using the ColumnType propery if available
+## If the table does not exist it will be created, using the ColumnType properyy if available
 ## otherwise, the type of input data will be used to determine field types.
 ##
 ## @subsubheading Inputs
@@ -32,7 +32,7 @@
 ## @item @var{tablename}
 ## Name of table to write data to
 ## @item @var{data}
-## Table containing data to write to the database. Variables names are expected to match the databse.
+## Table containing data to write to the database. Variables names are expected to match the database.
 ## @item @var{columntypes}
 ## Optional cell array of same size as data used if table must be created. The column types may also
 ## be passed in using the @var{propertyname}, @var{propertyvalue} syntax.

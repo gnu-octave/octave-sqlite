@@ -48,7 +48,7 @@
 ## @end table
 ##
 ## @subsubheading Examples
-## Open a sqlite database, failing if it doesnt exist.
+## Open a sqlite database, failing if it does not exist.
 ## @example
 ## @code {
 ## db = sqlite("mytest.db");
