@@ -24,6 +24,9 @@ function t = read_dbtable_csv (filename)
   colnames = {};
 
   fd = fopen(filename, "rt");
+  if fd == -1
+    error ("Cant open file '%s'", filename);
+  endif
   unwind_protect
     l = fgetl(fd);
     colnames = strsplit(l, ",");
