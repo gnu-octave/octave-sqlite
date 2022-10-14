@@ -463,6 +463,20 @@ classdef dbtable
       endfor
     endfunction
 
+    function writetable (this, filename)
+      [~, ~, ext] = fileparts(filename);
+      if isempty(ext)
+        ext = ".csv"
+      endif
+
+      switch tolower(ext)
+        case { ".txt" ".csv" ".dat" }
+          write_dbtable_csv(this, filename);
+        otherwise
+          error ("unknown or unsupported format for '%s'", ext); 
+      endswitch
+    endfunction
+
     # head tail - create sub tables
     function tdata = head(this, rows)
       nrows = size(this, 1);
