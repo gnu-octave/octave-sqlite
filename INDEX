@@ -15,3 +15,4 @@ Database Operations
 Support Functions
   dbtable
   struct2dbtable
+  readdbtable
