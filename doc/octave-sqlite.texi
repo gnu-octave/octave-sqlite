@@ -56,7 +56,7 @@ Octave that you have.  The precise conditions can be found in the
 Octave SQLITE package and that also appears in @ref{Copying}.
 
 To download a copy of the @acronym{GNU} Octave SQLITE package, please visit
-@url{https://sourceforge.net/projects/octave-sqlite/}.
+@url{https://gnu-octave.github.io/octave-sqlite/}.
 
 @end titlepage
 @c %*** End of TITLEPAGE

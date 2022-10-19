@@ -10,4 +10,4 @@ Depends: octave (>= 6.0.0)
 BuildRequires: libsqlite3-dev
 SystemRequirements: libsqlite3
 License: GPLv3+
-Url: https://github.com/gnu-octave/octave-sqlite/wiki/Octave-SQLITE-Toolkit
+Url: https://gnu-octave.github.io/octave-sqlite/

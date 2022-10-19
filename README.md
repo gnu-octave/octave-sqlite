@@ -49,8 +49,8 @@ Octave documentation pages.
 
 The Documentation is also installed as a pdf in the installed package folder.
 
-An online summary of the documentation is also available at
-https://github.com/gnu-octave/octave-sqlite/wiki/Octave-SQLITE-Toolkit
+Online documentation is also available at
+https://gnu-octave.github.io/octave-sqlite/
 
 ## Reporting Bugs
 
