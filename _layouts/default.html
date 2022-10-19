@@ -15,7 +15,7 @@
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
           crossorigin="anonymous">
     <link rel="stylesheet"
-          href="{{ '/assets/style.css' | relative_url }}">
+	  href="{{site.url}}/assets/style.css">
     <script src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/sc-2.0.4/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
@@ -75,15 +75,15 @@
         {%- if page.navigation -%}
           {%- for nav in page.navigation -%}
 	    {% if nav.url %}
-	    <li class="list-group-item py-1"><a href="{{nav.url | relative_url}}">{{nav.name}}</a></li>
+	    <li class="list-group-item py-1"><a href="{{site.url}}{{nav.url}}">{{nav.name}}</a></li>
 	    {% else %}
 	    <li class="list-group-item py-1"><b>{{nav.name}}</b></li>
             {%- endif -%}
           {%- endfor -%}
 	{%- else -%}
-	      <li class="list-group-item py-1"><a href="{{ 'index' | relative_url }}">Overview</a></li>
-	      <li class="list-group-item py-1"><a href="{{ 'functions' | relative_url }}">Function Reference</a></li>
-	      <li class="list-group-item py-1"><a href="{{ 'news' | relative_url }}">News</a></li>
+	<li class="list-group-item py-1"><a href="{{site.url}}/index">Overview</a></li>
+	<li class="list-group-item py-1"><a href="{{site.url}}/functions">Function Reference</a></li>
+        <li class="list-group-item py-1"><a href="{{site.url}}/news">News</a></li>
         {%- endif -%}
       </ul>
     </div>
@@ -111,7 +111,7 @@
 	  <img src="{{ site.url }}/{{ site.logo }}"
 		width="25" height="25" alt="{{ site.title }}"
                class="d-inline-block align-top">
-           X{{ site.title }}
+           {{ site.title }}
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
