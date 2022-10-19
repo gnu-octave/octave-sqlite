@@ -1,2 +1,0 @@
-# on unload, call private del
-sqlite_pkg_del ();

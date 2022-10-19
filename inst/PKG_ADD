@@ -1,3 +1,0 @@
-# on package load, call private add
-
-sqlite_pkg_add();

@@ -1,9 +1,0 @@
-#! /bin/sh
-set -e      # halt if unhandled error
-
-## Generate ./configure
-aclocal
-autoconf
-autoheader -f
-
-rm -rf autom4te.cache
