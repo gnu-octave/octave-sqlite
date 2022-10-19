@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "functions/23_octavesqliterollback/"
+permalink: "/functions/@octave_sqlite/23_octavesqliterollback/"
 pkg_name: "sqlite"
 pkg_version: "0.0.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"

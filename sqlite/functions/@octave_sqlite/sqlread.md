@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "functions/22_octavesqlitesqlread/"
+permalink: "/functions/@octave_sqlite/22_octavesqlitesqlread/"
 pkg_name: "sqlite"
 pkg_version: "0.0.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"

@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "functions/7_dbtable/"
+permalink: "/functions/7_dbtable/"
 pkg_name: "sqlite"
 pkg_version: "0.0.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"

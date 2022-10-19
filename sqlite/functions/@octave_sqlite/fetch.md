@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "functions/20_octavesqlitefetch/"
+permalink: "/functions/@octave_sqlite/20_octavesqlitefetch/"
 pkg_name: "sqlite"
 pkg_version: "0.0.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
