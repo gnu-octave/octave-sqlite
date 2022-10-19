@@ -22,8 +22,8 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-fetch"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-fetch"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch' class='copiable-anchor'></a></span></dt>
+<dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Return rows of data after runnning a sql query on a sqlite database.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

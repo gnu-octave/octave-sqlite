@@ -22,9 +22,9 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-dbtable"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'></a></span></dt>
+<dt id="index-dbtable"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable' class='copiable-anchor'></a></span></dt>
+<dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Basic implementation of a table type to avoid dependancies on other packages.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

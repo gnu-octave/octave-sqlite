@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-struct2dbtable"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-struct2dbtable"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable' class='copiable-anchor'></a></span></dt>
 <dd><p>Create a dbtable from a struct
 </p> 
 <span id="Inputs_003a"></span><h4 class="subsubheading">Inputs:</h4>

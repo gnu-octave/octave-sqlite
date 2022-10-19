@@ -22,8 +22,8 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-sqlwrite"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlwrite"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Insert rows of data from <var>tablename</var>.
 </p>
 <p>If the table does not exist it will be created, using the COlumnType propery if available

@@ -22,8 +22,8 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-sqlite"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlite"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

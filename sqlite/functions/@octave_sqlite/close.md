@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-close"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-close"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close' class='copiable-anchor'></a></span></dt>
 <dd><p>Close the sqlite connection represented by the object <var>db</var>.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

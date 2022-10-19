@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-rollback"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-rollback"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback' class='copiable-anchor'></a></span></dt>
 <dd><p>Rollback pending transactions of sqlite connection.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

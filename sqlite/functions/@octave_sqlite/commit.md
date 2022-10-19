@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-commit"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-commit"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit' class='copiable-anchor'></a></span></dt>
 <dd><p>Commit pending transactions of sqlite connection.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

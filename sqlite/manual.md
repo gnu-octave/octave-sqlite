@@ -241,7 +241,7 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
 <h4 class="subsection">3.1.1 @octave_sqlite/close</h4>
 <span id="index-close"></span>
 <dl class="def">
-<dt id="index-close-1"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-close-1"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Close the sqlite connection represented by the object <var>db</var>.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
@@ -260,7 +260,7 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
 <h4 class="subsection">3.1.2 @octave_sqlite/isopen</h4>
 <span id="index-isopen"></span>
 <dl class="def">
-<dt id="index-isopen-1"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-isopen-1"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Return true if the sqlite connection is open.
 </p>
 <span id="Inputs-1"></span><h4 class="subsubheading">Inputs</h4>
@@ -282,8 +282,8 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
 <h4 class="subsection">3.1.3 sqlite</h4>
 <span id="index-sqlite"></span>
 <dl class="def">
-<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlite-2"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-2' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlite-2"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-2' class='copiable-anchor'></a></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
 <span id="Inputs-2"></span><h4 class="subsubheading">Inputs</h4>
@@ -350,8 +350,8 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <h4 class="subsection">3.2.1 @octave_sqlite/fetch</h4>
 <span id="index-fetch"></span>
 <dl class="def">
-<dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch-1' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-fetch-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-2' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch-1' class='copiable-anchor'></a></span></dt>
+<dt id="index-fetch-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-2' class='copiable-anchor'></a></span></dt>
 <dd><p>Return rows of data after runnning a sql query on a sqlite database.
 </p>
 <span id="Inputs-3"></span><h4 class="subsubheading">Inputs</h4>
@@ -387,8 +387,8 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <h4 class="subsection">3.2.2 @octave_sqlite/sqlread</h4>
 <span id="index-sqlread"></span>
 <dl class="def">
-<dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread-1' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlread-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-2' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread-1' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlread-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-2' class='copiable-anchor'></a></span></dt>
 <dd><p>Return rows of data from table <var>tablename</var> in a sqlite database.
 </p>
 <p>This function is the equivalent of running SELECT * FROM <var>table</var>.
@@ -438,8 +438,8 @@ Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operation
 <h4 class="subsection">3.3.1 @octave_sqlite/sqlwrite</h4>
 <span id="index-sqlwrite"></span>
 <dl class="def">
-<dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite-1' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlwrite-2"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-2' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite-1' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlwrite-2"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-2' class='copiable-anchor'></a></span></dt>
 <dd><p>Insert rows of data from <var>tablename</var>.
 </p>
 <p>If the table does not exist it will be created, using the COlumnType propery if available
@@ -490,7 +490,7 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <h4 class="subsection">3.4.1 @octave_sqlite/commit</h4>
 <span id="index-commit"></span>
 <dl class="def">
-<dt id="index-commit-1"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-commit-1"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Commit pending transactions of sqlite connection.
 </p>
 <span id="Inputs-6"></span><h4 class="subsubheading">Inputs</h4>
@@ -509,7 +509,7 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <h4 class="subsection">3.4.2 @octave_sqlite/execute</h4>
 <span id="index-execute"></span>
 <dl class="def">
-<dt id="index-execute-1"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-execute-1"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Execute non select sql query <var>sqlquery</var> on a sqlite database.
 </p>
 <span id="Inputs-7"></span><h4 class="subsubheading">Inputs</h4>
@@ -531,7 +531,7 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <h4 class="subsection">3.4.3 @octave_sqlite/rollback</h4>
 <span id="index-rollback"></span>
 <dl class="def">
-<dt id="index-rollback-1"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-rollback-1"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Rollback pending transactions of sqlite connection.
 </p>
 <span id="Inputs-9"></span><h4 class="subsubheading">Inputs</h4>
@@ -563,9 +563,9 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <h4 class="subsection">3.5.1 dbtable</h4>
 <span id="index-dbtable"></span>
 <dl class="def">
-<dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-dbtable-2"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-2' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'></a></span></dt>
+<dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'></a></span></dt>
+<dt id="index-dbtable-2"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-2' class='copiable-anchor'></a></span></dt>
 <dd><p>Basic implementation of a table type to avoid dependancies on other packages.
 </p>
 <span id="Inputs-10"></span><h4 class="subsubheading">Inputs</h4>
@@ -600,7 +600,7 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <h4 class="subsection">3.5.2 struct2dbtable</h4>
 <span id="index-struct2dbtable"></span>
 <dl class="def">
-<dt id="index-struct2dbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-struct2dbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Create a dbtable from a struct
 </p>
 <span id="Inputs_003a"></span><h4 class="subsubheading">Inputs:</h4>

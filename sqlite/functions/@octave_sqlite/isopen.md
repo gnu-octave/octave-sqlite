@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-isopen"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-isopen"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen' class='copiable-anchor'></a></span></dt>
 <dd><p>Return true if the sqlite connection is open.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>

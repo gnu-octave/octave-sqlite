@@ -22,8 +22,8 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-sqlread"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread' class='copiable-anchor'> &para;</a></span></dt>
-<dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-1' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-sqlread"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Return rows of data from table <var>tablename</var> in a sqlite database.
 </p>
 <p>This function is the equivalent of running SELECT * FROM <var>table</var>.

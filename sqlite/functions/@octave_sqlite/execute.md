@@ -22,7 +22,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="def">
-<dt id="index-execute"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute' class='copiable-anchor'> &para;</a></span></dt>
+<dt id="index-execute"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute' class='copiable-anchor'></a></span></dt>
 <dd><p>Execute non select sql query <var>sqlquery</var> on a sqlite database.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
