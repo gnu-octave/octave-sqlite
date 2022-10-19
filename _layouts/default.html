@@ -108,16 +108,16 @@
 
         <!-- Brand -->
         <a class="navbar-brand" href="/">
-           <img src="../{{ site.logo }}"
+	  <img src="{{ site.url }}/{{ site.logo }}"
 		width="25" height="25" alt="{{ site.title }}"
                class="d-inline-block align-top">
-           {{ site.title }}
+           X{{ site.title }}
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <a class="nav-link" href="https://gnu-octave.github.io/packages/">
-                    <img src="{{ '../assets/octave-logo.svg' | relative_url }}"
+                    <img src="{{ site.url/assets/octave-logo.svg | relative_url }}"
                      width="16" height="16" alt="GNU Octave"
                      class="d-inline-block align-center">
                     Octave Packages
