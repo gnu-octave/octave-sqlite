@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "./sqlite/functions/14_struct2dbtable"
+permalink: "./sqlite/functions/14_struct2dbtable/"
 pkg_name: "sqlite"
 pkg_version: "0.0.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"

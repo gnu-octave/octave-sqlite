@@ -1,6 +1,6 @@
 ---
 layout: "function_list"
-permalink: "/functions"
+permalink: "/functions/"
 title: "Sqlite Toolkit - Functions"
 pkg_name: "sqlite"
 version: "0.0.1"

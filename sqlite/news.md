@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "/news"
+permalink: "/news/"
 title: "Sqlite Toolkit - News"
 pkg_name: "sqlite"
 version: "0.0.1"

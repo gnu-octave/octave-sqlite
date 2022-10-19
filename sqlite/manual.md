@@ -1,6 +1,6 @@
 ---
 layout: "default"
-permalink: "/manual"
+permalink: "/manual/"
 title: "Sqlite Toolkit - Manual"
 pkg_name: "sqlite"
 version: "0.0.1"
