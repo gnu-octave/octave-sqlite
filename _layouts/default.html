@@ -52,7 +52,6 @@
 
       .mainscroll {
          overflow-y: scroll;
-	 height: 100%
       }
 
       .mysidebar {
@@ -134,10 +133,10 @@
           </nav>
         </div>
         <!-- main page -->
-        <div class="col-sm-11 col-md-9 col-lg-10 col-xl-10 mainscroll container">
+        <div class="col-sm-11 col-md-9 col-lg-10 col-xl-10 mainscroll" id="mainscroll">
           <h1>{{ page.title | default: site.title }}</h1><hr/>
           {{content}}
-        </div>
+        <div>
       </div>
     </div>
 
@@ -145,5 +144,26 @@
     <div class="bg-dark text-light fixed-bottom footer">
       <div class="pad-left-1">&copy; 2022 - {{ site.author | default: "The Octave Forge Community" | xml_escape | textilize }}<div>
     </div>
+
+    <script>
+      function getOffset(el) {
+        const rect = el.getBoundingClientRect();
+        return {
+          left: rect.left + window.scrollX,
+          top: rect.top + window.scrollY,
+          width: rect.width,
+          height: rect.height
+        };
+      }
+      function resizeDivs() {
+	var p = getOffset(document.getElementById('mainscroll'));
+	var pp = getOffset(document.getElementById('mainscroll').parentElement);
+        document.getElementById('mainscroll').style.height = (pp.height - (p.top - pp.top)) + 'px'
+      }
+    
+      window.onload = resizeDivs;
+      window.onresize = resizeDivs;
+
+    </script>
   </body>
 </html>
