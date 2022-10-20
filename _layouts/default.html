@@ -27,18 +27,32 @@
     <style>
       body {
         background-color: #ffffff;
+	height: 100%
       }
 
       .afterheader {
         position: fixed;
-        top: 58px;
-        bottom: 0;
+        top: 56px;
+	/* allow for footer */
+        bottom: calc(1.5em); 
         left: 0;
+      }
+
+      .fullheight {
+	 height: 100%
+      }
+
+      .footer {
+	 max-height:1.5em;
+      }
+
+      .pad-left-1 {
+	 padding-left: 1em
       }
 
       .mainscroll {
          overflow-y: scroll;
-         max-height: calc(100vh - 150px);
+	 height: 100%
       }
 
       .mysidebar {
@@ -88,7 +102,7 @@
 
     <!-- main section -->
     <div class="container-fluid afterheader">
-      <div class="row">
+      <div class="row fullheight">
         <!-- left navbar - is set no expand when > md -->
         <div class="col-sm-1 col-md-3 col-lg-2 col-xl-2 mysidebar">
           <nav class="navbar navbar-expand-md bg-white fixed-left">
@@ -127,9 +141,9 @@
       </div>
     </div>
 
-    <!-- fiiter -->
-    <div class="bg-dark text-light fixed-bottom">
-      &copy; 2022 - {{ site.author | default: "The Octave Forge Community" | xml_escape | textilize }}
+    <!-- footer -->
+    <div class="bg-dark text-light fixed-bottom footer">
+      <div class="pad-left-1">&copy; 2022 - {{ site.author | default: "The Octave Forge Community" | xml_escape | textilize }}<div>
     </div>
   </body>
 </html>
