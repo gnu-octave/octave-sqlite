@@ -24,129 +24,112 @@
     <title>{{ page.title | default: site.title }}</title>
   </head>
   <body>
-  <style>
-    body {
-      background-color: #ffffff;
-    }
-    @media (min-width: 991.98px) {
-      main {
-        padding-left: 250px;
+    <style>
+      body {
+        background-color: #ffffff;
       }
-    }
 
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      padding: 58px 0 0; /* Height of navbar */
-      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-      width: 250px;
-      z-index: 600;
-    }
-
-    @media (max-width: 991.98px) {
-      .sidebar {
-        width: 100%;
+      .afterheader {
+        position: fixed;
+        top: 58px;
+        bottom: 0;
+        left: 0;
       }
-    }
-    .sidebar .active {
-      border-radius: 5px;
-      box-shadow: 0 2px 5px 0 rgb(f f f / 16%), 0 2px 10px 0 rgb(f f f / 12%);
-    }
 
-    .sidebar-sticky {
-      position: relative;
-      top: 0;
-      height: calc(100vh - 48px);
-      padding-top: 0.5rem;
-      overflow-x: hidden;
-      overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    }
-  </style>
+      .mainscroll {
+         overflow-y: scroll;
+         max-height: calc(100vh - 58px - 22px);
+      }
 
-   <header>
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-    <div class="position-sticky">
-     <div class="list-group list-group-flush mx-3 mt-4">
-	<div class="centered"><b>Navigation</b><div>
-        <ul class="collapse show list-group list-group-flush">
-        {%- if page.navigation -%}
-          {%- for nav in page.navigation -%}
-	    {% if nav.url %}
-	    <li class="list-group-item py-1"><a href="{{site.url}}{{nav.url}}">{{nav.name}}</a></li>
-	    {% else %}
-	    <li class="list-group-item py-1"><b>{{nav.name}}</b></li>
-            {%- endif -%}
-          {%- endfor -%}
-	{%- else -%}
-	<li class="list-group-item py-1"><a href="{{site.url}}/index">Overview</a></li>
-	<li class="list-group-item py-1"><a href="{{site.url}}/functions">Function Reference</a></li>
-        <li class="list-group-item py-1"><a href="{{site.url}}/news">News</a></li>
-        {%- endif -%}
-      </ul>
-    </div>
-    </div>
-   </nav>
+      .mysidebar {
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+        z-index: 600;
+      }
+    </style>
 
-   <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <!-- Container wrapper -->
-      <div class="container-fluid">
-        <!-- Toggle button -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
+    <!-- top nav bar -->
+    <header>
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+	  <a class="navbar-brand" href="{{site.url}}">
+	    <img src="{{ site.url }}/{{ site.logo }}"
+	         width="25" height="25" alt="{{ site.title }}"
+                 class="d-inline-block align-top">
+            {{ site.title }}
+          </a>
+          <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fas fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="https://gnu-octave.github.io/packages/">
+                  <img src="{{ site.url }}{{'/assets/octave-logo.svg'}}"
+                       width="16" height="16" alt="GNU Octave"
+                       class="d-inline-block align-center">
+                  Octave Packages
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.octave.org">
+                  <i class="fas fa-home"></i>
+                  GNU Octave website
+                </a>
+              </li>
+            </ul>
+	  </div>
+        </div>
+      <nav>
+    </header>
 
-        <!-- Brand -->
-	<a class="navbar-brand" href="{{site.url}}">
-	  <img src="{{ site.url }}/{{ site.logo }}"
-		width="25" height="25" alt="{{ site.title }}"
-               class="d-inline-block align-top">
-           {{ site.title }}
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="https://gnu-octave.github.io/packages/">
-		  <img src="{{ site.url }}{{'/assets/octave-logo.svg'}}"
-                     width="16" height="16" alt="GNU Octave"
-                     class="d-inline-block align-center">
-                    Octave Packages
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://www.octave.org">
-                    <i class="fas fa-home"></i>
-                    GNU Octave website
-                  </a>
-                </li>
+    <!-- main section -->
+    <div class="container-fluid afterheader">
+      <div class="row">
+        <!-- left navbar - is set no expand when > md -->
+        <div class="col-sm-1 col-md-3 col-lg-2 col-xl-2 mysidebar">
+          <nav class="navbar navbar-expand-md bg-white fixed-left">
+            <button class="navbar-toggler pull-right" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarLeft"
+              aria-controls="navbarLeft" aria-expanded="true"
+              aria-label="Toggle navigation"
+            >
+              <span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLeft">
+              <ul class="collapse show list-group list-group-flush">
+  	      <li class="list-group-item py-1"><b>Navigation</b></li>
+                {%- if page.navigation -%}
+                  {%- for nav in page.navigation -%}
+                    {% if nav.url %}
+                      <li class="list-group-item py-1"><a href="{{site.url}}{{nav.url}}">{{nav.name}}</a></li>
+                    {% else %}
+                      <li class="list-group-item py-1"><b>{{nav.name}}</b></li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- else -%}
+	          <li class="list-group-item py-1"><a href="{{site.url}}/index">Overview</a></li>
+	          <li class="list-group-item py-1"><a href="{{site.url}}/functions">Function Reference</a></li>
+                  <li class="list-group-item py-1"><a href="{{site.url}}/news">News</a></li>
+                {%- endif -%}
               </ul>
- 
-	</div>
+            </div>
+          </nav>
+        </div>
+        <!-- main page -->
+        <div class="col-sm-11 col-md-9 col-lg-10 col-xl-10 mainscroll container">
+          <h1>{{ page.title | default: site.title }}</h1><hr/>
+          {{content}}
+        </div>
       </div>
-    <nav>
-   </header>
+    </div>
 
-   <main style="margin-top: 58px; margin-bottom: 10px;">
-     <div class="container pt-4">
-       <h1>{{ page.title | default: site.title }}</h1>
-       <hr/>
-       {{content}}
-     </div>
-
-      <footer class="bg-light">
-	<hr>
-        <div>&copy; 2022 - {{ site.author | default: "The Octave Forge Community" | xml_escape | textilize }}</div>
-      </footer>
-    </main>
+    <!-- fiiter -->
+    <div class="bg-dark text-light fixed-bottom">
+      &copy; 2022 - {{ site.author | default: "The Octave Forge Community" | xml_escape | textilize }}
+    </div>
   </body>
 </html>

@@ -2,30 +2,30 @@
 layout: "default"
 ---
 <div class="container">
-<div class="card mb-3 bg-light" style="max-width: 40rem;">
-  <div class="row no-gutters">
-   <div class="col-md-2">
-   <img src="{{site.url}}{{site.logo}}" class="card-img" alt="{{ page.pkg_name }}"/>
-   </div>
-   <div class="col-md-8">
-    <div class="card-body">
-     <h5 class="card-title">{{ page.pkg_name }}</h5>
-     <h6 class="card-subtitle mb-2 text-muted">{{ page.description }}</h6>
-     <table class="card-text table">
-      <tr><td>Name:</td><td>{{page.pkg_name}}</td></tr>
-      <tr><td>Version:</td><td>{{page.version}}</td></tr>
-      <tr><td>Released Date:</td><td>{{page.pkg_date}}</td></tr>
-      <tr><td>License:</td><td>{{page.license}}</td></tr>
-      <tr><td>Authors:</td><td>{{page.author |xml_escape | textilize }}</td></tr>
-      <tr><td>Maintainers:</td><td>{{page.maintainer | xml_escape | textilize }}</td></tr>
-     </table>
+  <div class="card mb-3 bg-light" style="max-width: 40rem;">
+    <div class="row no-gutters">
+     <div class="col-md-2">
+     <img src="{{site.url}}{{site.logo}}" class="card-img" alt="{{ page.pkg_name }}"/>
+     </div>
+     <div class="col-md-8">
+      <div class="card-body">
+       <h5 class="card-title">{{ page.pkg_name }}</h5>
+       <h6 class="card-subtitle mb-2 text-muted">{{ page.description }}</h6>
+       <table class="card-text table">
+        <tr><td>Name:</td><td>{{page.pkg_name}}</td></tr>
+        <tr><td>Version:</td><td>{{page.version}}</td></tr>
+        <tr><td>Released Date:</td><td>{{page.pkg_date}}</td></tr>
+        <tr><td>License:</td><td>{{page.license}}</td></tr>
+        <tr><td>Authors:</td><td>{{page.author |xml_escape | textilize }}</td></tr>
+        <tr><td>Maintainers:</td><td>{{page.maintainer | xml_escape | textilize }}</td></tr>
+       </table>
+      </div>
+     </div>
     </div>
-   </div>
   </div>
-</div>
-<p></p>
-<p>To download and install the latest version of the package:</p>
-<p>
- <code language="matlab">pkg install -forge {{page.pkg_name}}</code>
-</p>
+  <p></p>
+  <p>To download and install the latest version of the package:</p>
+  <p>
+   <code language="matlab">pkg install -forge {{page.pkg_name}}</code>
+  </p>
 </div>
