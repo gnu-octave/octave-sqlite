@@ -62,7 +62,7 @@
 
     <!-- top nav bar -->
     <header>
-      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
 	  <a class="navbar-brand" href="{{site.url}}">
 	    <img src="{{ site.url }}/{{ site.logo }}"
@@ -114,13 +114,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarLeft">
               <ul class="collapse show list-group list-group-flush">
-  	      <li class="list-group-item py-1"><b>Navigation</b></li>
                 {%- if page.navigation -%}
                   {%- for nav in page.navigation -%}
                     {% if nav.url %}
-                      <li class="list-group-item py-1"><a href="{{site.url}}{{nav.url}}">{{nav.name}}</a></li>
+		    <li class="list-group-item p-1"><a href="{{site.url}}{{nav.url}}">{{nav.name}}</a></li>
                     {% else %}
-                      <li class="list-group-item py-1"><b>{{nav.name}}</b></li>
+                      <li class="list-group-item p-1"><b>{{nav.name}}</b></li>
                     {%- endif -%}
                   {%- endfor -%}
                 {%- else -%}
