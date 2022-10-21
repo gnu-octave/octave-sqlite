@@ -62,6 +62,33 @@ classdef dbtable
   ##  User data value
   ##  @end table
   ## @end table
+  ##
+  ## @subsubheading Examples
+  ## Directly create a 2 column table from input of each column
+  ## @example
+  ## @code {
+  ## t = dbtable([0;1;3], [2;4;6]);
+  ## }
+  ## @end example
+  ##
+  ## Directly create a 2 column table from input of each column, and specify variable 
+  ## names
+  ## @example
+  ## @code {
+  ## t = dbtable([0;1;3], [2;4;6], "VariableNames", @{'Variable1', 'Variable2'@});
+  ## }
+  ## @end example
+  ##
+  ## Create a 2 column table from 2 variables V1, V2
+  ## @example
+  ## @code {
+  ## V1 = [0;1;3];
+  ## V2 = [2;4;6];
+  ## t = dbtable(V1, V2);
+  ## }
+  ## @end example
+  ##
+  ## @seealso{readdbtable, struct2dbtable}
   ## @end deftypefn
 
   properties (Access = private)

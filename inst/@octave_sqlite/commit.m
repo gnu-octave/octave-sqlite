@@ -18,7 +18,7 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} commit (@var{db})
-## Commit pending transactions of sqlite connection.
+## Commit pending transactions of sqlite connection that has AutoCommit = off.
 ##
 ## @subsubheading Inputs
 ## @table @asis
@@ -28,6 +28,22 @@
 ##
 ## @subsubheading Outputs
 ## None
+##
+## @subsubheading Examples
+## Create a database table turn off autocommit and insert a row and commit
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## # create table
+## execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+## # turn off auto commit
+## db.AutoCommit = "off";
+## execute(db, 'INSERT INTO Test (Name) VALUES ("Line1")');
+## # commit the insert
+## commit(db);
+## }
+## @end example
 ##
 ## @seealso{sqlite, rollback}
 ## @end deftypefn

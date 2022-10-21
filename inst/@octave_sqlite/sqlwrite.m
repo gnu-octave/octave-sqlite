@@ -48,6 +48,19 @@
 ## @subsubheading Outputs
 ## None
 ##
+## @subsubheading Examples
+## Create a database table and insert a row
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## # create table (if doesnt exist) and then insert 2 rows
+## t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', @{'Id','Name'@});
+## # insert table data
+## sqlwrite(db, "Test", t, 'ColumnType', @{'numeric', 'text'@});
+## }
+## @end example
+##
 ## @seealso{sqlite, execute}
 ## @end deftypefn
 
