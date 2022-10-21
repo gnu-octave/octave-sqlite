@@ -33,6 +33,14 @@ table.function-list {
   };
 }
 
+// overview table
+table.overview {
+  tr td:first-child {
+    font-weight: bold;
+  };
+}
+
+
 // color the code outputs in manual and function ref
 
 pre.example, .header, .float-caption, hr {
