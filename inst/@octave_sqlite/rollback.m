@@ -29,6 +29,22 @@
 ## @subsubheading Outputs
 ## None
 ##
+## @subsubheading Examples
+## Create a database table and insert a row, then roll back the insert
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## # create table
+## execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+## # turn off auto commit
+## db.AutoCommit = "off";
+## execute(db, 'INSERT INTO Test (Name) VALUES ("Line1")');
+## # roll back the insert
+## rollback(db);
+## }
+## @end example
+##
 ## @seealso{sqlite, commit}
 ## @end deftypefn
 

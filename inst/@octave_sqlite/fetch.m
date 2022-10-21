@@ -43,6 +43,25 @@
 ##  a table containing the query result.
 ## @end table
 ##
+## @subsubheading Examples
+## Select all rows of data from a database tables
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## data = fetch(db, 'SELECT * FROM TestTable');
+## }
+## @end example
+##
+## Select 5 rows of data from a database tables
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## data = fetch(db, 'SELECT * FROM TestTable', "MaxRows", 5);
+## }
+## @end example
+##
 ## @seealso{sqlite, sqlread}
 ## @end deftypefn
 

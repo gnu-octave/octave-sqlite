@@ -31,6 +31,18 @@
 ## @subsubheading Inputs
 ## None
 ##
+## @subsubheading Examples
+## Create a database table and insert a row
+## @example
+## @code {
+## # create sql connection
+## db = sqlite("mytest.db");
+## # create table and then insert a row
+## execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+## execute(db, 'INSERT INTO Test (Name) VALUES ("Line1")');
+## }
+## @end example
+##
 ## @seealso{sqlite, fetch}
 ## @end deftypefn
 
