@@ -19,7 +19,9 @@ classdef dbtable
   ## @deftypefn {} {@var{table} =} dbtable()
   ## @deftypefnx {} {@var{table} =} dbtable (@var{var1}, @dots{} @var{varn})
   ## @deftypefnx {} {@var{table} =} dbtable (@dots{} @var{propertyname}, @var{propertyvalue})
-  ## Basic implementation of a table type to avoid dependencies on other packages.
+  ## Create a table of data
+  ##
+  ## dbtable is a basic implementation of a table type to avoid dependencies on other packages.
   ##
   ## @subsubheading Inputs
   ## @table @asis

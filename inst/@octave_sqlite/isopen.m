@@ -18,12 +18,15 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {@var{yesno} =} isopen (@var{db})
-## Return true if the sqlite connection is open.
+## Check if a sqlite connection is open
+##
+## Return true if the sqlite connection is open, otherwise
+## return false.
 ##
 ## @subsubheading Inputs
 ## @table @asis
 ## @item @var{db}
-##  previously opened sqlite database.
+##  A previously opened sqlite database.
 ## @end table
 ##
 ## @subsubheading Outputs

@@ -18,6 +18,13 @@
 ## @deftypefn {} {@var{t} =} struct2dbtable (@var{astruct})
 ## Create a dbtable from a struct
 ## 
+## This function uses the field names and data of the fields to create a table
+## representation of the struct.
+##
+## Each fieldname will be a variable in the table. The data for each variable
+## will be the data of the fieldname, and is expected to be a uniform size for
+## all fields in the struct.
+##
 ## @subsubheading Inputs
 ## @table @asis
 ## @item @var{astruct} 
