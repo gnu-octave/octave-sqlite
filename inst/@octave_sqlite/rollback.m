@@ -18,7 +18,10 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} rollback (@var{db})
-## Rollback pending transactions of sqlite connection.
+## Rollback changes to a database
+##
+## Rollback pending transactions of sqlite connection that has
+## AutoCommit = off set.
 ##
 ## @subsubheading Inputs
 ## @table @asis

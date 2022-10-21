@@ -18,7 +18,8 @@
 ## @deftypefn {} {@var{t} =} readdbtable (@var{filename})
 ## Create a dbtable from a file
 ##
-## Currently, this is using a very simplistic approach
+## Currently, this is using a very simplistic approach to read data from a CSV
+## formatted file only.
 ## 
 ## @subsubheading Inputs
 ## @table @asis

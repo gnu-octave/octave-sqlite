@@ -19,8 +19,9 @@
 ## -*- texinfo -*-
 ## @deftypefn {} {@var{data} =} sqlread (@var{db}, @var{tablename})
 ## @deftypefnx {} {@var{data} =} sqlread (@var{db}, @var{tablename}, @var{propertyname}, @var{propertyvalue} @dots{})
-## Return rows of data from table @var{tablename} in a sqlite database.
+## Read rows of data from a table
 ##
+## Return rows of data from table @var{tablename} in a sqlite database.
 ## This function is the equivalent of running SELECT * FROM @var{table}.
 ##
 ## @subsubheading Inputs
@@ -49,7 +50,7 @@
 ## Select all rows of data from a database table
 ## @example
 ## @code {
-## # create sql connection
+## # create sql connection to an existing database
 ## db = sqlite("mytest.db");
 ## data = sqlread(db, 'TestTable');
 ## }

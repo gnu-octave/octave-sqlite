@@ -18,18 +18,20 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} close (@var{db})
-## Close the sqlite connection represented by the object @var{db}.
+## Close a sqlite connection
+##
+## Close the previously opened sqlite connection @var{db}.
 ##
 ## @subsubheading Inputs
 ## @table @asis
 ## @item @var{db}
-## Previously created octave_sqlite object
+## A previously created octave_sqlite object
 ## @end table
 ##
 ## @subsubheading Outputs
 ## None
 ##
-## @seealso{sqlite}
+## @seealso{sqlite, isopen}
 ## @end deftypefn
 
 function close (db)

@@ -18,6 +18,8 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} execute (@var{db}, @var{sqlquery})
+## Execute a SQL statement on a sqlite database
+##
 ## Execute non select SQL query @var{sqlquery} on a sqlite database.
 ##
 ## @subsubheading Inputs
@@ -36,7 +38,7 @@
 ## @example
 ## @code {
 ## # create sql connection
-## db = sqlite("mytest.db");
+## db = sqlite("mytest.db", "create");
 ## # create table and then insert a row
 ## execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
 ## execute(db, 'INSERT INTO Test (Name) VALUES ("Line1")');

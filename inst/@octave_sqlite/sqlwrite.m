@@ -20,9 +20,10 @@
 ## @deftypefn {} {} sqlwrite (@var{db}, @var{tablename}, @var{data})
 ## @deftypefnx {} {} sqlwrite (@var{db}, @var{tablename}, @var{data}, @var{columntypes})
 ## @deftypefnx {} {} sqlwrite (@var{db}, @var{tablename}, @var{data}, @var{propertyname}, @var{propertyvalue} @dots{})
-## Insert rows of data from @var{tablename}.
+## Insert rows of data into a table.
 ##
-## If the table does not exist it will be created, using the ColumnType properyy if available
+## Insert rows of data into a sqlite database table.
+## If the table does not exist it will be created, using the ColumnType property if available
 ## otherwise, the type of input data will be used to determine field types.
 ##
 ## @subsubheading Inputs
@@ -53,8 +54,8 @@
 ## @example
 ## @code {
 ## # create sql connection
-## db = sqlite("mytest.db");
-## # create table (if doesnt exist) and then insert 2 rows
+## db = sqlite("mytest.db", "create");
+## # create table (if it does not exist) and then insert 2 rows
 ## t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', @{'Id','Name'@});
 ## # insert table data
 ## sqlwrite(db, "Test", t, 'ColumnType', @{'numeric', 'text'@});

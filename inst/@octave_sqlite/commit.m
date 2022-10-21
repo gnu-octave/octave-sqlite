@@ -18,7 +18,9 @@
 
 ## -*- texinfo -*-
 ## @deftypefn {} {} commit (@var{db})
-## Commit pending transactions of sqlite connection that has AutoCommit = off.
+## Commit changes to a database
+##
+## Commit pending transactions of sqlite connection that has AutoCommit = off set.
 ##
 ## @subsubheading Inputs
 ## @table @asis
