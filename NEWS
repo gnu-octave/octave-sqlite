@@ -1,3 +1,12 @@
+Summary of important user-visible changes for sqlite 0.0.2:
+-------------------------------------------------------------------
+
+ ** Documentation updates
+
+ ** New functions:
+    - dbtable.writetable
+    - readdbtable
+
 Summary of important user-visible changes for sqlite 0.0.1:
 -------------------------------------------------------------------
 

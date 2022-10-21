@@ -34,7 +34,7 @@ The toolkit can be installed in Octave 7.2+ using the command:
 
 On older versions of Octave, install the package using the full path to the latest released version:
 
-    pkg install "https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.1/octave-sqlite-0.0.1.tar.gz"
+    pkg install "https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.2/octave-sqlite-0.0.2.tar.gz"
 
 After installation, load the package in order to use it.
 
