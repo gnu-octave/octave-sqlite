@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Sqlite Toolkit - Manual"
 pkg_name: "sqlite"
-version: "0.0.1"
+version: "0.0.2"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -78,7 +78,8 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
     <li><a id="toc-Support-Functions-1" href="#Support-Functions">3.5 Support Functions</a>
     <ul class="no-bullet">
       <li><a id="toc-dbtable" href="#dbtable">3.5.1 dbtable</a></li>
-      <li><a id="toc-struct2dbtable" href="#struct2dbtable">3.5.2 struct2dbtable</a></li>
+      <li><a id="toc-readdbtable" href="#readdbtable">3.5.2 readdbtable</a></li>
+      <li><a id="toc-struct2dbtable" href="#struct2dbtable">3.5.3 struct2dbtable</a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-GNU-General-Public-License" href="#Copying">Appendix A GNU General Public License</a></li>
@@ -116,7 +117,7 @@ to successfully install the toolkit.
 the octave-sqlite website using the following command within <acronym>GNU</acronym> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install https://github.com/gnu-octave/octave-sqlite/releases/v0.0.1/octave-sqlite-0.0.1.tar.gz
+<pre class="example">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.2/octave-sqlite-0.0.2.tar.gz
 </pre></div>
 <p>On Octave 7.2 and later, the package can be installed using the following command within
 <acronym>GNU</acronym> Octave:
@@ -134,7 +135,7 @@ the octave-sqlite website using the following command within <acronym>GNU</acron
 <acronym>GNU</acronym> Octave, the package can be installed using the following command within <acronym>GNU</acronym> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install octave-sqlite-0.0.1.tar.gz
+<pre class="example">pkg install octave-sqlite-0.0.2.tar.gz
 </pre></div>
 </div>
 <div class="section" id="Loading">
@@ -242,18 +243,20 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
 <span id="index-close"></span>
 <dl class="def">
 <dt id="index-close-1"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Close the sqlite connection represented by the object <var>db</var>.
+<dd><p>Close a sqlite connection
+</p>
+<p>Close the previously opened sqlite connection <var>db</var>.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
 <dt><span><var>db</var></span></dt>
-<dd><p>Previously created octave_sqlite object
+<dd><p>A previously created octave_sqlite object
  </p></dd>
 </dl>
 <span id="Outputs"></span><h4 class="subsubheading">Outputs</h4>
 <p>None
 </p>
-<p><strong>See also:</strong> sqlite.
+<p><strong>See also:</strong> sqlite, isopen.
  </p></dd></dl>
 </div>
 <div class="subsection" id="g_t_0040octave_005fsqlite_002fisopen">
@@ -261,12 +264,15 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
 <span id="index-isopen"></span>
 <dl class="def">
 <dt id="index-isopen-1"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Return true if the sqlite connection is open.
+<dd><p>Check if a sqlite connection is open
+</p>
+<p>Return true if the sqlite connection is open, otherwise
+ return false.
 </p>
 <span id="Inputs-1"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
 <dt><span><var>db</var></span></dt>
-<dd><p>previously opened sqlite database.
+<dd><p>A previously opened sqlite database.
  </p></dd>
 </dl>
 <span id="Outputs-1"></span><h4 class="subsubheading">Outputs</h4>
@@ -319,7 +325,7 @@ Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up:
  </p></dd>
 </dl>
 <span id="Examples"></span><h4 class="subsubheading">Examples</h4>
-<p>Open a sqlite database, failing if it doesnt exist.
+<p>Open a sqlite database, failing if it does not exist.
  </p><div class="example">
 <pre class="example"> <code>
  db = sqlite(&quot;mytest.db&quot;);
@@ -352,7 +358,9 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <dl class="def">
 <dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch-1' class='copiable-anchor'></a></span></dt>
 <dt id="index-fetch-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-2' class='copiable-anchor'></a></span></dt>
-<dd><p>Return rows of data after runnning a sql query on a sqlite database.
+<dd><p>Run a SQL query on a sqlite database
+</p>
+<p>Return rows of data after running a SQL query on a sqlite database.
 </p>
 <span id="Inputs-3"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -360,7 +368,7 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <dd><p>currently open sqlite database.
  </p></dd>
 <dt><span><var>sqlquery</var></span></dt>
-<dd><p>String containing a valid select sqlquery.
+<dd><p>String containing a valid select SQL query.
  </p></dd>
 <dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
 <dd><p>property name/value pairs where known properties are:
@@ -380,6 +388,23 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <dd><p>a table containing the query result.
  </p></dd>
 </dl>
+<span id="Examples-1"></span><h4 class="subsubheading">Examples</h4>
+<p>Select all rows of data from a database tables
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = fetch(db, 'SELECT * FROM TestTable');
+ </code>
+ </pre></div>
+<p>Select 5 rows of data from a database tables
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = fetch(db, 'SELECT * FROM TestTable', &quot;MaxRows&quot;, 5);
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, sqlread.
  </p></dd></dl>
 </div>
@@ -389,9 +414,10 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <dl class="def">
 <dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread-1' class='copiable-anchor'></a></span></dt>
 <dt id="index-sqlread-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-2' class='copiable-anchor'></a></span></dt>
-<dd><p>Return rows of data from table <var>tablename</var> in a sqlite database.
+<dd><p>Read rows of data from a table
 </p>
-<p>This function is the equivalent of running SELECT * FROM <var>table</var>.
+<p>Return rows of data from table <var>tablename</var> in a sqlite database.
+ This function is the equivalent of running SELECT * FROM <var>table</var>.
 </p>
 <span id="Inputs-4"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -419,6 +445,23 @@ Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Pre
 <dd><p>a table containing the query result.
  </p></dd>
 </dl>
+<span id="Examples-2"></span><h4 class="subsubheading">Examples</h4>
+<p>Select all rows of data from a database table
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection to an existing database
+ db = sqlite(&quot;mytest.db&quot;);
+ data = sqlread(db, 'TestTable');
+ </code>
+ </pre></div>
+<p>Select 5 rows of data from a database table
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = sqlread(db, 'TestTable', &quot;MaxRows&quot;, 5);
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, fetch.
  </p></dd></dl>
 <hr>
@@ -439,10 +482,12 @@ Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operation
 <span id="index-sqlwrite"></span>
 <dl class="def">
 <dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlwrite-2"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-2' class='copiable-anchor'></a></span></dt>
-<dd><p>Insert rows of data from <var>tablename</var>.
+<dt id="index-sqlwrite-2"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>columntypes</var>)</em><a href='#index-sqlwrite-2' class='copiable-anchor'></a></span></dt>
+<dt id="index-sqlwrite-3"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-3' class='copiable-anchor'></a></span></dt>
+<dd><p>Insert rows of data into a table.
 </p>
-<p>If the table does not exist it will be created, using the COlumnType propery if available
+<p>Insert rows of data into a sqlite database table.
+ If the table does not exist it will be created, using the ColumnType property if available
  otherwise, the type of input data will be used to determine field types.
 </p>
 <span id="Inputs-5"></span><h4 class="subsubheading">Inputs</h4>
@@ -454,14 +499,18 @@ Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operation
 <dd><p>Name of table to write data to
  </p></dd>
 <dt><span><var>data</var></span></dt>
-<dd><p>Table containing data to write to the database. Variables names are expected to match the databse.
+<dd><p>Table containing data to write to the database. Variables names are expected to match the database.
+ </p></dd>
+<dt><span><var>columntypes</var></span></dt>
+<dd><p>Optional cell array of same size as data used if table must be created. The column types may also
+ be passed in using the <var>propertyname</var>, <var>propertyvalue</var> syntax.
  </p></dd>
 <dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
 <dd><p>property name/value pairs where known properties are:
   </p><dl compact="compact">
 <dt><span>ColumnType</span></dt>
 <dd><p>Optional cell array of same size as the data that may be used
-  if the table is created as part of the rite operation.
+  if the table is created as part of the write operation.
   </p></dd>
 </dl>
 </dd>
@@ -469,6 +518,18 @@ Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operation
 <span id="Outputs-5"></span><h4 class="subsubheading">Outputs</h4>
 <p>None
 </p>
+<span id="Examples-3"></span><h4 class="subsubheading">Examples</h4>
+<p>Create a database table and insert a row
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
+ # create table (if it does not exist) and then insert 2 rows
+ t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', {'Id','Name'});
+ # insert table data
+ sqlwrite(db, &quot;Test&quot;, t, 'ColumnType', {'numeric', 'text'});
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, execute.
  </p></dd></dl>
 <hr>
@@ -491,7 +552,9 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="index-commit"></span>
 <dl class="def">
 <dt id="index-commit-1"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Commit pending transactions of sqlite connection.
+<dd><p>Commit changes to a database
+</p>
+<p>Commit pending transactions of sqlite connection that has AutoCommit = off set.
 </p>
 <span id="Inputs-6"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -502,6 +565,21 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="Outputs-6"></span><h4 class="subsubheading">Outputs</h4>
 <p>None
 </p>
+<span id="Examples-4"></span><h4 class="subsubheading">Examples</h4>
+<p>Create a database table turn off autocommit and insert a row and commit
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ # create table
+ execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+ # turn off auto commit
+ db.AutoCommit = &quot;off&quot;;
+ execute(db, 'INSERT INTO Test (Name) VALUES (&quot;Line1&quot;)');
+ # commit the insert
+ commit(db);
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, rollback.
  </p></dd></dl>
 </div>
@@ -510,7 +588,9 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="index-execute"></span>
 <dl class="def">
 <dt id="index-execute-1"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Execute non select sql query <var>sqlquery</var> on a sqlite database.
+<dd><p>Execute a SQL statement on a sqlite database
+</p>
+<p>Execute non select SQL query <var>sqlquery</var> on a sqlite database.
 </p>
 <span id="Inputs-7"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -524,6 +604,17 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="Inputs-8"></span><h4 class="subsubheading">Inputs</h4>
 <p>None
 </p>
+<span id="Examples-5"></span><h4 class="subsubheading">Examples</h4>
+<p>Create a database table and insert a row
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
+ # create table and then insert a row
+ execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+ execute(db, 'INSERT INTO Test (Name) VALUES (&quot;Line1&quot;)');
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, fetch.
  </p></dd></dl>
 </div>
@@ -532,7 +623,10 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="index-rollback"></span>
 <dl class="def">
 <dt id="index-rollback-1"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Rollback pending transactions of sqlite connection.
+<dd><p>Rollback changes to a database
+</p>
+<p>Rollback pending transactions of sqlite connection that has
+ AutoCommit = off set.
 </p>
 <span id="Inputs-9"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -543,6 +637,21 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
 <span id="Outputs-7"></span><h4 class="subsubheading">Outputs</h4>
 <p>None
 </p>
+<span id="Examples-6"></span><h4 class="subsubheading">Examples</h4>
+<p>Create a database table and insert a row, then roll back the insert
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ # create table
+ execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
+ # turn off auto commit
+ db.AutoCommit = &quot;off&quot;;
+ execute(db, 'INSERT INTO Test (Name) VALUES (&quot;Line1&quot;)');
+ # roll back the insert
+ rollback(db);
+ </code>
+ </pre></div>
 <p><strong>See also:</strong> sqlite, commit.
  </p></dd></dl>
 <hr>
@@ -557,7 +666,8 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <span id="index-Support-Functions"></span>
 <ul class="section-toc">
 <li><a href="#dbtable" accesskey="1">dbtable</a></li>
-<li><a href="#struct2dbtable" accesskey="2">struct2dbtable</a></li>
+<li><a href="#readdbtable" accesskey="2">readdbtable</a></li>
+<li><a href="#struct2dbtable" accesskey="3">struct2dbtable</a></li>
 </ul>
 <div class="subsection" id="dbtable">
 <h4 class="subsection">3.5.1 dbtable</h4>
@@ -566,7 +676,9 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'></a></span></dt>
 <dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'></a></span></dt>
 <dt id="index-dbtable-2"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-2' class='copiable-anchor'></a></span></dt>
-<dd><p>Basic implementation of a table type to avoid dependancies on other packages.
+<dd><p>Create a table of data
+</p>
+<p>dbtable is a basic implementation of a table type to avoid dependencies on other packages.
 </p>
 <span id="Inputs-10"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -579,10 +691,10 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <dd><p>Property name/value pairs, where known property names are:
   </p><dl compact="compact">
 <dt><span>VariableNames</span></dt>
-<dd><p>a cell string matching the number of input columns with the name to use for the
+<dd><p>A cell string matching the number of input columns with the name to use for the
   </p></dd>
 <dt><span>DimensionNames</span></dt>
-<dd><p>a cell string matching of length 2 for using as dimesion access. If not specified
+<dd><p>A cell string matching of length 2 for using as dimension access. If not specified
   it will be &quot;Rows&quot; and &quot;Variables&quot;.
   </p></dd>
 </dl>
@@ -594,22 +706,99 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
 <dd><p>a dbtable object
  </p></dd>
 </dl>
+<span id="Object-Properties-1"></span><h4 class="subsubheading">Object Properties</h4>
+<p>A dbtable object has the following properties:
+ </p><dl compact="compact">
+<dt><span>Properties</span></dt>
+<dd><p>A table properties struct.
+</p>
+<p>The table struct includes fields:
+  </p><dl compact="compact">
+<dt><span>Description</span></dt>
+<dd><p>Text table description
+  </p></dd>
+<dt><span>DimensionNames</span></dt>
+<dd><p>Cell array of Row and Variable dimension names
+  </p></dd>
+<dt><span>VariableNames</span></dt>
+<dd><p>Cell array of variable (column) names
+  </p></dd>
+<dt><span>UserData</span></dt>
+<dd><p>User data value
+  </p></dd>
+</dl>
+</dd>
+</dl>
+<span id="Examples-7"></span><h4 class="subsubheading">Examples</h4>
+<p>Directly create a 2 column table from input of each column
+ </p><div class="example">
+<pre class="example"> <code>
+ t = dbtable([0;1;3], [2;4;6]);
+ </code>
+ </pre></div>
+<p>Directly create a 2 column table from input of each column, and specify variable
+ names
+ </p><div class="example">
+<pre class="example"> <code>
+ t = dbtable([0;1;3], [2;4;6], &quot;VariableNames&quot;, {'Variable1', 'Variable2'});
+ </code>
+ </pre></div>
+<p>Create a 2 column table from 2 variables V1, V2
+ </p><div class="example">
+<pre class="example"> <code>
+ V1 = [0;1;3];
+ V2 = [2;4;6];
+ t = dbtable(V1, V2);
+ </code>
+ </pre></div>
+<p><strong>See also:</strong> readdbtable, struct2dbtable.
+ </p></dd></dl>
+</div>
+<div class="subsection" id="readdbtable">
+<h4 class="subsection">3.5.2 readdbtable</h4>
+<span id="index-readdbtable"></span>
+<dl class="def">
+<dt id="index-readdbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>readdbtable</strong> <em>(<var>filename</var>)</em><a href='#index-readdbtable-1' class='copiable-anchor'></a></span></dt>
+<dd><p>Create a dbtable from a file
+</p>
+<p>Currently, this is using a very simplistic approach to read data from a CSV
+ formatted file only.
+</p>
+<span id="Inputs-11"></span><h4 class="subsubheading">Inputs</h4>
+<dl compact="compact">
+<dt><span><var>filename</var></span></dt>
+<dd><p>Filename for file containing tabular data
+ </p></dd>
+</dl>
+<span id="Outputs-9"></span><h4 class="subsubheading">Outputs</h4>
+<dl compact="compact">
+<dt><span><var>t</var></span></dt>
+<dd><p>a dbtable of the read data
+ </p></dd>
+</dl>
 </dd></dl>
 </div>
 <div class="subsection" id="struct2dbtable">
-<h4 class="subsection">3.5.2 struct2dbtable</h4>
+<h4 class="subsection">3.5.3 struct2dbtable</h4>
 <span id="index-struct2dbtable"></span>
 <dl class="def">
 <dt id="index-struct2dbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable-1' class='copiable-anchor'></a></span></dt>
 <dd><p>Create a dbtable from a struct
 </p>
-<span id="Inputs_003a"></span><h4 class="subsubheading">Inputs:</h4>
+<p>This function uses the field names and data of the fields to create a table
+ representation of the struct.
+</p>
+<p>Each fieldname will be a variable in the table. The data for each variable
+ will be the data of the fieldname, and is expected to be a uniform size for
+ all fields in the struct.
+</p>
+<span id="Inputs-12"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
 <dt><span><var>astruct</var></span></dt>
 <dd><p>A struct with same number of elements in each field
  </p></dd>
 </dl>
-<span id="Outputs_003a"></span><h4 class="subsubheading">Outputs:</h4>
+<span id="Outputs-10"></span><h4 class="subsubheading">Outputs</h4>
 <dl compact="compact">
 <dt><span><var>t</var></span></dt>
 <dd><p>a dbtable of the <var>astruct</var> data
@@ -1352,6 +1541,7 @@ Previous: <a href="#Copying" accesskey="p" rel="prev">GNU General Public License
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-R">R</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Read-a-table">Read a table</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-readdbtable">readdbtable</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Support-Functions">Support Functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-rollback">rollback</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Database-Operations">Database Operations</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-S">S</th><td></td><td></td></tr>

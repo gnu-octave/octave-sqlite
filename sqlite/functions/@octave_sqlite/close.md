@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/20_octavesqliteclose/"
 pkg_name: "sqlite"
-pkg_version: "0.0.1"
+pkg_version: "0.0.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit"
 category: "SQLITE connection"
@@ -23,12 +23,14 @@ navigation:
 ---
 <dl class="def">
 <dt id="index-close"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close' class='copiable-anchor'></a></span></dt>
-<dd><p>Close the sqlite connection represented by the object <var>db</var>.
+<dd><p>Close a sqlite connection
+</p>
+<p>Close the previously opened sqlite connection <var>db</var>.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
 <dt><span><var>db</var></span></dt>
-<dd><p>Previously created octave_sqlite object
+<dd><p>A previously created octave_sqlite object
  </p></dd>
 </dl>
 
@@ -36,5 +38,5 @@ navigation:
 <p>None
 </p>
 
-<p><strong>See also:</strong> sqlite.
+<p><strong>See also:</strong> sqlite, isopen.
  </p></dd></dl>

@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/22_octavesqlitesqlread/"
 pkg_name: "sqlite"
-pkg_version: "0.0.1"
+pkg_version: "0.0.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit"
 category: "Importing Data"
@@ -24,9 +24,10 @@ navigation:
 <dl class="def">
 <dt id="index-sqlread"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread' class='copiable-anchor'></a></span></dt>
 <dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Return rows of data from table <var>tablename</var> in a sqlite database.
+<dd><p>Read rows of data from a table
 </p>
-<p>This function is the equivalent of running SELECT * FROM <var>table</var>.
+<p>Return rows of data from table <var>tablename</var> in a sqlite database.
+ This function is the equivalent of running SELECT * FROM <var>table</var>.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -55,6 +56,25 @@ navigation:
 <dd><p>a table containing the query result.
  </p></dd>
 </dl>
+
+<span id="Examples"></span><h4 class="subsubheading">Examples</h4>
+<p>Select all rows of data from a database table
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection to an existing database
+ db = sqlite(&quot;mytest.db&quot;);
+ data = sqlread(db, 'TestTable');
+ </code>
+ </pre></div>
+
+<p>Select 5 rows of data from a database table
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = sqlread(db, 'TestTable', &quot;MaxRows&quot;, 5);
+ </code>
+ </pre></div>
 
 
 <p><strong>See also:</strong> sqlite, fetch.

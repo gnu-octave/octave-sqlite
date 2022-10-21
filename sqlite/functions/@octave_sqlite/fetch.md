@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/20_octavesqlitefetch/"
 pkg_name: "sqlite"
-pkg_version: "0.0.1"
+pkg_version: "0.0.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit"
 category: "Importing Data"
@@ -24,7 +24,9 @@ navigation:
 <dl class="def">
 <dt id="index-fetch"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch' class='copiable-anchor'></a></span></dt>
 <dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-1' class='copiable-anchor'></a></span></dt>
-<dd><p>Return rows of data after runnning a sql query on a sqlite database.
+<dd><p>Run a SQL query on a sqlite database
+</p>
+<p>Return rows of data after running a SQL query on a sqlite database.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
@@ -32,7 +34,7 @@ navigation:
 <dd><p>currently open sqlite database.
  </p></dd>
 <dt><span><var>sqlquery</var></span></dt>
-<dd><p>String containing a valid select sqlquery.
+<dd><p>String containing a valid select SQL query.
  </p></dd>
 <dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
 <dd><p>property name/value pairs where known properties are:
@@ -53,6 +55,25 @@ navigation:
 <dd><p>a table containing the query result.
  </p></dd>
 </dl>
+
+<span id="Examples"></span><h4 class="subsubheading">Examples</h4>
+<p>Select all rows of data from a database tables
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = fetch(db, 'SELECT * FROM TestTable');
+ </code>
+ </pre></div>
+
+<p>Select 5 rows of data from a database tables
+ </p><div class="example">
+<pre class="example"> <code>
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ data = fetch(db, 'SELECT * FROM TestTable', &quot;MaxRows&quot;, 5);
+ </code>
+ </pre></div>
 
 
 <p><strong>See also:</strong> sqlite, sqlread.

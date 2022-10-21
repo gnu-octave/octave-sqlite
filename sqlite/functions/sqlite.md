@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/6_sqlite/"
 pkg_name: "sqlite"
-pkg_version: "0.0.1"
+pkg_version: "0.0.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit"
 category: "SQLITE connection"
@@ -62,7 +62,7 @@ navigation:
 </dl>
 
 <span id="Examples"></span><h4 class="subsubheading">Examples</h4>
-<p>Open a sqlite database, failing if it doesnt exist.
+<p>Open a sqlite database, failing if it does not exist.
  </p><div class="example">
 <pre class="example"> <code>
  db = sqlite(&quot;mytest.db&quot;);

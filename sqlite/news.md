@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/news/"
 title: "Sqlite Toolkit - News"
 pkg_name: "sqlite"
-version: "0.0.1"
+version: "0.0.2"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -19,6 +19,15 @@ navigation:
   url: "/manual"
 ---
 <pre>
+Summary of important user-visible changes for sqlite 0.0.2:
+-------------------------------------------------------------------
+
+ ** Documentation updates
+
+ ** New functions:
+    - dbtable.writetable
+    - readdbtable
+
 Summary of important user-visible changes for sqlite 0.0.1:
 -------------------------------------------------------------------
 

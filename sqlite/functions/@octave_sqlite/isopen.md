@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/21_octavesqliteisopen/"
 pkg_name: "sqlite"
-pkg_version: "0.0.1"
+pkg_version: "0.0.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit"
 category: "SQLITE connection"
@@ -23,12 +23,15 @@ navigation:
 ---
 <dl class="def">
 <dt id="index-isopen"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen' class='copiable-anchor'></a></span></dt>
-<dd><p>Return true if the sqlite connection is open.
+<dd><p>Check if a sqlite connection is open
+</p>
+<p>Return true if the sqlite connection is open, otherwise
+ return false.
 </p>
 <span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
 <dl compact="compact">
 <dt><span><var>db</var></span></dt>
-<dd><p>previously opened sqlite database.
+<dd><p>A previously opened sqlite database.
  </p></dd>
 </dl>
 
