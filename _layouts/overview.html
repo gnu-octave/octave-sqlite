@@ -18,6 +18,9 @@ layout: "default"
         <tr><td>License:</td><td>{{page.license}}</td></tr>
         <tr><td>Authors:</td><td>{{page.author |xml_escape | textilize }}</td></tr>
         <tr><td>Maintainers:</td><td>{{page.maintainer | xml_escape | textilize }}</td></tr>
+	{%- if page.repository -%}
+	<tr><td>Repository:</td><td><a href="{{ page.repository }}">{{ page.repository }}</a></td></tr>
+	{%- endif -%}
        </table>
       </div>
      </div>
@@ -28,4 +31,5 @@ layout: "default"
   <p>
    <code language="matlab">pkg install -forge {{page.pkg_name}}</code>
   </p>
+  <p>Each function is documented in the <a href="{{site.url}}/functions/">function reference</a></p>
 </div>
