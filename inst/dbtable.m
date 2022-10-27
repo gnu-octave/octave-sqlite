@@ -507,7 +507,10 @@ classdef dbtable
     endfunction
 
     # head tail - create sub tables
-    function tdata = head(this, rows)
+    function tdata = head(this, rows=8)
+      if nargin > 1 && !isnumeric(rows)
+        error ("Expected rows to be a number");
+      endif
       nrows = size(this, 1);
       if rows > nrows
         rows = nrows;
@@ -517,7 +520,10 @@ classdef dbtable
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
 
-    function tdata = tail(this, rows)
+    function tdata = tail(this, rows=8)
+      if nargin > 1 && !isnumeric(rows)
+        error ("Expected rows to be a number");
+      endif
       nrows = size(this, 1);
       if rows >= nrows
         rows = 1;
@@ -619,3 +625,18 @@ endclassdef
 %! s = table2struct(t);
 %! assert(fieldnames(s), {'V1'; 'V2'});
 %! assert(s.V1, [0;1;3]);
+
+%!test
+%! V1 = [0;1;3];
+%! V2 = [2;4;6];
+%! t = dbtable(V1, V2);
+%! x = head(t);
+%! assert(length(x), 3);
+%! x = head(t, 1);
+%! assert(length(x), 1);
+%! assert(x.V1(1), 0);
+%! x = tail(t);
+%! assert(length(x), 3);
+%! x = tail(t, 1);
+%! assert(length(x), 1);
+%! assert(x.V1(1), 3);
