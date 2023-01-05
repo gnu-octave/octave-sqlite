@@ -29,11 +29,11 @@ AC_CANONICAL_TARGET
 AC_PROG_SED
 AC_PROG_GREP
 
-AC_PATH_PROG([MKOCTFILE], [mkoctfile])
-if test -z "$MKOCTFILE"; then
+AC_CHECK_TOOL([MKOCTFILE], [mkoctfile], [none])
+if [ test "x$MKOCTFILE" = "xnone" ]; then
   AC_MSG_ERROR([*** 'mkoctfile' not found.])
 fi
-AC_CHECK_PROG(OCTAVE_CONFIG,octave-config,octave-config)
+AC_CHECK_TOOL([OCTAVE_CONFIG], [octave-config] ,[])
 test -z "$OCTAVE_CONFIG" && OCTAVE_CONFIG=$MKOCTFILE
 
 CXX=`${MKOCTFILE} -p CXX`
