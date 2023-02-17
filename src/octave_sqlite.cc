@@ -89,7 +89,7 @@ octave_sqlite::clone (void) const
 octave_base_value *
 octave_sqlite::unique_clone (void) 
 {
-  count++;
+  OV_COUNT++;
   return this;
 }
 
@@ -198,7 +198,7 @@ octave_sqlite::subsasgn (const std::string& type, const std::list<octave_value_l
 		}
 	      }
             }
-            count++;
+            OV_COUNT++;
             retval = octave_value (this);
 	  }
         }
