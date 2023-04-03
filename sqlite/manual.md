@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Sqlite Toolkit - Manual"
 pkg_name: "sqlite"
-version: "0.0.2"
+version: "0.0.3"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -117,7 +117,7 @@ to successfully install the toolkit.
 the octave-sqlite website using the following command within <acronym>GNU</acronym> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.2/octave-sqlite-0.0.2.tar.gz
+<pre class="example">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.3/octave-sqlite-0.0.3.tar.gz
 </pre></div>
 <p>On Octave 7.2 and later, the package can be installed using the following command within
 <acronym>GNU</acronym> Octave:
@@ -135,7 +135,7 @@ the octave-sqlite website using the following command within <acronym>GNU</acron
 <acronym>GNU</acronym> Octave, the package can be installed using the following command within <acronym>GNU</acronym> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install octave-sqlite-0.0.2.tar.gz
+<pre class="example">pkg install octave-sqlite-0.0.3.tar.gz
 </pre></div>
 </div>
 <div class="section" id="Loading">

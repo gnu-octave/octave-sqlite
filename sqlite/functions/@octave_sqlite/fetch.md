@@ -2,9 +2,9 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/20_octavesqlitefetch/"
 pkg_name: "sqlite"
-pkg_version: "0.0.2"
+pkg_version: "0.0.3"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
-title: "Sqlite Toolkit"
+title: "Sqlite Toolkit - @octave_sqlite/fetch"
 category: "Importing Data"
 func_name: "@octave_sqlite/fetch"
 navigation:
