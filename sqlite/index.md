@@ -10,7 +10,8 @@ author: "John Donoghue <john.donoghue@ieee.org>"
 maintainer: "John Donoghue <john.donoghue@ieee.org>"
 license: "GPLv3+"
 pkg_url: "https://gnu-octave.github.io/octave-sqlite/"
-repository: "https://github.com/gnu-octave/octave-sqlite/"navigation:
+repository: "https://github.com/gnu-octave/octave-sqlite/"
+navigation:
 - id: "overview"
   name: "Overview"
 - id: "Functions"
