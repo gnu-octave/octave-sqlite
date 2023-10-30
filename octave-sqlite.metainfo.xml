@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2023 John Donoghue
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without any warranty.
+-->
+<component type="addon">
+  <id>octave-sqlite</id>
+  <extends>www.octave.org-octave.desktop</extends>
+  <name>SQLITE Toolkit</name>
+  <summary>Octave SQLITE Toolkit</summary>
+  <description>
+    <p>Toolkit for provideing SQLITE database access to GNU Octave</p>
+  </description>
+  <keywords>
+    <keyword>sqlite</keyword>
+    <keyword>SQL</keyword>
+    <keyword>database</keyword>
+  </keywords>
+  <url type="homepage">https://gnu-octave.github.io/octave-sqlite/</url>
+  <url type="bugtracker">https://github.com/gnu-octave/octave-sqlite/issues</url>
+  <project_license>GPL-3.0+</project_license>
+  <developer_name>Octave-Forge Community</developer_name>
+  <update_contact>octave-maintainers@gnu.org</update_contact>
+  <metadata_license>FSFAP</metadata_license>
+</component>
