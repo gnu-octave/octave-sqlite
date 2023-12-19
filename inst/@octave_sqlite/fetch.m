@@ -36,6 +36,8 @@
 ##   Integer value of max number of rows in the query
 ##  @item VariableNamingRule
 ##   String value 'preserve' (default) or 'modify' to flag renaming of variable names (currently ignored)
+##  @item RowFilter
+##   dbrowfilter object to filter results
 ##  @end table
 ## @end table
 ##
@@ -84,22 +86,38 @@ function data = fetch (db, query, varargin)
       error ("expected property names to be strings");
     endif
   endif
+
+  maxrows = [];
+  rowfilter = [];
  
   for idx=1:2:numel(varargin)
     n = varargin{idx};
     v = varargin{idx+1};
     if strcmp(n, "MaxRows")
-      query = [query " LIMIT " num2str(v)];
+      maxrows = num2str(v);
     elseif strcmp(n, "VariableNamingRule")
       if !ischar(v) || sum(strcmp(v, {'preserve', 'modify'})) != 1
         error ("Expected VariableNamingRule property value to be 'preserve' or 'modify'");
       endif
       # TODO
+      #
+    elseif strcmp(n, "RowFilter")
+      if !isa(v, "dbrowfilter")
+        error ("Expected RowFilter to be a dbrowfilter class");
+      endif
+      rowfilter = v;
     else
       error ("Unknown property name '%s'", n);
     endif
   endfor
   
+  if !isempty(rowfilter)
+      query = [query " WHERE " char(rowfilter)];
+  endif
+
+  if !isempty(maxrows)
+      query = [query " LIMIT " maxrows];
+  endif
   data = __sqlite_fetch__(db, query);
   data = struct2dbtable(data);
 endfunction
@@ -113,4 +131,10 @@ endfunction
 %! assert(size(data), [1 4]) 
 %! data = fetch(db, "SELECT AuthorId FROM Authors");
 %! assert(size(data), [3 1]) 
+%! rf = dbrowfilter('AuthorId');
+%! data = fetch(db, "SELECT * FROM Authors", 'RowFilter', rf);
+%! assert(size(data), [3 4]) 
+%! rf = (rf.AuthorId == 1);
+%! data = fetch(db, "SELECT * FROM Authors", 'RowFilter', rf);
+%! assert(size(data), [1 4]) 
 %! close (db);

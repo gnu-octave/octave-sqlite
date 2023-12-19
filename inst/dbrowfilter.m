@@ -153,7 +153,7 @@ classdef dbrowfilter
     endfunction
 
     function tf = isempty (this)
-      tf = isempty(this.constraints)
+      tf = isempty(this.constraints);
     endfunction
 
     function val = subsref (this, s)

@@ -37,6 +37,8 @@
 ##   Integer value of max number of rows in the query
 ##  @item VariableNamingRule
 ##   String value 'preserve' (default) or 'modify' to flag renaming of variable names (currently ignored)
+##  @item RowFilter
+##   dbrowfilter object to filter results
 ##  @end table
 ## @end table
 ##
