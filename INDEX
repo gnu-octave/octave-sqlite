@@ -12,6 +12,7 @@ Database Operations
   @octave_sqlite/commit
   @octave_sqlite/execute
   @octave_sqlite/rollback
+  @octave_sqlite/sqlupdate
 Support Functions
   dbtable
   dbrowfilter
