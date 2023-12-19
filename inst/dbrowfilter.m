@@ -55,34 +55,56 @@ classdef dbrowfilter
   endproperties
 
   methods (Static = true, Access = private, Hidden = true)
-    function show_constraint(c)
-      #c
+
+    function v = no_op_change (c)
+      v = [ " " c " " ];
+    endfunction
+
+    function v = sql_op_change (c)
+      if strcmp(c, "&")
+       c = "AND";
+      endif
+      if strcmp(c, "|")
+       c = "OR";
+      endif
+      if strcmp(c, "==")
+       c = "=";
+      endif
+      v = [ " " c " " ];
+    endfunction
+
+    function s = str_constraint(c, opconv = [])
+      if nargin == 1
+        opconv = @dbrowfilter.no_op_change;
+      endif
+      s = "";
       if iscell(c)
-	if length(c) > 1, printf(" ( "), endif;
+	if length(c) > 1, s = "( ";, endif;
         for x = 1:length(c)
 	  v = c{x};
-	  if x > 1, printf(" & "), endif;
-          dbrowfilter.show_constraint(v);
+	  if x > 1, s = [s opconv("&")];, endif;
+          s = [s dbrowfilter.str_constraint(v, opconv)];
 	endfor
-	if length(c) > 1, printf(" )"), endif;
+	if length(c) > 1, s = [s " )"'];, endif;
       else
 	if isfield(c, "value1")
 	  if !isempty(c.value1)
-	    printf(" ( ");
-            dbrowfilter.show_constraint(c.value1);
+	    s = " ( ";
+            s = [s dbrowfilter.str_constraint(c.value1, opconv)];
 	  endif
-	  printf(" %s ", c.operation);
-	  dbrowfilter.show_constraint(c.value2);
+	  s = [s opconv(c.operation)];
+	  s = [s dbrowfilter.str_constraint(c.value2, opconv)];
 	  if !isempty(c.value1)
-	  printf(" )");
+	  s = [s " )"];
 	  endif
 	elseif isnumeric(c.value)
-	  printf("%s %s %s", c.field, c.operation, num2str(c.value));
+	  s = sprintf("%s %s %s", c.field, opconv(c.operation), num2str(c.value));
 	else
-	  printf("%s %s %s", c.field, c.operation, c.value);
+	  s = sprintf("%s %s '%s'", c.field, opconv(c.operation), c.value);
 	endif
       endif
     endfunction
+ 
   endmethods
 
   methods (Access = public)
@@ -119,9 +141,7 @@ classdef dbrowfilter
         printf ("  RowFilter with no constraints\n\n");
       else
         printf ("  RowFilter with constraints\n\n");
-        printf("  ");
-        dbrowfilter.show_constraint(this.constraints);
-	printf("\n\n");
+        printf("  %s\n\n", this.str_constraint(this.constraints));
       endif
       printf ("  VariableNames:");
       printf(" %s", this.vars{:});
@@ -200,7 +220,7 @@ classdef dbrowfilter
       tf = false;
       if size(this.vars) == [1 1]
         V = this.vars{1,1};
-	s = {}; s.field = V; s.operation = "=="; s.value = v;
+	s = {}; s.field = V; s.operation = "=="; s.value = v; #: note change to '='
 	tf = dbrowfilter(this.vars);
 	tf.constraints{end+1} = s;
       endif
@@ -270,8 +290,11 @@ classdef dbrowfilter
       const.value2 = const2;
       val.constraints = {const}; #{const1{:}, const2{:}};
     endfunction
-  endmethods
 
+    function val = char(this)
+      val = dbrowfilter.str_constraint(this.constraints, @dbrowfilter.sql_op_change);
+    endfunction
+  endmethods
 endclassdef
 
 %!error <Expected variableNames> dbrowfilter();
