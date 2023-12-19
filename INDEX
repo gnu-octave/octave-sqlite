@@ -14,5 +14,6 @@ Database Operations
   @octave_sqlite/rollback
 Support Functions
   dbtable
+  dbrowfilter
   struct2dbtable
   readdbtable
