@@ -100,4 +100,8 @@ endfunction
 %! assert(size(data), [3 4]) 
 %! data = sqlread(db, "Authors", 'MaxRows', 1);
 %! assert(size(data), [1 4]) 
+%! rf = dbrowfilter('AuthorId');
+%! rf = (rf.AuthorId == 1);
+%! data = sqlread(db, "Authors", 'RowFilter', rf);
+%! assert(size(data), [1 4]) 
 %! close (db);
