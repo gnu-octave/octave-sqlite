@@ -58,11 +58,11 @@ classdef dbrowfilter
 
   methods (Static = true, Access = private, Hidden = true)
 
-    function v = no_op_change (c)
+    function v = no_op_change (c, v='')
       v = [ " " c " " ];
     endfunction
 
-    function v = sql_op_change (c)
+    function v = sql_op_change (c, v='')
       if strcmp(c, "&")
        c = "AND";
       endif
@@ -71,6 +71,15 @@ classdef dbrowfilter
       endif
       if strcmp(c, "==")
        c = "=";
+       if isnumeric(v) && isempty(v)
+         c = "IS";
+       endif
+      endif
+      if strcmp(c, "!=")
+       c = "<>";
+       if isnumeric(v) && isempty(v)
+         c = "IS NOT";
+       endif
       endif
       v = [ " " c " " ];
     endfunction
@@ -81,29 +90,37 @@ classdef dbrowfilter
       endif
       s = "";
       if iscell(c)
-	if length(c) > 1, s = "( ";, endif;
+        if length(c) > 1, s = "( ";, endif;
         for x = 1:length(c)
-	  v = c{x};
-	  if x > 1, s = [s opconv("&")];, endif;
+          v = c{x};
+          if x > 1, s = [s opconv("&")];, endif;
           s = [s dbrowfilter.str_constraint(v, opconv)];
-	endfor
-	if length(c) > 1, s = [s " )"'];, endif;
+        endfor
+        if length(c) > 1, s = [s " )"'];, endif;
       else
-	if isfield(c, "value1")
-	  if !isempty(c.value1)
-	    s = " ( ";
+        if isfield(c, "value1")
+          if !isempty(c.value1)
+            s = " ( ";
             s = [s dbrowfilter.str_constraint(c.value1, opconv)];
-	  endif
-	  s = [s opconv(c.operation)];
-	  s = [s dbrowfilter.str_constraint(c.value2, opconv)];
-	  if !isempty(c.value1)
-	  s = [s " )"];
-	  endif
-	elseif isnumeric(c.value)
-	  s = sprintf("%s %s %s", c.field, opconv(c.operation), num2str(c.value));
-	else
-	  s = sprintf("%s %s '%s'", c.field, opconv(c.operation), c.value);
-	endif
+          endif
+          s = [s opconv(c.operation)];
+          s = [s dbrowfilter.str_constraint(c.value2, opconv)];
+          if !isempty(c.value1)
+            s = [s " )"];
+          endif
+        elseif isnumeric(c.value)
+          if isempty(c.value)
+            if opconv == @dbrowfilter.sql_op_change
+              s = sprintf("%s %s %s", c.field, opconv(c.operation, c.value), "NULL");
+            else
+              s = sprintf("%s %s %s", c.field, opconv(c.operation), "[]");
+            endif
+          else
+            s = sprintf("%s %s %s", c.field, opconv(c.operation), num2str(c.value));
+          endif
+        else
+          s = sprintf("%s %s '%s'", c.field, opconv(c.operation), c.value);
+        endif
       endif
     endfunction
  
