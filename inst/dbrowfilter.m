@@ -22,7 +22,7 @@ classdef dbrowfilter
   ## @subsubheading Inputs
   ## @table @asis
   ## @item @var{C}
-  ## A column name or cell array of column names
+  ## A column name, cell array of column names or dbtable.
   ## @end table
   ##
   ## @subsubheading Outputs
@@ -46,6 +46,8 @@ classdef dbrowfilter
   ## rfc = rf.Column1 > 10
   ## }
   ## @end example
+  ##
+  ## @seealso{dbtable}
   ## @end deftypefn
 
   properties (Access = private)
@@ -117,6 +119,9 @@ classdef dbrowfilter
         this.vars = varargin{1};
       elseif ischar(varargin{1})
         this.vars = { varargin{1} };
+      elseif isa(varargin{1}, "dbtable")
+        t = varargin{1};
+        this.vars = t.Properties.VariableNames;
       else
         error ("Unknown or unsupported rowfilter input");
       endif
@@ -317,3 +322,7 @@ endclassdef
 %! rf = dbrowfilter({'Column1', 'Column2'});
 %! fail("rf.Column12 > 10")
 
+%!test
+%! t = dbtable([0;1;3], [2;4;6]);
+%! rf = dbrowfilter(t);
+%! assert(properties(rf), {'Var1', 'Var2'});
