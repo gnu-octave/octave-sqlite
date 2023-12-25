@@ -170,10 +170,6 @@ classdef dbrowfilter
       printf("\n");
     endfunction
 
-    function props = properties(this)
-      props = this.vars;
-    endfunction
-
     function tf = isempty (this)
       tf = isempty(this.constraints);
     endfunction
