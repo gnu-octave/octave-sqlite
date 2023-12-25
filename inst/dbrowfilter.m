@@ -321,6 +321,7 @@ endclassdef
 %!test
 %! rf = dbrowfilter('Column1');
 %! assert(properties(rf), {'Column1'});
+%! assert(isempty(rf))
 
 %!test
 %! rf = dbrowfilter({'Column1', 'Column2'});
@@ -330,6 +331,7 @@ endclassdef
 %! rf = dbrowfilter({'Column1', 'Column2'});
 %! r2 = rf.Column1 > 10;
 %! assert(properties(r2), {'Column1'})
+%! assert(!isempty(r2))
 
 %!test
 %! rf = dbrowfilter({'Column1', 'Column2'});
