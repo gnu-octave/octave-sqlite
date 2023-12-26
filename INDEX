@@ -3,6 +3,7 @@ SQLITE connection
   sqlite
   @octave_sqlite/isopen
   @octave_sqlite/close
+  @octave_sqlite/sqlfind
 Importing Data
   @octave_sqlite/fetch
   @octave_sqlite/sqlread
