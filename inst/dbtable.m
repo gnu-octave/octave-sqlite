@@ -304,8 +304,12 @@ classdef dbtable
             if iscell(d)
               d = d{1};
             endif
-            if !isnumeric(d)
-             d = num2str(d);
+            if !ischar(d)
+              if isnumeric(d)
+                d = num2str(d);
+              else
+                d = sprintf("%dx%d %s", size(d,1), size(d,2), class(d));
+              endif
             endif
             w = length(d);
             if w > widths(col)
@@ -338,7 +342,11 @@ classdef dbtable
               d = d{1};
             endif
             if !ischar(d)
-             d = num2str(d);
+              if isnumeric(d)
+                d = num2str(d);
+              else
+                d = sprintf("%dx%d %s", size(d,1), size(d,2), class(d));
+              endif
             endif
  
             t = sprintf("%%-%d.%ds", widths(col), widths(col));
