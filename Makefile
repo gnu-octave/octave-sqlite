@@ -60,7 +60,7 @@ install_stamp    := $(installation_dir)/.install_stamp
 ifndef OCTAVE
 OCTAVE := octave
 endif
-OCTAVE := $(OCTAVE) --no-gui --silent --norc
+OCTAVE := $(OCTAVE) --silent --norc
 MKOCTFILE ?= mkoctfile
 
 ## Command used to set permissions before creating tarballs
@@ -179,7 +179,7 @@ html_options = --eval 'options = get_html_options ("octave-forge");' \
 	       --eval 'options.package_doc_options = [options.package_doc_options " --css-include=$(packageprefix)$(package).css"];'
 $(html_dir): $(install_stamp)
 	$(RM) -r "$@";
-	$(run_in_place)                    \
+	$(run_in_place) --no-gui           \
         --eval ' pkg load generate_html; ' \
 	$(html_options)                    \
         --eval ' generate_package_html ("$(package)", "$@", options); ';
@@ -210,13 +210,13 @@ octave_install_commands = \
 ## different versions of Octave.
 install: $(release_tarball)
 	@echo "Installing package under $(installation_dir) ..."
-	$(OCTAVE) --eval $(octave_install_commands)
+	$(OCTAVE) --no-gui --eval $(octave_install_commands)
 	touch $(install_stamp)
 
 ## Install only if installation (under target/...) is not current.
 $(install_stamp): $(release_tarball)
 	@echo "Installing package under $(installation_dir) ..."
-	$(OCTAVE) --eval $(octave_install_commands)
+	$(OCTAVE) --no-gui --eval $(octave_install_commands)
 	touch $(install_stamp)
 
 clean-install:
@@ -234,7 +234,7 @@ clean-install:
 ## Start an Octave session with the package directories on the path for
 ## interactice test of development sources.
 run: $(install_stamp)
-	$(run_in_place) --persist
+	$(run_in_place) --no-gui --persist
 
 rungui: $(install_stamp)
 	$(run_in_place) --gui --persist
@@ -242,7 +242,7 @@ rungui: $(install_stamp)
 ## Test example blocks in the documentation.  Needs doctest package
 ##  https://octave.sourceforge.io/doctest/index.html
 doctest: $(install_stamp)
-	$(run_in_place) --eval 'pkg load doctest;' \
+	$(run_in_place) --no-gui --eval 'pkg load doctest;' \
           --eval "pkgs = pkg('list', '$(package)');" \
           --eval "target = {pkgs{1}.dir};" \
 	  --eval "doctest (target);"
@@ -259,7 +259,7 @@ octave_test_commands = \
 ##
 ##    else cellfun (@runtests, horzcat (cellfun (@ (dir) ostrsplit (([~, dirs] = system (sprintf ("find %s -type d", dir))), "\n\r", true), dirs, "UniformOutput", false){:})); endif '
 check: $(install_stamp)
-	$(run_in_place) --eval $(octave_test_commands)
+	$(run_in_place) --no-gui --eval $(octave_test_commands)
 
 ## 
 ## Docs
@@ -336,7 +336,7 @@ endif
 
 
 runinplace: compile-inplace
-	$(OCTAVE) --silent --persist --path "$(TOPDIR)/inst/" --path "$(TOPDIR)/src/" \
+	$(OCTAVE) --no-gui --silent --persist --path "$(TOPDIR)/inst/" --path "$(TOPDIR)/src/" \
 	  --eval '$(PKG_ADD)'
 
 clean-runinplace:
