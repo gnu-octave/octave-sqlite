@@ -34,8 +34,8 @@ classdef dbrowfilter
   ## @subsubheading Object Properties
   ## Object properties are the names of the columns on creation of the filter.
   ##
-  ## Contraints can be set on a specfic field of the filter by setting a
-  ## comparison value for the varaible name.
+  ## Constraints can be set on a specific field of the filter by setting a
+  ## comparison value for the variable name.
   ##
   ## @subsubheading Examples
   ## @example
