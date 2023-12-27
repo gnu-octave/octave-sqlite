@@ -39,4 +39,9 @@ function sqlite_pkg_add ()
     assignin("base", "table", @dbtable);
   endif
 
+  # if rowfilter type exists, use it, otherwise use dbtable
+  if exist ("rowfilter") == 0
+    assignin("base", "rowfilter", @dbrowfilter);
+  endif
+
 endfunction
