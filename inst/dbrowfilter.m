@@ -16,13 +16,16 @@
 
 classdef dbrowfilter
   ## -*- texinfo -*- 
-  ## @deftypefn {} {@var{rowfilt} =} dbrowfilter(C)
-  ## create a dbrowfilter obj with columns names @var{C}.
+  ## @deftypefn {} {@var{rowfilt} =} dbrowfilter(@var{C})
+  ## @deftypefnx {} {@var{rowfilt} =} dbrowfilter(@var{T})
+  ## Create an unconstrained dbrowfilter object with columns names.
   ##
   ## @subsubheading Inputs
   ## @table @asis
   ## @item @var{C}
-  ## A column name, cell array of column names or dbtable.
+  ## A column name, cell array of column names.
+  ## @item @var{T}
+  ## A table to use for column names.
   ## @end table
   ##
   ## @subsubheading Outputs
