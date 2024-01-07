@@ -23,6 +23,7 @@ function sqlite_pkg_add ()
   try
     pkg_dir = fileparts (fullfile (mfilename ("fullpath")));
     doc_file = fullfile (pkg_dir, "..", "doc", "octave-sqlite.qch");
+    doc_file = strrep (doc_file, '\', '/');
     if exist(doc_file, "file")
       if exist("__event_manager_register_documentation__")
         __event_manager_register_documentation__ (doc_file);
