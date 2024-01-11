@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/20_octavesqliteclose/"
 pkg_name: "sqlite"
-pkg_version: "0.0.3"
+pkg_version: "0.1.0"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/close"
 category: "SQLITE connection"
@@ -14,6 +14,21 @@ navigation:
 - id: "Functions"
   name: "Function Reference"
   url: "/functions"
+- id: "17_SQLITEconnection"
+  name: "&nbsp;&nbsp;SQLITE connection"
+  url: "/functions/#17_SQLITEconnection"
+- id: "14_ImportingData"
+  name: "&nbsp;&nbsp;Importing Data"
+  url: "/functions/#14_ImportingData"
+- id: "14_ExportingData"
+  name: "&nbsp;&nbsp;Exporting Data"
+  url: "/functions/#14_ExportingData"
+- id: "19_DatabaseOperations"
+  name: "&nbsp;&nbsp;Database Operations"
+  url: "/functions/#19_DatabaseOperations"
+- id: "17_SupportFunctions"
+  name: "&nbsp;&nbsp;Support Functions"
+  url: "/functions/#17_SupportFunctions"
 - id: "news"
   name: "News"
   url: "/news"
@@ -21,22 +36,22 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="def">
-<dt id="index-close"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close' class='copiable-anchor'></a></span></dt>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-close"><span class="category-def">: </span><span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-close'></a></span></dt>
 <dd><p>Close a sqlite connection
 </p>
-<p>Close the previously opened sqlite connection <var>db</var>.
+<p>Close the previously opened sqlite connection <var class="var">db</var>.
 </p>
-<span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>A previously created octave_sqlite object
  </p></dd>
 </dl>
 
-<span id="Outputs"></span><h4 class="subsubheading">Outputs</h4>
+<h4 class="subsubheading" id="Outputs">Outputs</h4>
 <p>None
 </p>
 
-<p><strong>See also:</strong> sqlite, isopen.
+<p><strong class="strong">See also:</strong> sqlite, isopen.
  </p></dd></dl>

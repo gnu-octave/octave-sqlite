@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_struct2dbtable/"
 pkg_name: "sqlite"
-pkg_version: "0.0.3"
+pkg_version: "0.1.0"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - struct2dbtable"
 category: "Support Functions"
@@ -14,6 +14,21 @@ navigation:
 - id: "Functions"
   name: "Function Reference"
   url: "/functions"
+- id: "17_SQLITEconnection"
+  name: "&nbsp;&nbsp;SQLITE connection"
+  url: "/functions/#17_SQLITEconnection"
+- id: "14_ImportingData"
+  name: "&nbsp;&nbsp;Importing Data"
+  url: "/functions/#14_ImportingData"
+- id: "14_ExportingData"
+  name: "&nbsp;&nbsp;Exporting Data"
+  url: "/functions/#14_ExportingData"
+- id: "19_DatabaseOperations"
+  name: "&nbsp;&nbsp;Database Operations"
+  url: "/functions/#19_DatabaseOperations"
+- id: "17_SupportFunctions"
+  name: "&nbsp;&nbsp;Support Functions"
+  url: "/functions/#17_SupportFunctions"
 - id: "news"
   name: "News"
   url: "/news"
@@ -21,8 +36,8 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="def">
-<dt id="index-struct2dbtable"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable' class='copiable-anchor'></a></span></dt>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-struct2dbtable"><span class="category-def">: </span><span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">struct2dbtable</strong> <code class="def-code-arguments">(<var class="var">astruct</var>)</code><a class="copiable-link" href='#index-struct2dbtable'></a></span></dt>
 <dd><p>Create a dbtable from a struct
 </p> 
 <p>This function uses the field names and data of the fields to create a table
@@ -32,17 +47,17 @@ navigation:
  will be the data of the fieldname, and is expected to be a uniform size for
  all fields in the struct.
 </p>
-<span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>astruct</var></span></dt>
+<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<dl class="table">
+<dt><var class="var">astruct</var></dt>
 <dd><p>A struct with same number of elements in each field
  </p></dd>
 </dl>
 
-<span id="Outputs"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>t</var></span></dt>
-<dd><p>a dbtable of the <var>astruct</var> data
+<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<dl class="table">
+<dt><var class="var">t</var></dt>
+<dd><p>a dbtable of the <var class="var">astruct</var> data
  </p></dd>
 </dl>
 

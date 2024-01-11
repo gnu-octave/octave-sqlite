@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Sqlite Toolkit - Manual"
 pkg_name: "sqlite"
-version: "0.0.3"
+version: "0.1.0"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -27,59 +27,61 @@ navigation:
   name: "&nbsp;&nbsp; Function Reference"
   url: "/manual/#Function-Reference-1"
 ---
-<h1 class="settitle" align="center">Octave SQLITE - Basic implementation of SQLITE Toolkit for GNU Octave</h1>
-<div class="top" id="Top">
-<div class="header">
+<div class="top-level-extent" id="Top">
+<div class="nav-panel">
 <p>
 Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and loading</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Introduction"></span><h1 class="top">Introduction</h1>
+<h1 class="top" id="Introduction">Introduction</h1>
 <p>The Octave SQLITE toolkit is a set of SQLITE routines for GNU Octave
 </p>
-<div class="Contents_element" id="SEC_Contents">
+<div class="element-contents" id="SEC_Contents">
 <h2 class="contents-heading">Table of Contents</h2>
 <div class="contents">
-<ul class="no-bullet">
+<ul class="toc-numbered-mark">
   <li><a id="toc-Installing-and-loading-1" href="#Installing-and-loading">1 Installing and loading</a>
-  <ul class="no-bullet">
+  <ul class="toc-numbered-mark">
     <li><a id="toc-Online-Direct-install" href="#Online-Direct-install">1.1 Online Direct install</a></li>
     <li><a id="toc-Off_002dline-install" href="#Off_002dline-install">1.2 Off-line install</a></li>
     <li><a id="toc-Loading" href="#Loading">1.3 Loading</a></li>
   </ul></li>
   <li><a id="toc-Basic-Usage-Overview-1" href="#Basic-Usage-Overview">2 Basic Usage Overview</a>
-  <ul class="no-bullet">
+  <ul class="toc-numbered-mark">
     <li><a id="toc-Connection-to-a-sqlite-database" href="#Connection-to-a-sqlite-database">2.1 Connection to a sqlite database</a></li>
     <li><a id="toc-Read-a-table" href="#Read-a-table">2.2 Read a table</a></li>
     <li><a id="toc-Close-the-database" href="#Close-the-database">2.3 Close the database</a></li>
   </ul></li>
   <li><a id="toc-Function-Reference-1" href="#Function-Reference">3 Function Reference</a>
-  <ul class="no-bullet">
+  <ul class="toc-numbered-mark">
     <li><a id="toc-SQLITE-connection-1" href="#SQLITE-connection">3.1 SQLITE connection</a>
-    <ul class="no-bullet">
+    <ul class="toc-numbered-mark">
       <li><a id="toc-_0040octave_005fsqlite_002fclose" href="#g_t_0040octave_005fsqlite_002fclose">3.1.1 @octave_sqlite/close</a></li>
       <li><a id="toc-_0040octave_005fsqlite_002fisopen" href="#g_t_0040octave_005fsqlite_002fisopen">3.1.2 @octave_sqlite/isopen</a></li>
-      <li><a id="toc-sqlite" href="#sqlite">3.1.3 sqlite</a></li>
+      <li><a id="toc-_0040octave_005fsqlite_002fsqlfind" href="#g_t_0040octave_005fsqlite_002fsqlfind">3.1.3 @octave_sqlite/sqlfind</a></li>
+      <li><a id="toc-sqlite" href="#sqlite">3.1.4 sqlite</a></li>
     </ul></li>
     <li><a id="toc-Importing-Data-1" href="#Importing-Data">3.2 Importing Data</a>
-    <ul class="no-bullet">
+    <ul class="toc-numbered-mark">
       <li><a id="toc-_0040octave_005fsqlite_002ffetch" href="#g_t_0040octave_005fsqlite_002ffetch">3.2.1 @octave_sqlite/fetch</a></li>
       <li><a id="toc-_0040octave_005fsqlite_002fsqlread" href="#g_t_0040octave_005fsqlite_002fsqlread">3.2.2 @octave_sqlite/sqlread</a></li>
     </ul></li>
     <li><a id="toc-Exporting-Data-1" href="#Exporting-Data">3.3 Exporting Data</a>
-    <ul class="no-bullet">
+    <ul class="toc-numbered-mark">
       <li><a id="toc-_0040octave_005fsqlite_002fsqlwrite" href="#g_t_0040octave_005fsqlite_002fsqlwrite">3.3.1 @octave_sqlite/sqlwrite</a></li>
     </ul></li>
     <li><a id="toc-Database-Operations-1" href="#Database-Operations">3.4 Database Operations</a>
-    <ul class="no-bullet">
+    <ul class="toc-numbered-mark">
       <li><a id="toc-_0040octave_005fsqlite_002fcommit" href="#g_t_0040octave_005fsqlite_002fcommit">3.4.1 @octave_sqlite/commit</a></li>
       <li><a id="toc-_0040octave_005fsqlite_002fexecute" href="#g_t_0040octave_005fsqlite_002fexecute">3.4.2 @octave_sqlite/execute</a></li>
       <li><a id="toc-_0040octave_005fsqlite_002frollback" href="#g_t_0040octave_005fsqlite_002frollback">3.4.3 @octave_sqlite/rollback</a></li>
+      <li><a id="toc-_0040octave_005fsqlite_002fsqlupdate" href="#g_t_0040octave_005fsqlite_002fsqlupdate">3.4.4 @octave_sqlite/sqlupdate</a></li>
     </ul></li>
     <li><a id="toc-Support-Functions-1" href="#Support-Functions">3.5 Support Functions</a>
-    <ul class="no-bullet">
-      <li><a id="toc-dbtable" href="#dbtable">3.5.1 dbtable</a></li>
-      <li><a id="toc-readdbtable" href="#readdbtable">3.5.2 readdbtable</a></li>
-      <li><a id="toc-struct2dbtable" href="#struct2dbtable">3.5.3 struct2dbtable</a></li>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-dbrowfilter" href="#dbrowfilter">3.5.1 dbrowfilter</a></li>
+      <li><a id="toc-dbtable" href="#dbtable">3.5.2 dbtable</a></li>
+      <li><a id="toc-readdbtable" href="#readdbtable">3.5.3 readdbtable</a></li>
+      <li><a id="toc-struct2dbtable" href="#struct2dbtable">3.5.4 struct2dbtable</a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-GNU-General-Public-License" href="#Copying">Appendix A GNU General Public License</a></li>
@@ -88,93 +90,93 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
 </div>
 </div>
 <hr>
-<div class="chapter" id="Installing-and-loading">
-<div class="header">
+<div class="chapter-level-extent" id="Installing-and-loading">
+<div class="nav-panel">
 <p>
 Next: <a href="#Basic-Usage-Overview" accesskey="n" rel="next">Basic Usage Overview</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Introduction</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Installing-and-loading-1"></span><h2 class="chapter">1 Installing and loading</h2>
-<span id="index-Installing-and-loading"></span>
+<h2 class="chapter" id="Installing-and-loading-1">1 Installing and loading</h2>
+<a class="index-entry-id" id="index-Installing-and-loading"></a>
 <p>The toolkit must be installed and then loaded to be used.
 </p>
-<p>It can be installed in <acronym>GNU</acronym> Octave directly from the website,
+<p>It can be installed in <abbr class="acronym">GNU</abbr> Octave directly from the website,
 or can be installed in an off-line mode via a downloaded tarball.
 </p>
-<p>The toolkit has a dependency on the SQLITE library (<a href="https://www.sqlite.org/">https://www.sqlite.org/</a>), so it must be installed in order
+<p>The toolkit has a dependency on the SQLITE library (<a class="url" href="https://www.sqlite.org/">https://www.sqlite.org/</a>), so it must be installed in order
 to successfully install the toolkit.
 </p>
-<p>The toolkit must be then be loaded once per each <acronym>GNU</acronym> Octave session in order to use its functionality.
+<p>The toolkit must be then be loaded once per each <abbr class="acronym">GNU</abbr> Octave session in order to use its functionality.
 </p>
-<ul class="section-toc">
+<ul class="mini-toc">
 <li><a href="#Online-Direct-install" accesskey="1">Online Direct install</a></li>
 <li><a href="#Off_002dline-install" accesskey="2">Off-line install</a></li>
 <li><a href="#Loading" accesskey="3">Loading</a></li>
 </ul>
-<div class="section" id="Online-Direct-install">
+<div class="section-level-extent" id="Online-Direct-install">
 <h3 class="section">1.1 Online Direct install</h3>
-<span id="index-Online-install"></span>
+<a class="index-entry-id" id="index-Online-install"></a>
 <p>With an internet connection available, the octave sqlite package can be installed from
-the octave-sqlite website using the following command within <acronym>GNU</acronym> Octave:
+the octave-sqlite website using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.3/octave-sqlite-0.0.3.tar.gz
+<pre class="example-preformatted">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.1.0/octave-sqlite-0.1.0.tar.gz
 </pre></div>
 <p>On Octave 7.2 and later, the package can be installed using the following command within
-<acronym>GNU</acronym> Octave:
+<abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install -forge sqlite
+<pre class="example-preformatted">pkg install -forge sqlite
 </pre></div>
 <p>The latest released version of the toolkit will be downloaded and installed.
 </p>
 </div>
-<div class="section" id="Off_002dline-install">
+<div class="section-level-extent" id="Off_002dline-install">
 <h3 class="section">1.2 Off-line install</h3>
-<span id="index-Off_002dline-install"></span>
+<a class="index-entry-id" id="index-Off_002dline-install"></a>
 <p>With the toolkit package already downloaded, and in the current directory when running
-<acronym>GNU</acronym> Octave, the package can be installed using the following command within <acronym>GNU</acronym> Octave:
+<abbr class="acronym">GNU</abbr> Octave, the package can be installed using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example">pkg install octave-sqlite-0.0.3.tar.gz
+<pre class="example-preformatted">pkg install octave-sqlite-0.1.0.tar.gz
 </pre></div>
 </div>
-<div class="section" id="Loading">
+<div class="section-level-extent" id="Loading">
 <h3 class="section">1.3 Loading</h3>
-<span id="index-Loading"></span>
+<a class="index-entry-id" id="index-Loading"></a>
 <p>Regardless of the method of installing the toolkit, in order to use its functions,
 the toolkit must be loaded using the pkg load command:
 </p>
 <div class="example">
-<pre class="example">pkg load sqlite
+<pre class="example-preformatted">pkg load sqlite
 </pre></div>
-<p>The toolkit must be loaded on each <acronym>GNU</acronym> Octave session.
+<p>The toolkit must be loaded on each <abbr class="acronym">GNU</abbr> Octave session.
 </p>
 <hr>
 </div>
 </div>
-<div class="chapter" id="Basic-Usage-Overview">
-<div class="header">
+<div class="chapter-level-extent" id="Basic-Usage-Overview">
+<div class="nav-panel">
 <p>
 Next: <a href="#Function-Reference" accesskey="n" rel="next">Function Reference</a>, Previous: <a href="#Installing-and-loading" accesskey="p" rel="prev">Installing and loading</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Basic-Usage-Overview-1"></span><h2 class="chapter">2 Basic Usage Overview</h2>
-<span id="index-Basic-Usage-Overview"></span>
-<ul class="section-toc">
+<h2 class="chapter" id="Basic-Usage-Overview-1">2 Basic Usage Overview</h2>
+<a class="index-entry-id" id="index-Basic-Usage-Overview"></a>
+<ul class="mini-toc">
 <li><a href="#Connection-to-a-sqlite-database" accesskey="1">Connection to a sqlite database</a></li>
 <li><a href="#Read-a-table" accesskey="2">Read a table</a></li>
 <li><a href="#Close-the-database" accesskey="3">Close the database</a></li>
 </ul>
-<div class="section" id="Connection-to-a-sqlite-database">
+<div class="section-level-extent" id="Connection-to-a-sqlite-database">
 <h3 class="section">2.1 Connection to a sqlite database</h3>
-<span id="index-Connection-to-a-sqlite-database"></span>
+<a class="index-entry-id" id="index-Connection-to-a-sqlite-database"></a>
 <p>Connection to the database is done using the sqlite function.
 </p>
-<span id="Example"></span><h4 class="subsubheading">Example</h4>
+<h4 class="subsubheading" id="Example">Example</h4>
 <div class="example">
-<pre class="example"><code>
+<pre class="example-preformatted"><code class="code">
 db = sqlite('testdb.db')
 </code>
-<kbd>
+<kbd class="kbd">
 db =
  sqlite with properties
       Database: testdb.db
@@ -183,42 +185,42 @@ db =
 </kbd>
 </pre></div>
 </div>
-<div class="section" id="Read-a-table">
+<div class="section-level-extent" id="Read-a-table">
 <h3 class="section">2.2 Read a table</h3>
-<span id="index-Read-a-table"></span>
+<a class="index-entry-id" id="index-Read-a-table"></a>
 <p>To quickly read data from a table, use the sqlread function
 </p>
-<span id="Example-1"></span><h4 class="subsubheading">Example</h4>
+<h4 class="subsubheading" id="Example-1">Example</h4>
 <div class="example">
-<pre class="example"><code>
+<pre class="example-preformatted"><code class="code">
 data = sqlread(db, &quot;TestTable&quot;)
 </code>
 </pre></div>
 </div>
-<div class="section" id="Close-the-database">
+<div class="section-level-extent" id="Close-the-database">
 <h3 class="section">2.3 Close the database</h3>
-<span id="index-Close-the-database"></span>
+<a class="index-entry-id" id="index-Close-the-database"></a>
 <p>To close the database, use the close function
 </p>
-<span id="Example-2"></span><h4 class="subsubheading">Example</h4>
+<h4 class="subsubheading" id="Example-2">Example</h4>
 <div class="example">
-<pre class="example"><code>
+<pre class="example-preformatted"><code class="code">
 close(db)
 </code>
 </pre></div>
 <hr>
 </div>
 </div>
-<div class="chapter" id="Function-Reference">
-<div class="header">
+<div class="chapter-level-extent" id="Function-Reference">
+<div class="nav-panel">
 <p>
 Next: <a href="#Copying" accesskey="n" rel="next">GNU General Public License</a>, Previous: <a href="#Basic-Usage-Overview" accesskey="p" rel="prev">Basic Usage Overview</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Function-Reference-1"></span><h2 class="chapter">3 Function Reference</h2>
-<span id="index-Function-Reference"></span>
+<h2 class="chapter" id="Function-Reference-1">3 Function Reference</h2>
+<a class="index-entry-id" id="index-Function-Reference"></a>
 <p>The functions currently available in the toolkit are described below;
 </p>
-<ul class="section-toc">
+<ul class="mini-toc">
 <li><a href="#SQLITE-connection" accesskey="1">SQLITE connection</a></li>
 <li><a href="#Importing-Data" accesskey="2">Importing Data</a></li>
 <li><a href="#Exporting-Data" accesskey="3">Exporting Data</a></li>
@@ -226,302 +228,368 @@ Next: <a href="#Copying" accesskey="n" rel="next">GNU General Public License</a>
 <li><a href="#Support-Functions" accesskey="5">Support Functions</a></li>
 </ul>
 <hr>
-<div class="section" id="SQLITE-connection">
-<div class="header">
+<div class="section-level-extent" id="SQLITE-connection">
+<div class="nav-panel">
 <p>
 Next: <a href="#Importing-Data" accesskey="n" rel="next">Importing Data</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="SQLITE-connection-1"></span><h3 class="section">3.1 SQLITE connection</h3>
-<span id="index-SQLITE-connection"></span>
-<ul class="section-toc">
+<h3 class="section" id="SQLITE-connection-1">3.1 SQLITE connection</h3>
+<a class="index-entry-id" id="index-SQLITE-connection"></a>
+<ul class="mini-toc">
 <li><a href="#g_t_0040octave_005fsqlite_002fclose" accesskey="1">@octave_sqlite/close</a></li>
 <li><a href="#g_t_0040octave_005fsqlite_002fisopen" accesskey="2">@octave_sqlite/isopen</a></li>
-<li><a href="#sqlite" accesskey="3">sqlite</a></li>
+<li><a href="#g_t_0040octave_005fsqlite_002fsqlfind" accesskey="3">@octave_sqlite/sqlfind</a></li>
+<li><a href="#sqlite" accesskey="4">sqlite</a></li>
 </ul>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fclose">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fclose">
 <h4 class="subsection">3.1.1 @octave_sqlite/close</h4>
-<span id="index-close"></span>
-<dl class="def">
-<dt id="index-close-1"><span class="category">: </span><span><em></em> <strong>close</strong> <em>(<var>db</var>)</em><a href='#index-close-1' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-close"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-close-1"><span class="category-def">: </span><span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-close-1'></a></span></dt>
 <dd><p>Close a sqlite connection
 </p>
-<p>Close the previously opened sqlite connection <var>db</var>.
+<p>Close the previously opened sqlite connection <var class="var">db</var>.
 </p>
-<span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>A previously created octave_sqlite object
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs"></span><h4 class="subsubheading">Outputs</h4>
+<h4 class="subsubheading" id="Outputs">Outputs</h4>
 <p>None
 </p>
-<p><strong>See also:</strong> sqlite, isopen.
- </p></dd></dl>
+<p><strong class="strong">See also:</strong> sqlite, isopen.
+</p></dd></dl>
 </div>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fisopen">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fisopen">
 <h4 class="subsection">3.1.2 @octave_sqlite/isopen</h4>
-<span id="index-isopen"></span>
-<dl class="def">
-<dt id="index-isopen-1"><span class="category">: </span><span><em><var>yesno</var> =</em> <strong>isopen</strong> <em>(<var>db</var>)</em><a href='#index-isopen-1' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-isopen"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-isopen-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">isopen</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-isopen-1'></a></span></dt>
 <dd><p>Check if a sqlite connection is open
 </p>
 <p>Return true if the sqlite connection is open, otherwise
  return false.
 </p>
-<span id="Inputs-1"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-1">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>A previously opened sqlite database.
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-1"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>yesno</var></span></dt>
+<h4 class="subsubheading" id="Outputs-1">Outputs</h4>
+<dl class="table">
+<dt><var class="var">yesno</var></dt>
 <dd><p>Boolean for if the database is still open.
- </p></dd>
+</p></dd>
 </dl>
-<p><strong>See also:</strong> sqlite, close.
- </p></dd></dl>
+<p><strong class="strong">See also:</strong> sqlite, close.
+</p></dd></dl>
 </div>
-<div class="subsection" id="sqlite">
-<h4 class="subsection">3.1.3 sqlite</h4>
-<span id="index-sqlite"></span>
-<dl class="def">
-<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlite-2"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-2' class='copiable-anchor'></a></span></dt>
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fsqlfind">
+<h4 class="subsection">3.1.3 @octave_sqlite/sqlfind</h4>
+<a class="index-entry-id" id="index-sqlfind"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlfind-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>)</code><a class="copiable-link" href='#index-sqlfind-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlfind-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-sqlfind-2'></a></span></dt>
+<dd><p>Find information about table types in a database.
+</p>
+<h4 class="subsubheading" id="Inputs-2">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
+<dd><p>currently open sqlite database.
+</p></dd>
+<dt><var class="var">pattern</var></dt>
+<dd><p>Name or pattern to match table in database. Use &rdquo; to match match all tables.
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
+<dd><p>property name/value pairs where known properties are:
+  </p><dl class="table">
+<dt>Catalog</dt>
+<dd><p>catalog value to match
+  </p></dd>
+<dt>Schema</dt>
+<dd><p>schema value to match
+  </p></dd>
+</dl>
+</dd>
+</dl>
+<p>Note: currently the property values are not used in the filter process.
+</p>
+<h4 class="subsubheading" id="Outputs-2">Outputs</h4>
+<dl class="table">
+<dt><var class="var">data</var></dt>
+<dd><p>a table containing the query result. Table columns are
+ &rsquo;Catalog&rsquo;, &rsquo;Schema&rsquo;, &rsquo;Table&rsquo;, &rsquo;Columns&rsquo;, &rsquo;Type&rsquo;.
+</p></dd>
+</dl>
+<h4 class="subsubheading" id="Examples">Examples</h4>
+<p>Show all tables in the database.
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
+ # create sql connection to an existing database
+ db = sqlite(&quot;mytest.db&quot;);
+ # list all tables
+ data = sqlfind(db, '');
+ </code>
+</pre></div>
+<p>Show information about TestTable
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;);
+ # list matching tables
+ data = sqlfind(db, 'TestTable');
+ </code>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite.
+</p></dd></dl>
+</div>
+<div class="subsection-level-extent" id="sqlite">
+<h4 class="subsection">3.1.4 sqlite</h4>
+<a class="index-entry-id" id="index-sqlite"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlite-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code><a class="copiable-link" href='#index-sqlite-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlite-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code><a class="copiable-link" href='#index-sqlite-2'></a></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
-<span id="Inputs-2"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><code><var>filename</var></code></span></dt>
+<h4 class="subsubheading" id="Inputs-3">Inputs</h4>
+<dl class="table">
+<dt><code class="code"><var class="var">filename</var></code></dt>
 <dd><p>Filename of the sqlite database
- </p></dd>
-<dt><span><code><var>mode</var></code></span></dt>
+</p></dd>
+<dt><code class="code"><var class="var">mode</var></code></dt>
 <dd><p>mode for the sqlite access &rsquo;readonly&rsquo;, &rsquo;connect&rsquo; (default), &rsquo;create&rsquo;.
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-2"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><code><var>db</var></code></span></dt>
+<h4 class="subsubheading" id="Outputs-3">Outputs</h4>
+<dl class="table">
+<dt><code class="code"><var class="var">db</var></code></dt>
 <dd><p>a opened SQLITE database as a octave_sqlite object
- </p></dd>
+</p></dd>
 </dl>
-<span id="Object-Properties"></span><h4 class="subsubheading">Object Properties</h4>
+<h4 class="subsubheading" id="Object-Properties">Object Properties</h4>
 <p>The octave_sqlite object has the following properties:
 </p>
-<dl compact="compact">
-<dt><span>Database</span></dt>
+<dl class="table">
+<dt>Database</dt>
 <dd><p>The name of the opened database file (readonly)
- </p></dd>
-<dt><span>IsOpen</span></dt>
+</p></dd>
+<dt>IsOpen</dt>
 <dd><p>Boolean field for if the database is currently open (readonly)
- </p></dd>
-<dt><span>IsReadOnly</span></dt>
+</p></dd>
+<dt>IsReadOnly</dt>
 <dd><p>Boolean field for if the database was opened in readonly mode. (readonly)
- </p></dd>
-<dt><span>AutoCommit</span></dt>
+</p></dd>
+<dt>AutoCommit</dt>
 <dd><p>String flag field for whether database is in auto commit mode. &quot;on&quot; (default) or &quot;off&quot;.
- </p></dd>
+</p></dd>
 </dl>
-<span id="Examples"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-1">Examples</h4>
 <p>Open a sqlite database, failing if it does not exist.
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  db = sqlite(&quot;mytest.db&quot;);
  </code>
- </pre></div>
+</pre></div>
 <p>Open a sqlite database, creating it if it does not exist.
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
  </code>
- </pre></div>
+</pre></div>
 </dd></dl>
 <hr>
 </div>
 </div>
-<div class="section" id="Importing-Data">
-<div class="header">
+<div class="section-level-extent" id="Importing-Data">
+<div class="nav-panel">
 <p>
 Next: <a href="#Exporting-Data" accesskey="n" rel="next">Exporting Data</a>, Previous: <a href="#SQLITE-connection" accesskey="p" rel="prev">SQLITE connection</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Importing-Data-1"></span><h3 class="section">3.2 Importing Data</h3>
-<span id="index-Importing-Data"></span>
-<ul class="section-toc">
+<h3 class="section" id="Importing-Data-1">3.2 Importing Data</h3>
+<a class="index-entry-id" id="index-Importing-Data"></a>
+<ul class="mini-toc">
 <li><a href="#g_t_0040octave_005fsqlite_002ffetch" accesskey="1">@octave_sqlite/fetch</a></li>
 <li><a href="#g_t_0040octave_005fsqlite_002fsqlread" accesskey="2">@octave_sqlite/sqlread</a></li>
 </ul>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002ffetch">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002ffetch">
 <h4 class="subsection">3.2.1 @octave_sqlite/fetch</h4>
-<span id="index-fetch"></span>
-<dl class="def">
-<dt id="index-fetch-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-fetch-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-fetch-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>fetch</strong> <em>(<var>db</var>, <var>sqlquery</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-fetch-2' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-fetch"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-fetch-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code><a class="copiable-link" href='#index-fetch-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-fetch-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-fetch-2'></a></span></dt>
 <dd><p>Run a SQL query on a sqlite database
 </p>
 <p>Return rows of data after running a SQL query on a sqlite database.
 </p>
-<span id="Inputs-3"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-4">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>currently open sqlite database.
- </p></dd>
-<dt><span><var>sqlquery</var></span></dt>
+</p></dd>
+<dt><var class="var">sqlquery</var></dt>
 <dd><p>String containing a valid select SQL query.
- </p></dd>
-<dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
 <dd><p>property name/value pairs where known properties are:
-  </p><dl compact="compact">
-<dt><span>MaxRows</span></dt>
+  </p><dl class="table">
+<dt>MaxRows</dt>
 <dd><p>Integer value of max number of rows in the query
   </p></dd>
-<dt><span>VariableNamingRule</span></dt>
+<dt>VariableNamingRule</dt>
 <dd><p>String value &rsquo;preserve&rsquo; (default) or &rsquo;modify&rsquo; to flag renaming of variable names (currently ignored)
+  </p></dd>
+<dt>RowFilter</dt>
+<dd><p>dbrowfilter object to filter results
   </p></dd>
 </dl>
 </dd>
 </dl>
-<span id="Outputs-3"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>data</var></span></dt>
+<h4 class="subsubheading" id="Outputs-4">Outputs</h4>
+<dl class="table">
+<dt><var class="var">data</var></dt>
 <dd><p>a table containing the query result.
- </p></dd>
+</p></dd>
 </dl>
-<span id="Examples-1"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-2">Examples</h4>
 <p>Select all rows of data from a database tables
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;);
  data = fetch(db, 'SELECT * FROM TestTable');
  </code>
- </pre></div>
+</pre></div>
 <p>Select 5 rows of data from a database tables
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;);
  data = fetch(db, 'SELECT * FROM TestTable', &quot;MaxRows&quot;, 5);
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, sqlread.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, sqlread.
+</p></dd></dl>
 </div>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fsqlread">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fsqlread">
 <h4 class="subsection">3.2.2 @octave_sqlite/sqlread</h4>
-<span id="index-sqlread"></span>
-<dl class="def">
-<dt id="index-sqlread-1"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>)</em><a href='#index-sqlread-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlread-2"><span class="category">: </span><span><em><var>data</var> =</em> <strong>sqlread</strong> <em>(<var>db</var>, <var>tablename</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlread-2' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-sqlread"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlread-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>)</code><a class="copiable-link" href='#index-sqlread-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlread-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-sqlread-2'></a></span></dt>
 <dd><p>Read rows of data from a table
 </p>
-<p>Return rows of data from table <var>tablename</var> in a sqlite database.
- This function is the equivalent of running SELECT * FROM <var>table</var>.
+<p>Return rows of data from table <var class="var">tablename</var> in a sqlite database.
+ This function is the equivalent of running SELECT * FROM <var class="var">table</var>.
 </p>
-<span id="Inputs-4"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-5">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>currently open sqlite database.
- </p></dd>
-<dt><span><var>tablename</var></span></dt>
+</p></dd>
+<dt><var class="var">tablename</var></dt>
 <dd><p>Name of a table with the database.
- </p></dd>
-<dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
 <dd><p>property name/value pairs where known properties are:
-  </p><dl compact="compact">
-<dt><span>MaxRows</span></dt>
+  </p><dl class="table">
+<dt>MaxRows</dt>
 <dd><p>Integer value of max number of rows in the query
   </p></dd>
-<dt><span>VariableNamingRule</span></dt>
+<dt>VariableNamingRule</dt>
 <dd><p>String value &rsquo;preserve&rsquo; (default) or &rsquo;modify&rsquo; to flag renaming of variable names (currently ignored)
+  </p></dd>
+<dt>RowFilter</dt>
+<dd><p>dbrowfilter object to filter results
   </p></dd>
 </dl>
 </dd>
 </dl>
-<span id="Outputs-4"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>data</var></span></dt>
+<h4 class="subsubheading" id="Outputs-5">Outputs</h4>
+<dl class="table">
+<dt><var class="var">data</var></dt>
 <dd><p>a table containing the query result.
- </p></dd>
+</p></dd>
 </dl>
-<span id="Examples-2"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-3">Examples</h4>
 <p>Select all rows of data from a database table
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection to an existing database
  db = sqlite(&quot;mytest.db&quot;);
  data = sqlread(db, 'TestTable');
  </code>
- </pre></div>
+</pre></div>
 <p>Select 5 rows of data from a database table
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;);
  data = sqlread(db, 'TestTable', &quot;MaxRows&quot;, 5);
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, fetch.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, fetch.
+</p></dd></dl>
 <hr>
 </div>
 </div>
-<div class="section" id="Exporting-Data">
-<div class="header">
+<div class="section-level-extent" id="Exporting-Data">
+<div class="nav-panel">
 <p>
 Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operations</a>, Previous: <a href="#Importing-Data" accesskey="p" rel="prev">Importing Data</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Exporting-Data-1"></span><h3 class="section">3.3 Exporting Data</h3>
-<span id="index-Exporting-Data"></span>
-<ul class="section-toc">
+<h3 class="section" id="Exporting-Data-1">3.3 Exporting Data</h3>
+<a class="index-entry-id" id="index-Exporting-Data"></a>
+<ul class="mini-toc">
 <li><a href="#g_t_0040octave_005fsqlite_002fsqlwrite" accesskey="1">@octave_sqlite/sqlwrite</a></li>
 </ul>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fsqlwrite">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fsqlwrite">
 <h4 class="subsection">3.3.1 @octave_sqlite/sqlwrite</h4>
-<span id="index-sqlwrite"></span>
-<dl class="def">
-<dt id="index-sqlwrite-1"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>)</em><a href='#index-sqlwrite-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlwrite-2"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>columntypes</var>)</em><a href='#index-sqlwrite-2' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlwrite-3"><span class="category">: </span><span><em></em> <strong>sqlwrite</strong> <em>(<var>db</var>, <var>tablename</var>, <var>data</var>, <var>propertyname</var>, <var>propertyvalue</var> &hellip;)</em><a href='#index-sqlwrite-3' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-sqlwrite"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlwrite-1"><span class="category-def">: </span><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>)</code><a class="copiable-link" href='#index-sqlwrite-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlwrite-2"><span class="category-def">: </span><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">columntypes</var>)</code><a class="copiable-link" href='#index-sqlwrite-2'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlwrite-3"><span class="category-def">: </span><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-sqlwrite-3'></a></span></dt>
 <dd><p>Insert rows of data into a table.
 </p>
 <p>Insert rows of data into a sqlite database table.
  If the table does not exist it will be created, using the ColumnType property if available
  otherwise, the type of input data will be used to determine field types.
 </p>
-<span id="Inputs-5"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-6">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
- </p></dd>
-<dt><span><var>tablename</var></span></dt>
+</p></dd>
+<dt><var class="var">tablename</var></dt>
 <dd><p>Name of table to write data to
- </p></dd>
-<dt><span><var>data</var></span></dt>
+</p></dd>
+<dt><var class="var">data</var></dt>
 <dd><p>Table containing data to write to the database. Variables names are expected to match the database.
- </p></dd>
-<dt><span><var>columntypes</var></span></dt>
+</p></dd>
+<dt><var class="var">columntypes</var></dt>
 <dd><p>Optional cell array of same size as data used if table must be created. The column types may also
- be passed in using the <var>propertyname</var>, <var>propertyvalue</var> syntax.
- </p></dd>
-<dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
+ be passed in using the <var class="var">propertyname</var>, <var class="var">propertyvalue</var> syntax.
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
 <dd><p>property name/value pairs where known properties are:
-  </p><dl compact="compact">
-<dt><span>ColumnType</span></dt>
+  </p><dl class="table">
+<dt>ColumnType</dt>
 <dd><p>Optional cell array of same size as the data that may be used
   if the table is created as part of the write operation.
   </p></dd>
 </dl>
 </dd>
 </dl>
-<span id="Outputs-5"></span><h4 class="subsubheading">Outputs</h4>
+<h4 class="subsubheading" id="Outputs-6">Outputs</h4>
 <p>None
 </p>
-<span id="Examples-3"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-4">Examples</h4>
 <p>Create a database table and insert a row
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
  # create table (if it does not exist) and then insert 2 rows
@@ -529,46 +597,47 @@ Next: <a href="#Database-Operations" accesskey="n" rel="next">Database Operation
  # insert table data
  sqlwrite(db, &quot;Test&quot;, t, 'ColumnType', {'numeric', 'text'});
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, execute.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, execute.
+</p></dd></dl>
 <hr>
 </div>
 </div>
-<div class="section" id="Database-Operations">
-<div class="header">
+<div class="section-level-extent" id="Database-Operations">
+<div class="nav-panel">
 <p>
 Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a>, Previous: <a href="#Exporting-Data" accesskey="p" rel="prev">Exporting Data</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Database-Operations-1"></span><h3 class="section">3.4 Database Operations</h3>
-<span id="index-Database-Operations"></span>
-<ul class="section-toc">
+<h3 class="section" id="Database-Operations-1">3.4 Database Operations</h3>
+<a class="index-entry-id" id="index-Database-Operations"></a>
+<ul class="mini-toc">
 <li><a href="#g_t_0040octave_005fsqlite_002fcommit" accesskey="1">@octave_sqlite/commit</a></li>
 <li><a href="#g_t_0040octave_005fsqlite_002fexecute" accesskey="2">@octave_sqlite/execute</a></li>
 <li><a href="#g_t_0040octave_005fsqlite_002frollback" accesskey="3">@octave_sqlite/rollback</a></li>
+<li><a href="#g_t_0040octave_005fsqlite_002fsqlupdate" accesskey="4">@octave_sqlite/sqlupdate</a></li>
 </ul>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fcommit">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fcommit">
 <h4 class="subsection">3.4.1 @octave_sqlite/commit</h4>
-<span id="index-commit"></span>
-<dl class="def">
-<dt id="index-commit-1"><span class="category">: </span><span><em></em> <strong>commit</strong> <em>(<var>db</var>)</em><a href='#index-commit-1' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-commit"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-commit-1"><span class="category-def">: </span><span><strong class="def-name">commit</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-commit-1'></a></span></dt>
 <dd><p>Commit changes to a database
 </p>
 <p>Commit pending transactions of sqlite connection that has AutoCommit = off set.
 </p>
-<span id="Inputs-6"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-7">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-6"></span><h4 class="subsubheading">Outputs</h4>
+<h4 class="subsubheading" id="Outputs-7">Outputs</h4>
 <p>None
 </p>
-<span id="Examples-4"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-5">Examples</h4>
 <p>Create a database table turn off autocommit and insert a row and commit
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;);
  # create table
@@ -579,68 +648,68 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
  # commit the insert
  commit(db);
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, rollback.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, rollback.
+</p></dd></dl>
 </div>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002fexecute">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fexecute">
 <h4 class="subsection">3.4.2 @octave_sqlite/execute</h4>
-<span id="index-execute"></span>
-<dl class="def">
-<dt id="index-execute-1"><span class="category">: </span><span><em></em> <strong>execute</strong> <em>(<var>db</var>, <var>sqlquery</var>)</em><a href='#index-execute-1' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-execute"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-execute-1"><span class="category-def">: </span><span><strong class="def-name">execute</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code><a class="copiable-link" href='#index-execute-1'></a></span></dt>
 <dd><p>Execute a SQL statement on a sqlite database
 </p>
-<p>Execute non select SQL query <var>sqlquery</var> on a sqlite database.
+<p>Execute non select SQL query <var class="var">sqlquery</var> on a sqlite database.
 </p>
-<span id="Inputs-7"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-8">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
- </p></dd>
-<dt><span><var>sqlquery</var></span></dt>
+</p></dd>
+<dt><var class="var">sqlquery</var></dt>
 <dd><p>A valid non selecting SQL query string
- </p></dd>
+</p></dd>
 </dl>
-<span id="Inputs-8"></span><h4 class="subsubheading">Inputs</h4>
+<h4 class="subsubheading" id="Inputs-9">Inputs</h4>
 <p>None
 </p>
-<span id="Examples-5"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-6">Examples</h4>
 <p>Create a database table and insert a row
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
  # create table and then insert a row
  execute(db, 'CREATE TABLE Test (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT)');
  execute(db, 'INSERT INTO Test (Name) VALUES (&quot;Line1&quot;)');
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, fetch.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, fetch.
+</p></dd></dl>
 </div>
-<div class="subsection" id="g_t_0040octave_005fsqlite_002frollback">
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002frollback">
 <h4 class="subsection">3.4.3 @octave_sqlite/rollback</h4>
-<span id="index-rollback"></span>
-<dl class="def">
-<dt id="index-rollback-1"><span class="category">: </span><span><em></em> <strong>rollback</strong> <em>(<var>db</var>)</em><a href='#index-rollback-1' class='copiable-anchor'></a></span></dt>
+<a class="index-entry-id" id="index-rollback"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-rollback-1"><span class="category-def">: </span><span><strong class="def-name">rollback</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-rollback-1'></a></span></dt>
 <dd><p>Rollback changes to a database
 </p>
 <p>Rollback pending transactions of sqlite connection that has
  AutoCommit = off set.
 </p>
-<span id="Inputs-9"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>db</var></span></dt>
+<h4 class="subsubheading" id="Inputs-10">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-7"></span><h4 class="subsubheading">Outputs</h4>
+<h4 class="subsubheading" id="Outputs-8">Outputs</h4>
 <p>None
 </p>
-<span id="Examples-6"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-7">Examples</h4>
 <p>Create a database table and insert a row, then roll back the insert
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  # create sql connection
  db = sqlite(&quot;mytest.db&quot;);
  # create table
@@ -651,138 +720,240 @@ Next: <a href="#Support-Functions" accesskey="n" rel="next">Support Functions</a
  # roll back the insert
  rollback(db);
  </code>
- </pre></div>
-<p><strong>See also:</strong> sqlite, commit.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, commit.
+</p></dd></dl>
+</div>
+<div class="subsection-level-extent" id="g_t_0040octave_005fsqlite_002fsqlupdate">
+<h4 class="subsection">3.4.4 @octave_sqlite/sqlupdate</h4>
+<a class="index-entry-id" id="index-sqlupdate"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlupdate-1"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>)</code><a class="copiable-link" href='#index-sqlupdate-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlupdate-2"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-sqlupdate-2'></a></span></dt>
+<dd><p>Update rows of data into a table.
+</p>
+<p>Update rows of data into a sqlite database table based on the input filter.
+</p>
+<h4 class="subsubheading" id="Inputs-11">Inputs</h4>
+<dl class="table">
+<dt><var class="var">db</var></dt>
+<dd><p>Previously created octave_sqlite object
+</p></dd>
+<dt><var class="var">tablename</var></dt>
+<dd><p>Name of table to write data to
+</p></dd>
+<dt><var class="var">data</var></dt>
+<dd><p>Table containing data to write to the database. Variables names are expected to match the database.
+</p></dd>
+<dt><var class="var">filter</var></dt>
+<dd><p>A Filter object  or cell array of filter objects used to determine which rows of the table to update.
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
+<dd><p>property name/value pairs where known properties are:
+  </p><dl class="table">
+<dt>Catalog</dt>
+<dd><p>An optional database catalog name.
+  </p></dd>
+<dt>Schema</dt>
+<dd><p>An optional database schema name.
+  </p></dd>
+</dl>
+</dd>
+</dl>
+<h4 class="subsubheading" id="Outputs-9">Outputs</h4>
+<p>None
+</p>
+<h4 class="subsubheading" id="Examples-8">Examples</h4>
+<p>Create a database table and insert a row
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
+ # create sql connection
+ db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
+ # create table (if it does not exist) and then insert 2 rows
+ t = dbtable([1;2],['Name1';'Name2'], 'VariableNames', {'Id','Name'});
+ # insert table data
+ sqlwrite(db, &quot;Test&quot;, t, 'ColumnType', {'numeric', 'text'});
+ # make a filter to select what to update
+ rf = dbrowfilter({'Id'});
+ rf = rf.Id &gt; 1;
+ # update name where Id &gt; 1
+ t = dbtable(['Name3'], 'VariableNames', {'Name'});
+ sqlupdate(db, &quot;Test&quot;, t, rf);
+ </code>
+</pre></div>
+<p><strong class="strong">See also:</strong> sqlite, execute.
+</p></dd></dl>
 <hr>
 </div>
 </div>
-<div class="section" id="Support-Functions">
-<div class="header">
+<div class="section-level-extent" id="Support-Functions">
+<div class="nav-panel">
 <p>
 Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Operations</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Support-Functions-1"></span><h3 class="section">3.5 Support Functions</h3>
-<span id="index-Support-Functions"></span>
-<ul class="section-toc">
-<li><a href="#dbtable" accesskey="1">dbtable</a></li>
-<li><a href="#readdbtable" accesskey="2">readdbtable</a></li>
-<li><a href="#struct2dbtable" accesskey="3">struct2dbtable</a></li>
+<h3 class="section" id="Support-Functions-1">3.5 Support Functions</h3>
+<a class="index-entry-id" id="index-Support-Functions"></a>
+<ul class="mini-toc">
+<li><a href="#dbrowfilter" accesskey="1">dbrowfilter</a></li>
+<li><a href="#dbtable" accesskey="2">dbtable</a></li>
+<li><a href="#readdbtable" accesskey="3">readdbtable</a></li>
+<li><a href="#struct2dbtable" accesskey="4">struct2dbtable</a></li>
 </ul>
-<div class="subsection" id="dbtable">
-<h4 class="subsection">3.5.1 dbtable</h4>
-<span id="index-dbtable"></span>
-<dl class="def">
-<dt id="index-dbtable_0028_0029"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable()</strong><a href='#index-dbtable_0028_0029' class='copiable-anchor'></a></span></dt>
-<dt id="index-dbtable-1"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(<var>var1</var>, &hellip; <var>varn</var>)</em><a href='#index-dbtable-1' class='copiable-anchor'></a></span></dt>
-<dt id="index-dbtable-2"><span class="category">: </span><span><em><var>table</var> =</em> <strong>dbtable</strong> <em>(&hellip; <var>propertyname</var>, <var>propertyvalue</var>)</em><a href='#index-dbtable-2' class='copiable-anchor'></a></span></dt>
+<div class="subsection-level-extent" id="dbrowfilter">
+<h4 class="subsection">3.5.1 dbrowfilter</h4>
+<a class="index-entry-id" id="index-dbrowfilter"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-dbrowfilter_0028C_0029"><span class="category-def">: </span><span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">C</var>)</strong><a class="copiable-link" href='#index-dbrowfilter_0028C_0029'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-dbrowfilter_0028T_0029"><span class="category-def">: </span><span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">T</var>)</strong><a class="copiable-link" href='#index-dbrowfilter_0028T_0029'></a></span></dt>
+<dd><p>Create an unconstrained dbrowfilter object with columns names.
+</p>
+<h4 class="subsubheading" id="Inputs-12">Inputs</h4>
+<dl class="table">
+<dt><var class="var">C</var></dt>
+<dd><p>A column name, cell array of column names.
+</p></dd>
+<dt><var class="var">T</var></dt>
+<dd><p>A table to use for column names.
+</p></dd>
+</dl>
+<h4 class="subsubheading" id="Outputs-10">Outputs</h4>
+<dl class="table">
+<dt><var class="var">rowfilt</var></dt>
+<dd><p>a dbrowfilter object
+</p></dd>
+</dl>
+<h4 class="subsubheading" id="Object-Properties-1">Object Properties</h4>
+<p>Object properties are the names of the columns on creation of the filter.
+</p>
+<p>Constraints can be set on a specific field of the filter by setting a
+ comparison value for the variable name.
+</p>
+<h4 class="subsubheading" id="Examples-9">Examples</h4>
+<div class="example">
+<pre class="example-preformatted"><code class="code">
+ # create a dbrowfilter with 2 columns
+ rf = dbrowfilter({'Column1', 'Column2'});
+ # add a constraint for Column1 &gt; 10
+ rfc = rf.Column1 &gt; 10
+ </code>
+</pre></div>
+<p><strong class="strong">See also:</strong> dbtable.
+</p></dd></dl>
+</div>
+<div class="subsection-level-extent" id="dbtable">
+<h4 class="subsection">3.5.2 dbtable</h4>
+<a class="index-entry-id" id="index-dbtable"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-dbtable_0028_0029"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable()</strong><a class="copiable-link" href='#index-dbtable_0028_0029'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-dbtable-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(<var class="var">var1</var>, &hellip; <var class="var">varn</var>)</code><a class="copiable-link" href='#index-dbtable-1'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-dbtable-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(&hellip; <var class="var">propertyname</var>, <var class="var">propertyvalue</var>)</code><a class="copiable-link" href='#index-dbtable-2'></a></span></dt>
 <dd><p>Create a table of data
 </p>
 <p>dbtable is a basic implementation of a table type to avoid dependencies on other packages.
 </p>
-<span id="Inputs-10"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>var1</var> &hellip; <var>varn</var></span></dt>
+<h4 class="subsubheading" id="Inputs-13">Inputs</h4>
+<dl class="table">
+<dt><var class="var">var1</var> &hellip; <var class="var">varn</var></dt>
 <dd><p>Variables or data to be used as the column data of the table. When the input is a variable,
  the variable name will be used as the column name, otherwise the columns will be Var1 &hellip;
  VarN.
- </p></dd>
-<dt><span><var>propertyname</var>, <var>propertyvalue</var></span></dt>
+</p></dd>
+<dt><var class="var">propertyname</var>, <var class="var">propertyvalue</var></dt>
 <dd><p>Property name/value pairs, where known property names are:
-  </p><dl compact="compact">
-<dt><span>VariableNames</span></dt>
+  </p><dl class="table">
+<dt>VariableNames</dt>
 <dd><p>A cell string matching the number of input columns with the name to use for the
   </p></dd>
-<dt><span>DimensionNames</span></dt>
+<dt>DimensionNames</dt>
 <dd><p>A cell string matching of length 2 for using as dimension access. If not specified
   it will be &quot;Rows&quot; and &quot;Variables&quot;.
   </p></dd>
 </dl>
 </dd>
 </dl>
-<span id="Outputs-8"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>table</var></span></dt>
+<h4 class="subsubheading" id="Outputs-11">Outputs</h4>
+<dl class="table">
+<dt><var class="var">table</var></dt>
 <dd><p>a dbtable object
- </p></dd>
+</p></dd>
 </dl>
-<span id="Object-Properties-1"></span><h4 class="subsubheading">Object Properties</h4>
+<h4 class="subsubheading" id="Object-Properties-2">Object Properties</h4>
 <p>A dbtable object has the following properties:
- </p><dl compact="compact">
-<dt><span>Properties</span></dt>
+</p><dl class="table">
+<dt>Properties</dt>
 <dd><p>A table properties struct.
 </p>
 <p>The table struct includes fields:
-  </p><dl compact="compact">
-<dt><span>Description</span></dt>
+  </p><dl class="table">
+<dt>Description</dt>
 <dd><p>Text table description
   </p></dd>
-<dt><span>DimensionNames</span></dt>
+<dt>DimensionNames</dt>
 <dd><p>Cell array of Row and Variable dimension names
   </p></dd>
-<dt><span>VariableNames</span></dt>
+<dt>VariableNames</dt>
 <dd><p>Cell array of variable (column) names
   </p></dd>
-<dt><span>UserData</span></dt>
+<dt>UserData</dt>
 <dd><p>User data value
   </p></dd>
 </dl>
 </dd>
 </dl>
-<span id="Examples-7"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples-10">Examples</h4>
 <p>Directly create a 2 column table from input of each column
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  t = dbtable([0;1;3], [2;4;6]);
  </code>
- </pre></div>
+</pre></div>
 <p>Directly create a 2 column table from input of each column, and specify variable
  names
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  t = dbtable([0;1;3], [2;4;6], &quot;VariableNames&quot;, {'Variable1', 'Variable2'});
  </code>
- </pre></div>
+</pre></div>
 <p>Create a 2 column table from 2 variables V1, V2
- </p><div class="example">
-<pre class="example"> <code>
+</p><div class="example">
+<pre class="example-preformatted"><code class="code">
  V1 = [0;1;3];
  V2 = [2;4;6];
  t = dbtable(V1, V2);
  </code>
- </pre></div>
-<p><strong>See also:</strong> readdbtable, struct2dbtable.
- </p></dd></dl>
+</pre></div>
+<p><strong class="strong">See also:</strong> readdbtable, struct2dbtable.
+</p></dd></dl>
 </div>
-<div class="subsection" id="readdbtable">
-<h4 class="subsection">3.5.2 readdbtable</h4>
-<span id="index-readdbtable"></span>
-<dl class="def">
-<dt id="index-readdbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>readdbtable</strong> <em>(<var>filename</var>)</em><a href='#index-readdbtable-1' class='copiable-anchor'></a></span></dt>
+<div class="subsection-level-extent" id="readdbtable">
+<h4 class="subsection">3.5.3 readdbtable</h4>
+<a class="index-entry-id" id="index-readdbtable"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-readdbtable-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">readdbtable</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code><a class="copiable-link" href='#index-readdbtable-1'></a></span></dt>
 <dd><p>Create a dbtable from a file
 </p>
 <p>Currently, this is using a very simplistic approach to read data from a CSV
  formatted file only.
 </p>
-<span id="Inputs-11"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>filename</var></span></dt>
+<h4 class="subsubheading" id="Inputs-14">Inputs</h4>
+<dl class="table">
+<dt><var class="var">filename</var></dt>
 <dd><p>Filename for file containing tabular data
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-9"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>t</var></span></dt>
+<h4 class="subsubheading" id="Outputs-12">Outputs</h4>
+<dl class="table">
+<dt><var class="var">t</var></dt>
 <dd><p>a dbtable of the read data
- </p></dd>
+</p></dd>
 </dl>
 </dd></dl>
 </div>
-<div class="subsection" id="struct2dbtable">
-<h4 class="subsection">3.5.3 struct2dbtable</h4>
-<span id="index-struct2dbtable"></span>
-<dl class="def">
-<dt id="index-struct2dbtable-1"><span class="category">: </span><span><em><var>t</var> =</em> <strong>struct2dbtable</strong> <em>(<var>astruct</var>)</em><a href='#index-struct2dbtable-1' class='copiable-anchor'></a></span></dt>
+<div class="subsection-level-extent" id="struct2dbtable">
+<h4 class="subsection">3.5.4 struct2dbtable</h4>
+<a class="index-entry-id" id="index-struct2dbtable"></a>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-struct2dbtable-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">struct2dbtable</strong> <code class="def-code-arguments">(<var class="var">astruct</var>)</code><a class="copiable-link" href='#index-struct2dbtable-1'></a></span></dt>
 <dd><p>Create a dbtable from a struct
 </p>
 <p>This function uses the field names and data of the fields to create a table
@@ -792,39 +963,39 @@ Previous: <a href="#Database-Operations" accesskey="p" rel="prev">Database Opera
  will be the data of the fieldname, and is expected to be a uniform size for
  all fields in the struct.
 </p>
-<span id="Inputs-12"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><var>astruct</var></span></dt>
+<h4 class="subsubheading" id="Inputs-15">Inputs</h4>
+<dl class="table">
+<dt><var class="var">astruct</var></dt>
 <dd><p>A struct with same number of elements in each field
- </p></dd>
+</p></dd>
 </dl>
-<span id="Outputs-10"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><var>t</var></span></dt>
-<dd><p>a dbtable of the <var>astruct</var> data
- </p></dd>
+<h4 class="subsubheading" id="Outputs-13">Outputs</h4>
+<dl class="table">
+<dt><var class="var">t</var></dt>
+<dd><p>a dbtable of the <var class="var">astruct</var> data
+</p></dd>
 </dl>
 </dd></dl>
 <hr>
 </div>
 </div>
 </div>
-<div class="appendix" id="Copying">
-<div class="header">
+<div class="appendix-level-extent" id="Copying">
+<div class="nav-panel">
 <p>
 Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Function-Reference" accesskey="p" rel="prev">Function Reference</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="GNU-General-Public-License"></span><h2 class="appendix">Appendix A GNU General Public License</h2>
-<span id="index-warranty"></span>
-<span id="index-copyright"></span>
-<div align="center">Version 3, 29 June 2007
+<h2 class="appendix" id="GNU-General-Public-License">Appendix A GNU General Public License</h2>
+<a class="index-entry-id" id="index-warranty"></a>
+<a class="index-entry-id" id="index-copyright"></a>
+<div class="center">Version 3, 29 June 2007
 </div>
 <div class="display">
-<pre class="display">Copyright &copy; 2007 Free Software Foundation, Inc. <a href="http://fsf.org/">http://fsf.org/</a>
+<pre class="display-preformatted">Copyright &copy; 2007 Free Software Foundation, Inc. <a class="url" href="http://fsf.org/">http://fsf.org/</a>
 Everyone is permitted to copy and distribute verbatim copies of this
 license document, but changing it is not allowed.
 </pre></div>
-<span id="Preamble"></span><h3 class="heading">Preamble</h3>
+<h3 class="heading" id="Preamble">Preamble</h3>
 <p>The GNU General Public License is a free, copyleft license for
 software and other kinds of works.
 </p>
@@ -888,8 +1059,8 @@ assures that patents cannot be used to render the program non-free.
 <p>The precise terms and conditions for copying, distribution and
 modification follow.
 </p>
-<span id="TERMS-AND-CONDITIONS"></span><h3 class="heading">TERMS AND CONDITIONS</h3>
-<ol start="0">
+<h3 class="heading" id="TERMS-AND-CONDITIONS">TERMS AND CONDITIONS</h3>
+<ol class="enumerate" start="0">
 <li> Definitions.
 <p>&ldquo;This License&rdquo; refers to version 3 of the GNU General Public License.
 </p>
@@ -1026,7 +1197,7 @@ produce it from the Program, in the form of source code under the
 terms of section 4, provided that you also meet all of these
 conditions:
 </p>
-<ol type="a" start="1">
+<ol class="enumerate" type="a" start="1">
 <li> The work must carry prominent notices stating that you modified it,
 and giving a relevant date.
 </li><li> The work must carry prominent notices stating that it is released
@@ -1061,7 +1232,7 @@ sections 4 and 5, provided that you also convey the machine-readable
 Corresponding Source under the terms of this License, in one of these
 ways:
 </p>
-<ol type="a" start="1">
+<ol class="enumerate" type="a" start="1">
 <li> Convey the object code in, or embodied in, a physical product
 (including a physical distribution medium), accompanied by the
 Corresponding Source fixed on a durable physical medium customarily
@@ -1171,7 +1342,7 @@ for which you have or can give appropriate copyright permission.
 add to a covered work, you may (if authorized by the copyright holders
 of that material) supplement the terms of this License with terms:
 </p>
-<ol type="a" start="1">
+<ol class="enumerate" type="a" start="1">
 <li> Disclaiming warranty or limiting liability differently from the terms
 of sections 15 and 16 of this License; or
 </li><li> Requiring preservation of specified reasonable legal notices or author
@@ -1416,8 +1587,8 @@ Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
 </p>
 </li></ol>
-<span id="END-OF-TERMS-AND-CONDITIONS"></span><h3 class="heading">END OF TERMS AND CONDITIONS</h3>
-<span id="How-to-Apply-These-Terms-to-Your-New-Programs"></span><h3 class="heading">How to Apply These Terms to Your New Programs</h3>
+<h3 class="heading" id="END-OF-TERMS-AND-CONDITIONS">END OF TERMS AND CONDITIONS</h3>
+<h3 class="heading" id="How-to-Apply-These-Terms-to-Your-New-Programs">How to Apply These Terms to Your New Programs</h3>
 <p>If you develop a new program, and you want it to be of the greatest
 possible use to the public, the best way to achieve this is to make it
 free software which everyone can redistribute and change under these
@@ -1428,9 +1599,9 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the &ldquo;copyright&rdquo; line and a pointer to where the full notice is found.
 </p>
-<div class="example">
-<pre class="example"><var>one line to give the program's name and a brief idea of what it does.</var>  
-Copyright (C) <var>year</var> <var>name of author</var>
+<div class="example smallexample">
+<pre class="example-preformatted"><var class="var">one line to give the program's name and a brief idea of what it does.</var>  
+Copyright (C) <var class="var">year</var> <var class="var">name of author</var>
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at
@@ -1440,20 +1611,20 @@ WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+along with this program.  If not, see <a class="url" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 </pre></div>
 <p>Also add information on how to contact you by electronic and paper mail.
 </p>
 <p>If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 </p>
-<div class="example">
-<pre class="example"><var>program</var> Copyright (C) <var>year</var> <var>name of author</var> 
-This program comes with ABSOLUTELY NO WARRANTY; for details type &lsquo;<samp>show w</samp>&rsquo;.
+<div class="example smallexample">
+<pre class="example-preformatted"><var class="var">program</var> Copyright (C) <var class="var">year</var> <var class="var">name of author</var> 
+This program comes with ABSOLUTELY NO WARRANTY; for details type &lsquo;<samp class="samp">show w</samp>&rsquo;.
 This is free software, and you are welcome to redistribute it
-under certain conditions; type &lsquo;<samp>show c</samp>&rsquo; for details.
+under certain conditions; type &lsquo;<samp class="samp">show c</samp>&rsquo; for details.
 </pre></div>
-<p>The hypothetical commands &lsquo;<samp>show w</samp>&rsquo; and &lsquo;<samp>show c</samp>&rsquo; should show
+<p>The hypothetical commands &lsquo;<samp class="samp">show w</samp>&rsquo; and &lsquo;<samp class="samp">show c</samp>&rsquo; should show
 the appropriate parts of the General Public License.  Of course, your
 program&rsquo;s commands might be different; for a GUI interface, you would
 use an &ldquo;about box&rdquo;.
@@ -1461,124 +1632,129 @@ use an &ldquo;about box&rdquo;.
 <p>You should also get your employer (if you work as a programmer) or school,
 if any, to sign a &ldquo;copyright disclaimer&rdquo; for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
-<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+<a class="url" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 </p>
 <p>The GNU General Public License does not permit incorporating your
 program into proprietary programs.  If your program is a subroutine
 library, you may consider it more useful to permit linking proprietary
 applications with the library.  If this is what you want to do, use
 the GNU Lesser General Public License instead of this License.  But
-first, please read <a href="http://www.gnu.org/philosophy/why-not-lgpl.html">http://www.gnu.org/philosophy/why-not-lgpl.html</a>.
+first, please read <a class="url" href="http://www.gnu.org/philosophy/why-not-lgpl.html">http://www.gnu.org/philosophy/why-not-lgpl.html</a>.
 </p>
 <hr>
 </div>
-<div class="unnumbered" id="Index">
-<div class="header">
+<div class="unnumbered-level-extent" id="Index">
+<div class="nav-panel">
 <p>
 Previous: <a href="#Copying" accesskey="p" rel="prev">GNU General Public License</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Index-1"></span><h2 class="unnumbered">Index</h2>
+<h2 class="unnumbered" id="Index-1">Index</h2>
  
-<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Index_cp_letter-B"><b>B</b></a>
+<div class="printindex cp-printindex">
+<table class="cp-letters-header-printindex"><tr><th>Jump to: &nbsp; </th><td><a class="summary-letter-printindex" href="#Index_cp_letter-B"><b>B</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-C"><b>C</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-C"><b>C</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-D"><b>D</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-D"><b>D</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-E"><b>E</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-E"><b>E</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-F"><b>F</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-F"><b>F</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-I"><b>I</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-I"><b>I</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-L"><b>L</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-L"><b>L</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-O"><b>O</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-O"><b>O</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-R"><b>R</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-R"><b>R</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-S"><b>S</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-S"><b>S</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-W"><b>W</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
-<table class="index-cp" border="0">
-<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<table class="cp-entries-printindex" border="0">
+<tr><td></td><th class="entries-header-printindex">Index Entry</th><td>&nbsp;</td><th class="sections-header-printindex"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-B">B</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Basic-Usage-Overview">Basic Usage Overview</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Basic-Usage-Overview">Basic Usage Overview</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-C">C</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-close">close</a>:</td><td>&nbsp;</td><td valign="top"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Close-the-database">Close the database</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-commit">commit</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Database-Operations">Database Operations</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Connection-to-a-sqlite-database">Connection to a sqlite database</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-copyright">copyright</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Copying">Copying</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-close">close</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Close-the-database">Close the database</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-commit">commit</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Database-Operations">Database Operations</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Connection-to-a-sqlite-database">Connection to a sqlite database</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-copyright">copyright</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-D">D</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Database-Operations">Database Operations</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Database-Operations">Database Operations</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-dbtable">dbtable</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Support-Functions">Support Functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Database-Operations">Database Operations</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Database-Operations">Database Operations</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-dbrowfilter">dbrowfilter</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Support-Functions">Support Functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-dbtable">dbtable</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Support-Functions">Support Functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-E">E</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-execute">execute</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Database-Operations">Database Operations</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Exporting-Data">Exporting Data</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exporting-Data">Exporting Data</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-execute">execute</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Database-Operations">Database Operations</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Exporting-Data">Exporting Data</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Exporting-Data">Exporting Data</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-F">F</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-fetch">fetch</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Importing-Data">Importing Data</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function-Reference">Function Reference</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Function-Reference">Function Reference</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-fetch">fetch</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Importing-Data">Importing Data</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Function-Reference">Function Reference</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Function-Reference">Function Reference</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-I">I</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Importing-Data">Importing Data</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Importing-Data">Importing Data</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Installing-and-loading">Installing and loading</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-isopen">isopen</a>:</td><td>&nbsp;</td><td valign="top"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Importing-Data">Importing Data</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Importing-Data">Importing Data</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Installing-and-loading">Installing and loading</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-isopen">isopen</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-L">L</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Loading">Loading</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Loading">Loading</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-O">O</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Off_002dline-install">Off-line install</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Online-install">Online install</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Off_002dline-install">Off-line install</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Online-install">Online install</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-R">R</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Read-a-table">Read a table</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-readdbtable">readdbtable</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Support-Functions">Support Functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-rollback">rollback</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Database-Operations">Database Operations</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Read-a-table">Read a table</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-readdbtable">readdbtable</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Support-Functions">Support Functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-rollback">rollback</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Database-Operations">Database Operations</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-S">S</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sqlite">sqlite</a>:</td><td>&nbsp;</td><td valign="top"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-SQLITE-connection">SQLITE connection</a>:</td><td>&nbsp;</td><td valign="top"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sqlread">sqlread</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Importing-Data">Importing Data</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sqlwrite">sqlwrite</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exporting-Data">Exporting Data</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-struct2dbtable">struct2dbtable</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Support-Functions">Support Functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Support-Functions">Support Functions</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Support-Functions">Support Functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-sqlfind">sqlfind</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-sqlite">sqlite</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-SQLITE-connection">SQLITE connection</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#SQLITE-connection">SQLITE connection</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-sqlread">sqlread</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Importing-Data">Importing Data</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-sqlupdate">sqlupdate</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Database-Operations">Database Operations</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-sqlwrite">sqlwrite</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Exporting-Data">Exporting Data</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-struct2dbtable">struct2dbtable</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Support-Functions">Support Functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Support-Functions">Support Functions</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Support-Functions">Support Functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Index_cp_letter-W">W</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-warranty">warranty</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Copying">Copying</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-warranty">warranty</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
-<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Index_cp_letter-B"><b>B</b></a>
+<table class="cp-letters-footer-printindex"><tr><th>Jump to: &nbsp; </th><td><a class="summary-letter-printindex" href="#Index_cp_letter-B"><b>B</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-C"><b>C</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-C"><b>C</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-D"><b>D</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-D"><b>D</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-E"><b>E</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-E"><b>E</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-F"><b>F</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-F"><b>F</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-I"><b>I</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-I"><b>I</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-L"><b>L</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-L"><b>L</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-O"><b>O</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-O"><b>O</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-R"><b>R</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-R"><b>R</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-S"><b>S</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-S"><b>S</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Index_cp_letter-W"><b>W</b></a>
+<a class="summary-letter-printindex" href="#Index_cp_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
+</div>
  
 </div>
 </div>

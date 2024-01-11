@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/6_sqlite/"
 pkg_name: "sqlite"
-pkg_version: "0.0.3"
+pkg_version: "0.1.0"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - sqlite"
 category: "SQLITE connection"
@@ -14,6 +14,21 @@ navigation:
 - id: "Functions"
   name: "Function Reference"
   url: "/functions"
+- id: "17_SQLITEconnection"
+  name: "&nbsp;&nbsp;SQLITE connection"
+  url: "/functions/#17_SQLITEconnection"
+- id: "14_ImportingData"
+  name: "&nbsp;&nbsp;Importing Data"
+  url: "/functions/#14_ImportingData"
+- id: "14_ExportingData"
+  name: "&nbsp;&nbsp;Exporting Data"
+  url: "/functions/#14_ExportingData"
+- id: "19_DatabaseOperations"
+  name: "&nbsp;&nbsp;Database Operations"
+  url: "/functions/#19_DatabaseOperations"
+- id: "17_SupportFunctions"
+  name: "&nbsp;&nbsp;Support Functions"
+  url: "/functions/#17_SupportFunctions"
 - id: "news"
   name: "News"
   url: "/news"
@@ -21,57 +36,57 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="def">
-<dt id="index-sqlite"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>)</em><a href='#index-sqlite' class='copiable-anchor'></a></span></dt>
-<dt id="index-sqlite-1"><span class="category">: </span><span><em><var>db</var> =</em> <strong>sqlite</strong> <em>(<var>filename</var>, <var>mode</var>)</em><a href='#index-sqlite-1' class='copiable-anchor'></a></span></dt>
+<dl class="first-deftypefn">
+<dt class="deftypefn" id="index-sqlite"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code><a class="copiable-link" href='#index-sqlite'></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlite-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code><a class="copiable-link" href='#index-sqlite-1'></a></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
-<span id="Inputs"></span><h4 class="subsubheading">Inputs</h4>
-<dl compact="compact">
-<dt><span><code><var>filename</var></code></span></dt>
+<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<dl class="table">
+<dt><code class="code"><var class="var">filename</var></code></dt>
 <dd><p>Filename of the sqlite database
  </p></dd>
-<dt><span><code><var>mode</var></code></span></dt>
+<dt><code class="code"><var class="var">mode</var></code></dt>
 <dd><p>mode for the sqlite access &rsquo;readonly&rsquo;, &rsquo;connect&rsquo; (default), &rsquo;create&rsquo;.
  </p></dd>
 </dl>
 
-<span id="Outputs"></span><h4 class="subsubheading">Outputs</h4>
-<dl compact="compact">
-<dt><span><code><var>db</var></code></span></dt>
+<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<dl class="table">
+<dt><code class="code"><var class="var">db</var></code></dt>
 <dd><p>a opened SQLITE database as a octave_sqlite object
  </p></dd>
 </dl>
 
-<span id="Object-Properties"></span><h4 class="subsubheading">Object Properties</h4>
+<h4 class="subsubheading" id="Object-Properties">Object Properties</h4>
 <p>The octave_sqlite object has the following properties:
 </p>
-<dl compact="compact">
-<dt><span>Database</span></dt>
+<dl class="table">
+<dt>Database</dt>
 <dd><p>The name of the opened database file (readonly)
  </p></dd>
-<dt><span>IsOpen</span></dt>
+<dt>IsOpen</dt>
 <dd><p>Boolean field for if the database is currently open (readonly)
  </p></dd>
-<dt><span>IsReadOnly</span></dt>
+<dt>IsReadOnly</dt>
 <dd><p>Boolean field for if the database was opened in readonly mode. (readonly)
  </p></dd>
-<dt><span>AutoCommit</span></dt>
+<dt>AutoCommit</dt>
 <dd><p>String flag field for whether database is in auto commit mode. &quot;on&quot; (default) or &quot;off&quot;.
  </p></dd>
 </dl>
 
-<span id="Examples"></span><h4 class="subsubheading">Examples</h4>
+<h4 class="subsubheading" id="Examples">Examples</h4>
 <p>Open a sqlite database, failing if it does not exist.
  </p><div class="example">
-<pre class="example"> <code>
+<pre class="example-preformatted"> <code class="code">
  db = sqlite(&quot;mytest.db&quot;);
  </code>
  </pre></div>
 
 <p>Open a sqlite database, creating it if it does not exist.
  </p><div class="example">
-<pre class="example"> <code>
+<pre class="example-preformatted"> <code class="code">
  db = sqlite(&quot;mytest.db&quot;, &quot;create&quot;);
  </code>
  </pre></div>
