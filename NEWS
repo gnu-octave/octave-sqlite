@@ -1,7 +1,7 @@
-Summary of important user-visible changes for sqlite 0.0.3+:
+Summary of important user-visible changes for sqlite 0.1.0:
 -------------------------------------------------------------------
 
-  ** Development octave compatability updates
+  ** Development octave compatibility updates
 
   ** Documentation updates
 
@@ -14,14 +14,14 @@ Summary of important user-visible changes for sqlite 0.0.3+:
 
   ** Function Changes:
 
-     - dbtable: add better display or complex types
+     - dbtable: add better display of complex types
 
      - sqlread, fetch: add support for dbrowfilter
 
 Summary of important user-visible changes for sqlite 0.0.3:
 -------------------------------------------------------------------
 
-  ** Development octave compatability updates
+  ** Development octave compatibility updates
 
   ** Function Changes:
      - dbtable.m: provide default for head and tail
