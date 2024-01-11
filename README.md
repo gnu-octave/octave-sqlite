@@ -13,8 +13,10 @@ It provides functionality for the following functions:
 * close - close a sqlite database connection
 * fetch - fetch data from a connection using sql
 * execute - execute a non selecting sql statement 
+* sqlfind - query info about a sqlite table
 * sqlread - read a sqlite table
 * sqlwrite - write to a sqlite table
+* sqlupdate - update a sqlite table
 * commit - commit transaction when not in autocommit mode
 * rollback - rollback a transaction when not in autocommit mode
 * isopen - verify the database is open
@@ -34,7 +36,7 @@ The toolkit can be installed in Octave 7.2+ using the command:
 
 On older versions of Octave, install the package using the full path to the latest released version:
 
-    pkg install "https://github.com/gnu-octave/octave-sqlite/releases/download/v0.0.2/octave-sqlite-0.0.2.tar.gz"
+    pkg install "https://github.com/gnu-octave/octave-sqlite/releases/download/v0.1.0/octave-sqlite-0.1.0.tar.gz"
 
 After installation, load the package in order to use it.
 
