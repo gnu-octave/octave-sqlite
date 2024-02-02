@@ -147,20 +147,6 @@ classdef dbrowfilter
       endif
     endfunction
 
-    function this = dbrowfilterX (varnames)
-      if nargin != 1
-        print_usage();
-      endif
-      if iscellstr(varnames)
-        this.vars = varnames;
-      elseif ischar(varnames)
-        this.vars = {varnames};
-      else
-        error ("Unknown or unsupported rowfilter input");
-      endif
-      this.constraints = {};
-    endfunction
-
     function disp (this)
       if isempty(this.constraints)
         printf ("  RowFilter with no constraints\n\n");
@@ -174,6 +160,7 @@ classdef dbrowfilter
     endfunction
 
     function tf = isempty (this)
+      # return true is filter has no contraints set
       tf = isempty(this.constraints);
     endfunction
 

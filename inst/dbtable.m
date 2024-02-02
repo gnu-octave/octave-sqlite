@@ -183,7 +183,12 @@ classdef dbtable
 
   methods (Access = public)
     function this = dbtable (varargin)
-
+      ## -*- texinfo -*- 
+      ## @deftypefn {} {@var{table} =} dbtable.dbtable()
+      ## @deftypefnx {} {@var{table} =} dbtable (@dots{} @var{propertyname}, @var{propertyvalue})
+      ## Create a table of data
+      ## @end deftypefn
+ 
       # work out where properties start
       prop_idx = -1;
       for idx = 1:length(varargin)
@@ -435,6 +440,11 @@ classdef dbtable
     endfunction
 
     function summary (this)
+      ## -*- texinfo -*- 
+      ## @deftypefn {} {} dbtable.summary()
+      ## Display summary of the table
+      ## @end deftypefn
+ 
       printf("Properties:\n");
         printf("  %s: %s\n", "Description", this.Properties.Description);
       printf("Variables:\n");
@@ -450,8 +460,9 @@ classdef dbtable
       endfor
     endfunction
 
-    # rows, columns just calls size
     function varargout = size(this, dimn=1)
+      # get size of table
+      
       sz0 = 0;
       sz1 = length(this._data);
       if sz1 > 0
@@ -477,22 +488,31 @@ classdef dbtable
     endfunction
 
     function s = length(this)
+      # get length (number of rows) of table
       s = size(this, 1);
     endfunction
 
     function e = isempty(this)
+      # check if table has data
       e = (length(this) == 0);
     endfunction
 
     function y = istable(this)
+      # return true if we are a table
       y = true;
     endfunction
 
     function y = ismatrix(this)
+      # return true is we are a matrix
       y = true;
     endfunction
 
     function st = table2struct(this)
+      ## -*- texinfo -*- 
+      ## @deftypefn {} {@var{st} =} dbtable.table2struct()
+      ## Convert this table into a struct using the variable names as fields.
+      ## @end deftypefn
+ 
       names = this.Properties.VariableNames;
       st = {};
       for idx=1:numel(names)
@@ -501,6 +521,11 @@ classdef dbtable
     endfunction
 
     function writetable (this, filename)
+      ## -*- texinfo -*- 
+      ## @deftypefn {} {} dbtable.writetable(@var{filename})
+      ## Save table to a file (Currently only csv is supported)
+      ## @end deftypefn
+ 
       [~, ~, ext] = fileparts(filename);
       if isempty(ext)
         ext = ".csv"
@@ -514,8 +539,9 @@ classdef dbtable
       endswitch
     endfunction
 
-    # head tail - create sub tables
     function tdata = head(this, rows=8)
+      # get the first X rows of the table
+      
       if nargin > 1 && !isnumeric(rows)
         error ("Expected rows to be a number");
       endif
@@ -529,6 +555,8 @@ classdef dbtable
     endfunction
 
     function tdata = tail(this, rows=8)
+      # get the last X rows ofthe table
+
       if nargin > 1 && !isnumeric(rows)
         error ("Expected rows to be a number");
       endif
@@ -543,15 +571,6 @@ classdef dbtable
       tdata = dbtable(data{:}, 'VariableNames', names);
     endfunction
   endmethods
-
-%{
-  # octave ignores hiddent currently
-  methods (Hidden = true)
-    function tdata = _RawData(this)
-      tdata = this._data;
-    endfunction
-  endmethods
-%}
 endclassdef
 
 %!test
