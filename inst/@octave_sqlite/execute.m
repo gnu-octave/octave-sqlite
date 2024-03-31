@@ -30,7 +30,7 @@
 ## A valid non selecting SQL query string
 ## @end table
 ##
-## @subsubheading Inputs
+## @subsubheading Outputs
 ## None
 ##
 ## @subsubheading Examples
