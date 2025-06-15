@@ -145,7 +145,7 @@ function sqlwrite (db, tablename, data, varargin)
       if isnumeric(v)
          v = num2str(v);
       else
-         v = ['"' v '"'];
+         v = ["'" v "'"];
       endif
       values = [values v];
 

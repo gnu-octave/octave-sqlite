@@ -133,7 +133,7 @@ function sqlupdate (db, tablename, data, filter, varargin)
       if isnumeric(v)
          v = num2str(v);
       else
-         v = ['"' v '"'];
+         v = ["'" v "'"];
       endif
  
     sql = [sql cols{col} " = " v];
