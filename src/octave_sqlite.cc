@@ -236,11 +236,18 @@ octave_sqlite::create (const std::string &infilename, const std::string &inmode)
 
   rc = sqlite3_open_v2(filename.c_str(), &db, flags, NULL);
 
-  if(rc)
+  if (rc)
     {
       sqlite3_close(db);
       error("Failed to open '%s' - %s", filename.c_str(), error_string(db, rc).c_str());
       return false;
+    }
+
+  //Enable loading of external extensions (e.g. sqlean)
+  rc = sqlite3_enable_load_extension(db, 1);
+  if (rc)
+    {
+      warning("Failed to enable load extensions - '%s'", error_string(db, rc).c_str());
     }
 
   return true;
