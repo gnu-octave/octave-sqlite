@@ -179,6 +179,14 @@ if test "x$SQLITE_LIBS" == "x"; then
   AC_MSG_ERROR([sqlite3 is required to install $PACKAGE_NAME])
 fi
 
+AC_CHECK_LIB([sqlite3], [sqlite3_enable_load_extension],
+  [HAVE_SQLITE3_ENABLE_LOAD_EXTENSION=yes],
+  [HAVE_SQLITE3_ENABLE_LOAD_EXTENSION=no])
+
+if test "$HAVE_SQLITE3_ENABLE_LOAD_EXTENSION" == "no"; then
+  AC_DEFINE([HAVE_SQLITE3_ENABLE_LOAD_EXTENSION],[],[sql3_enable_extension is available])
+fi
+
 ## restore
 CPPFLAGS=$save_CPPFLAGS
 LDFLAGS=$save_LDFLAGS

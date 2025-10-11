@@ -244,11 +244,13 @@ octave_sqlite::create (const std::string &infilename, const std::string &inmode)
     }
 
   //Enable loading of external extensions (e.g. sqlean)
+#ifdef HAVE_SQLITE3_ENABLE_LOAD_EXTENSION
   rc = sqlite3_enable_load_extension(db, 1);
   if (rc)
     {
       warning("Failed to enable load extensions - '%s'", error_string(db, rc).c_str());
     }
+#endif
 
   return true;
 }
