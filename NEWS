@@ -1,3 +1,12 @@
+Summary of important user-visible changes for sqlite 0.1.1:
+-------------------------------------------------------------------
+
+  ** Documentation updates
+
+  ** Enable extentions on open of database
+
+  ** Update sql query for "'" not '"'
+
 Summary of important user-visible changes for sqlite 0.1.0:
 -------------------------------------------------------------------
 

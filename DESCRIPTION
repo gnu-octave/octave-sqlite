@@ -1,6 +1,6 @@
 Name: sqlite
-Version: 0.1.0
-Date: 2024-01-11
+Version: 0.1.1
+Date: 2025-10-11
 Author: John Donoghue <john.donoghue@ieee.org>
 Maintainer: John Donoghue <john.donoghue@ieee.org>
 Title: Octave Sqlite Toolkit
