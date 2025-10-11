@@ -183,7 +183,7 @@ AC_CHECK_LIB([sqlite3], [sqlite3_enable_load_extension],
   [HAVE_SQLITE3_ENABLE_LOAD_EXTENSION=yes],
   [HAVE_SQLITE3_ENABLE_LOAD_EXTENSION=no])
 
-if test "$HAVE_SQLITE3_ENABLE_LOAD_EXTENSION" == "no"; then
+if test "$HAVE_SQLITE3_ENABLE_LOAD_EXTENSION" == "yes"; then
   AC_DEFINE([HAVE_SQLITE3_ENABLE_LOAD_EXTENSION],[],[sql3_enable_extension is available])
 fi
 
