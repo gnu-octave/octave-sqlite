@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/6_sqlite/"
 pkg_name: "sqlite"
-pkg_version: "0.1.0"
+pkg_version: "0.1.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - sqlite"
 category: "SQLITE connection"
@@ -36,12 +36,12 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-sqlite"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code><a class="copiable-link" href='#index-sqlite'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlite-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code><a class="copiable-link" href='#index-sqlite-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-sqlite"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code><a class="copiable-link" href="#index-sqlite"></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlite-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code><a class="copiable-link" href="#index-sqlite-1"></a></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <dl class="table">
 <dt><code class="code"><var class="var">filename</var></code></dt>
 <dd><p>Filename of the sqlite database
@@ -51,14 +51,14 @@ navigation:
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <dl class="table">
 <dt><code class="code"><var class="var">db</var></code></dt>
 <dd><p>a opened SQLITE database as a octave_sqlite object
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Object-Properties">Object Properties</h4>
+<h4 class="subsubheading" id="Object-Properties"><span>Object Properties<a class="copiable-link" href="#Object-Properties"></a></span></h4>
 <p>The octave_sqlite object has the following properties:
 </p>
 <dl class="table">
@@ -76,7 +76,7 @@ navigation:
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Examples">Examples</h4>
+<h4 class="subsubheading" id="Examples"><span>Examples<a class="copiable-link" href="#Examples"></a></span></h4>
 <p>Open a sqlite database, failing if it does not exist.
  </p><div class="example">
 <pre class="example-preformatted"> <code class="code">

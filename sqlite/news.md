@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/news/"
 title: "Sqlite Toolkit - News"
 pkg_name: "sqlite"
-version: "0.1.0"
+version: "0.1.1"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -19,6 +19,15 @@ navigation:
   url: "/manual"
 ---
 <pre>
+Summary of important user-visible changes for sqlite 0.1.1:
+-------------------------------------------------------------------
+
+  ** Documentation updates
+
+  ** Enable extensions on open of database
+
+  ** Update sql query for "'" not '"'
+
 Summary of important user-visible changes for sqlite 0.1.0:
 -------------------------------------------------------------------
 

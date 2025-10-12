@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/22_octavesqliteexecute/"
 pkg_name: "sqlite"
-pkg_version: "0.1.0"
+pkg_version: "0.1.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/execute"
 category: "Database Operations"
@@ -36,13 +36,13 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-execute"><span class="category-def">: </span><span><strong class="def-name">execute</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code><a class="copiable-link" href='#index-execute'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-execute"><span class="category-def">: </span><span><strong class="def-name">execute</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code><a class="copiable-link" href="#index-execute"></a></span></dt>
 <dd><p>Execute a SQL statement on a sqlite database
 </p>
 <p>Execute non select SQL query <var class="var">sqlquery</var> on a sqlite database.
 </p>
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <dl class="table">
 <dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
@@ -52,10 +52,10 @@ navigation:
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Inputs-1">Inputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <p>None
 </p>
-<h4 class="subsubheading" id="Examples">Examples</h4>
+<h4 class="subsubheading" id="Examples"><span>Examples<a class="copiable-link" href="#Examples"></a></span></h4>
 <p>Create a database table and insert a row
  </p><div class="example">
 <pre class="example-preformatted"> <code class="code">

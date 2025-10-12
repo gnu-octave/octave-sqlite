@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/24_octavesqlitesqlupdate/"
 pkg_name: "sqlite"
-pkg_version: "0.1.0"
+pkg_version: "0.1.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/sqlupdate"
 category: "Database Operations"
@@ -36,14 +36,14 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-sqlupdate"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>)</code><a class="copiable-link" href='#index-sqlupdate'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-sqlupdate-1"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href='#index-sqlupdate-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-sqlupdate"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>)</code><a class="copiable-link" href="#index-sqlupdate"></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlupdate-1"><span class="category-def">: </span><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code><a class="copiable-link" href="#index-sqlupdate-1"></a></span></dt>
 <dd><p>Update rows of data into a table.
 </p>
 <p>Update rows of data into a sqlite database table based on the input filter.
 </p>
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <dl class="table">
 <dt><var class="var">db</var></dt>
 <dd><p>Previously created octave_sqlite object
@@ -70,10 +70,10 @@ navigation:
 </dd>
 </dl>
 
-<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <p>None
 </p>
-<h4 class="subsubheading" id="Examples">Examples</h4>
+<h4 class="subsubheading" id="Examples"><span>Examples<a class="copiable-link" href="#Examples"></a></span></h4>
 <p>Create a database table and insert a row
  </p><div class="example">
 <pre class="example-preformatted"> <code class="code">

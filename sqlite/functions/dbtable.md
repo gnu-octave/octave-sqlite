@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/7_dbtable/"
 pkg_name: "sqlite"
-pkg_version: "0.1.0"
+pkg_version: "0.1.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - dbtable"
 category: "Support Functions"
@@ -36,15 +36,15 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-dbtable_0028_0029"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable()</strong><a class="copiable-link" href='#index-dbtable_0028_0029'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-dbtable"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(<var class="var">var1</var>, &hellip; <var class="var">varn</var>)</code><a class="copiable-link" href='#index-dbtable'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-dbtable-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(&hellip; <var class="var">propertyname</var>, <var class="var">propertyvalue</var>)</code><a class="copiable-link" href='#index-dbtable-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-dbtable_0028_0029"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable()</strong><a class="copiable-link" href="#index-dbtable_0028_0029"></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(<var class="var">var1</var>, &hellip; <var class="var">varn</var>)</code><a class="copiable-link" href="#index-dbtable"></a></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(&hellip; <var class="var">propertyname</var>, <var class="var">propertyvalue</var>)</code><a class="copiable-link" href="#index-dbtable-1"></a></span></dt>
 <dd><p>Create a table of data
 </p>
 <p>dbtable is a basic implementation of a table type to avoid dependencies on other packages.
 </p>
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <dl class="table">
 <dt><var class="var">var1</var> &hellip; <var class="var">varn</var></dt>
 <dd><p>Variables or data to be used as the column data of the table. When the input is a variable,
@@ -65,14 +65,14 @@ navigation:
 </dd>
 </dl>
 
-<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <dl class="table">
 <dt><var class="var">table</var></dt>
 <dd><p>a dbtable object
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Object-Properties">Object Properties</h4>
+<h4 class="subsubheading" id="Object-Properties"><span>Object Properties<a class="copiable-link" href="#Object-Properties"></a></span></h4>
 <p>A dbtable object has the following properties:
  </p><dl class="table">
 <dt>Properties</dt>
@@ -96,7 +96,7 @@ navigation:
 </dd>
 </dl>
 
-<h4 class="subsubheading" id="Examples">Examples</h4>
+<h4 class="subsubheading" id="Examples"><span>Examples<a class="copiable-link" href="#Examples"></a></span></h4>
 <p>Directly create a 2 column table from input of each column
  </p><div class="example">
 <pre class="example-preformatted"> <code class="code">

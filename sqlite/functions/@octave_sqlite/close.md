@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/20_octavesqliteclose/"
 pkg_name: "sqlite"
-pkg_version: "0.1.0"
+pkg_version: "0.1.1"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/close"
 category: "SQLITE connection"
@@ -36,20 +36,20 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-close"><span class="category-def">: </span><span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href='#index-close'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-close"><span class="category-def">: </span><span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code><a class="copiable-link" href="#index-close"></a></span></dt>
 <dd><p>Close a sqlite connection
 </p>
 <p>Close the previously opened sqlite connection <var class="var">db</var>.
 </p>
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <dl class="table">
 <dt><var class="var">db</var></dt>
 <dd><p>A previously created octave_sqlite object
  </p></dd>
 </dl>
 
-<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <p>None
 </p>
 
