@@ -121,7 +121,7 @@ function data = sqlfind (db, pattern, varargin)
   
     cols = {};
     for j=1:length(ti)
-      cols{end+1} = ti(j);
+      cols(end+1) = ti(j);
     endfor
     columns{end+1} = cols;
   endfor
