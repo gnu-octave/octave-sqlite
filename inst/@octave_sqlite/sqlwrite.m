@@ -181,7 +181,9 @@ function sqlwrite (db, tablename, data, varargin)
     execute(db, tsql);
   endif
 
-  execute(db, sql);
+  if ! isempty(data)
+    execute(db, sql);
+  endif
 
 endfunction
 
@@ -238,6 +240,24 @@ endfunction
 %!   sqlwrite(db, "Test", t);
 %!   data = sqlread(db, 'Test');
 %!   assert(size(data), [2 2]);
+%!   close(db);
+%!
+%! unwind_protect_cleanup
+%!   db = 0;
+%!   
+%!   if exist(testfile, "file")
+%!     delete(testfile);
+%!   endif
+%! end_unwind_protect
+
+%!test
+%! testfile = tempname;
+%! t = dbtable([],[], 'VariableNames', {'Id','Name'});
+%! unwind_protect
+%!   db = sqlite(testfile, "create");
+%!   sqlwrite(db, "Test", t);
+%!   data = sqlread(db, 'Test');
+%!   assert(size(data), [0 2]);
 %!   close(db);
 %!
 %! unwind_protect_cleanup
