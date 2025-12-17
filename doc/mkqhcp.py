@@ -1,9 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 ## mkqhcp.py
 ## Version 1.0.5
 
-## Copyright 2022-2023 John Donoghue
+## Copyright 2022-2025 John Donoghue
 ##
 ## This program is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
