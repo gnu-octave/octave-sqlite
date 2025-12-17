@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/11_dbrowfilter/"
 pkg_name: "sqlite"
-pkg_version: "0.1.1"
+pkg_version: "0.1.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - dbrowfilter"
 category: "Support Functions"

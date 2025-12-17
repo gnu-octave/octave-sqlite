@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/24_octavesqlitesqlupdate/"
 pkg_name: "sqlite"
-pkg_version: "0.1.1"
+pkg_version: "0.1.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/sqlupdate"
 category: "Database Operations"

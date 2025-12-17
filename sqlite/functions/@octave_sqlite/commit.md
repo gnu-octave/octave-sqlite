@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/@octave_sqlite/21_octavesqlitecommit/"
 pkg_name: "sqlite"
-pkg_version: "0.1.1"
+pkg_version: "0.1.2"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - @octave_sqlite/commit"
 category: "Database Operations"
