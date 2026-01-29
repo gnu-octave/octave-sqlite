@@ -142,6 +142,10 @@ classdef dbrowfilter
       elseif isa(varargin{1}, "dbtable")
         t = varargin{1};
         this.vars = t.Properties.VariableNames;
+      elseif isa(varargin{1}, "table")
+        # a real table instead of our lightweight thing
+        t = varargin{1};
+        this.vars = t.Properties.VariableNames;
       else
         error ("Unknown or unsupported rowfilter input");
       endif
