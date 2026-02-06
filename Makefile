@@ -21,6 +21,8 @@ MAKEINFO_HTML_OPTIONS := --no-headers --set-customization-variable 'COPIABLE_LIN
 ifeq ($(strip $(QHELPGENERATOR)),)
   ifneq ($(shell qhelpgenerator-qt5 -v 2>/dev/null),)
     QHELPGENERATOR = qhelpgenerator-qt5
+  else ifneq ($(shell /usr/lib64/qt6/libexec/qhelpgenerator -v 2>/dev/null),)
+    QHELPGENERATOR = /usr/lib64/qt6/libexec/qhelpgenerator
   else ifneq ($(shell qcollectiongenerator-qt5 -v 2>/dev/null),)
     QHELPGENERATOR = qcollectiongenerator-qt5
   else ifneq ($(shell qcollectiongenerator -qt5 -v 2>/dev/null),)
