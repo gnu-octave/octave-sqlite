@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/news/"
 title: "Sqlite Toolkit - News"
 pkg_name: "sqlite"
-version: "0.1.2"
+version: "0.1.3"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -19,6 +19,15 @@ navigation:
   url: "/manual"
 ---
 <pre>
+Summary of important user-visible changes for sqlite 0.1.3:
+-------------------------------------------------------------------
+
+  ** Use compatibility paths to provide lightweight rowfilter and table types
+
+  ** Documentation updates
+
+  ** Update dbrowfilter to allow input of a table type
+
 Summary of important user-visible changes for sqlite 0.1.2:
 -------------------------------------------------------------------
 

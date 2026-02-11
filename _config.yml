@@ -26,6 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   SQLite Toolkit for GNU Octave
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gnu-octave.github.io/octave-sqlite/"
+pkg: sqlite
 twitter_username: jekyllrb
 github_username:  jekyll
 

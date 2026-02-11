@@ -3,7 +3,7 @@ layout: "function_list"
 permalink: "/functions/"
 title: "Sqlite Toolkit - Functions"
 pkg_name: "sqlite"
-version: "0.1.2"
+version: "0.1.3"
 description: "Basic Octave implementation of sqlite toolkit"
 categories:
 - id: "17_SQLITEconnection"
@@ -25,6 +25,7 @@ categories:
     name: "@octave_sqlite/sqlfind"
     description: "Find information about table types in a database."
     url: "/functions/@octave_sqlite/22_octavesqlitesqlfind/"
+  groups:
 - id: "14_ImportingData"
   description: "Importing Data"
   functions:
@@ -36,6 +37,7 @@ categories:
     name: "@octave_sqlite/sqlread"
     description: "Read rows of data from a table"
     url: "/functions/@octave_sqlite/22_octavesqlitesqlread/"
+  groups:
 - id: "14_ExportingData"
   description: "Exporting Data"
   functions:
@@ -43,6 +45,7 @@ categories:
     name: "@octave_sqlite/sqlwrite"
     description: "Insert rows of data into a table."
     url: "/functions/@octave_sqlite/23_octavesqlitesqlwrite/"
+  groups:
 - id: "19_DatabaseOperations"
   description: "Database Operations"
   functions:
@@ -62,6 +65,7 @@ categories:
     name: "@octave_sqlite/sqlupdate"
     description: "Update rows of data into a table."
     url: "/functions/@octave_sqlite/24_octavesqlitesqlupdate/"
+  groups:
 - id: "17_SupportFunctions"
   description: "Support Functions"
   functions:
@@ -81,6 +85,7 @@ categories:
     name: "readdbtable"
     description: "Create a dbtable from a file"
     url: "/functions/11_readdbtable/"
+  groups:
 navigation:
 - id: "overview"
   name: "Overview"
@@ -90,18 +95,23 @@ navigation:
 - id: "17_SQLITEconnection"
   name: "&nbsp;&nbsp;SQLITE connection"
   url: "/functions/#17_SQLITEconnection"
+  subitems:
 - id: "14_ImportingData"
   name: "&nbsp;&nbsp;Importing Data"
   url: "/functions/#14_ImportingData"
+  subitems:
 - id: "14_ExportingData"
   name: "&nbsp;&nbsp;Exporting Data"
   url: "/functions/#14_ExportingData"
+  subitems:
 - id: "19_DatabaseOperations"
   name: "&nbsp;&nbsp;Database Operations"
   url: "/functions/#19_DatabaseOperations"
+  subitems:
 - id: "17_SupportFunctions"
   name: "&nbsp;&nbsp;Support Functions"
   url: "/functions/#17_SupportFunctions"
+  subitems:
 - id: "news"
   name: "News"
   url: "/news"

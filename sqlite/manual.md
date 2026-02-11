@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Sqlite Toolkit - Manual"
 pkg_name: "sqlite"
-version: "0.1.2"
+version: "0.1.3"
 description: "Basic Octave implementation of sqlite toolkit"
 navigation:
 - id: "overview"
@@ -106,7 +106,7 @@ to successfully install the toolkit.
 the octave-sqlite website using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example-preformatted">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.1.2/octave-sqlite-0.1.2.tar.gz
+<pre class="example-preformatted">pkg install https://github.com/gnu-octave/octave-sqlite/releases/download/v0.1.3/octave-sqlite-0.1.3.tar.gz
 </pre></div>
 <p>On Octave 7.2 and later, the package can be installed using the following command within
 <abbr class="acronym">GNU</abbr> Octave:
@@ -124,7 +124,7 @@ the octave-sqlite website using the following command within <abbr class="acrony
 <abbr class="acronym">GNU</abbr> Octave, the package can be installed using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example-preformatted">pkg install octave-sqlite-0.1.2.tar.gz
+<pre class="example-preformatted">pkg install octave-sqlite-0.1.3.tar.gz
 </pre></div>
 </div>
 <div class="section-level-extent" id="Loading">
@@ -202,7 +202,7 @@ close(db)
 <h4 class="subsection">3.1.1 @octave_sqlite/close</h4>
 <a class="index-entry-id" id="index-close"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-close-1"><span class="category-def">: </span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-close-1"><span><strong class="def-name">close</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></span></dt>
 <dd><p>Close a sqlite connection
 </p>
 <p>Close the previously opened sqlite connection <var class="var">db</var>.
@@ -223,7 +223,7 @@ close(db)
 <h4 class="subsection">3.1.2 @octave_sqlite/isopen</h4>
 <a class="index-entry-id" id="index-isopen"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-isopen-1"><span class="category-def">: </span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">isopen</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-isopen-1"><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">isopen</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></span></dt>
 <dd><p>Check if a sqlite connection is open
 </p>
 <p>Return true if the sqlite connection is open, otherwise
@@ -248,8 +248,8 @@ close(db)
 <h4 class="subsection">3.1.3 @octave_sqlite/sqlfind</h4>
 <a class="index-entry-id" id="index-sqlfind"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-sqlfind-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlfind-2"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></dt>
+<dt class="deftypefn def-line" id="index-sqlfind-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlfind-2"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlfind</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">pattern</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></span></dt>
 <dd><p>Find information about table types in a database.
 </p>
 <h4 class="subsubheading" id="Inputs-2">Inputs</h4>
@@ -307,8 +307,8 @@ close(db)
 <h4 class="subsection">3.1.4 sqlite</h4>
 <a class="index-entry-id" id="index-sqlite"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-sqlite-1"><span class="category-def">: </span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlite-2"><span class="category-def">: </span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-sqlite-1"><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlite-2"><span><code class="def-type"><var class="var">db</var> =</code> <strong class="def-name">sqlite</strong> <code class="def-code-arguments">(<var class="var">filename</var>, <var class="var">mode</var>)</code></span></dt>
 <dd><p>Create a sqlite database connection
 </p>
 <h4 class="subsubheading" id="Inputs-3">Inputs</h4>
@@ -367,8 +367,8 @@ close(db)
 <h4 class="subsection">3.2.1 @octave_sqlite/fetch</h4>
 <a class="index-entry-id" id="index-fetch"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-fetch-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-fetch-2"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></dt>
+<dt class="deftypefn def-line" id="index-fetch-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-fetch-2"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">fetch</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></span></dt>
 <dd><p>Run a SQL query on a sqlite database
 </p>
 <p>Return rows of data after running a SQL query on a sqlite database.
@@ -426,8 +426,8 @@ close(db)
 <h4 class="subsection">3.2.2 @octave_sqlite/sqlread</h4>
 <a class="index-entry-id" id="index-sqlread"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-sqlread-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlread-2"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></dt>
+<dt class="deftypefn def-line" id="index-sqlread-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlread-2"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">sqlread</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></span></dt>
 <dd><p>Read rows of data from a table
 </p>
 <p>Return rows of data from table <var class="var">tablename</var> in a sqlite database.
@@ -491,9 +491,9 @@ close(db)
 <h4 class="subsection">3.3.1 @octave_sqlite/sqlwrite</h4>
 <a class="index-entry-id" id="index-sqlwrite"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-sqlwrite-1"><span class="category-def">: </span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlwrite-2"><span class="category-def">: </span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">columntypes</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlwrite-3"><span class="category-def">: </span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></dt>
+<dt class="deftypefn def-line" id="index-sqlwrite-1"><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlwrite-2"><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">columntypes</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlwrite-3"><span><strong class="def-name">sqlwrite</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></span></dt>
 <dd><p>Insert rows of data into a table.
 </p>
 <p>Insert rows of data into a sqlite database table.
@@ -552,7 +552,7 @@ close(db)
 <h4 class="subsection">3.4.1 @octave_sqlite/commit</h4>
 <a class="index-entry-id" id="index-commit"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-commit-1"><span class="category-def">: </span><strong class="def-name">commit</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-commit-1"><span><strong class="def-name">commit</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></span></dt>
 <dd><p>Commit changes to a database
 </p>
 <p>Commit pending transactions of sqlite connection that has AutoCommit = off set.
@@ -588,7 +588,7 @@ close(db)
 <h4 class="subsection">3.4.2 @octave_sqlite/execute</h4>
 <a class="index-entry-id" id="index-execute"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-execute-1"><span class="category-def">: </span><strong class="def-name">execute</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-execute-1"><span><strong class="def-name">execute</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">sqlquery</var>)</code></span></dt>
 <dd><p>Execute a SQL statement on a sqlite database
 </p>
 <p>Execute non select SQL query <var class="var">sqlquery</var> on a sqlite database.
@@ -623,7 +623,7 @@ close(db)
 <h4 class="subsection">3.4.3 @octave_sqlite/rollback</h4>
 <a class="index-entry-id" id="index-rollback"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-rollback-1"><span class="category-def">: </span><strong class="def-name">rollback</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-rollback-1"><span><strong class="def-name">rollback</strong> <code class="def-code-arguments">(<var class="var">db</var>)</code></span></dt>
 <dd><p>Rollback changes to a database
 </p>
 <p>Rollback pending transactions of sqlite connection that has
@@ -660,8 +660,8 @@ close(db)
 <h4 class="subsection">3.4.4 @octave_sqlite/sqlupdate</h4>
 <a class="index-entry-id" id="index-sqlupdate"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-sqlupdate-1"><span class="category-def">: </span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlupdate-2"><span class="category-def">: </span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></dt>
+<dt class="deftypefn def-line" id="index-sqlupdate-1"><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-sqlupdate-2"><span><strong class="def-name">sqlupdate</strong> <code class="def-code-arguments">(<var class="var">db</var>, <var class="var">tablename</var>, <var class="var">data</var>, <var class="var">filter</var>, <var class="var">propertyname</var>, <var class="var">propertyvalue</var> &hellip;)</code></span></dt>
 <dd><p>Update rows of data into a table.
 </p>
 <p>Update rows of data into a sqlite database table based on the input filter.
@@ -725,8 +725,8 @@ close(db)
 <h4 class="subsection">3.5.1 dbrowfilter</h4>
 <a class="index-entry-id" id="index-dbrowfilter"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-dbrowfilter_0028C_0029"><span class="category-def">: </span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">C</var>)</strong></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbrowfilter_0028T_0029"><span class="category-def">: </span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">T</var>)</strong></dt>
+<dt class="deftypefn def-line" id="index-dbrowfilter_0028C_0029"><span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">C</var>)</strong></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbrowfilter_0028T_0029"><span><code class="def-type"><var class="var">rowfilt</var> =</code> <strong class="def-name">dbrowfilter(<var class="var">T</var>)</strong></span></dt>
 <dd><p>Create an unconstrained dbrowfilter object with columns names.
 </p>
 <h4 class="subsubheading" id="Inputs-11">Inputs</h4>
@@ -766,9 +766,9 @@ close(db)
 <h4 class="subsection">3.5.2 dbtable</h4>
 <a class="index-entry-id" id="index-dbtable"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-dbtable_0028_0029"><span class="category-def">: </span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable()</strong></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable-1"><span class="category-def">: </span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(<var class="var">var1</var>, &hellip; <var class="var">varn</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable-2"><span class="category-def">: </span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(&hellip; <var class="var">propertyname</var>, <var class="var">propertyvalue</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-dbtable_0028_0029"><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable()</strong></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable-1"><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(<var class="var">var1</var>, &hellip; <var class="var">varn</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-dbtable-2"><span><code class="def-type"><var class="var">table</var> =</code> <strong class="def-name">dbtable</strong> <code class="def-code-arguments">(&hellip; <var class="var">propertyname</var>, <var class="var">propertyvalue</var>)</code></span></dt>
 <dd><p>Create a table of data
 </p>
 <p>dbtable is a basic implementation of a table type to avoid dependencies on other packages.
@@ -851,7 +851,7 @@ close(db)
 <h4 class="subsection">3.5.3 readdbtable</h4>
 <a class="index-entry-id" id="index-readdbtable"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-readdbtable-1"><span class="category-def">: </span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">readdbtable</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-readdbtable-1"><span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">readdbtable</strong> <code class="def-code-arguments">(<var class="var">filename</var>)</code></span></dt>
 <dd><p>Create a dbtable from a file
 </p>
 <p>Currently, this is using a very simplistic approach to read data from a CSV
@@ -875,7 +875,7 @@ close(db)
 <h4 class="subsection">3.5.4 struct2dbtable</h4>
 <a class="index-entry-id" id="index-struct2dbtable"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-struct2dbtable-1"><span class="category-def">: </span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">struct2dbtable</strong> <code class="def-code-arguments">(<var class="var">astruct</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-struct2dbtable-1"><span><code class="def-type"><var class="var">t</var> =</code> <strong class="def-name">struct2dbtable</strong> <code class="def-code-arguments">(<var class="var">astruct</var>)</code></span></dt>
 <dd><p>Create a dbtable from a struct
 </p>
 <p>This function uses the field names and data of the fields to create a table
