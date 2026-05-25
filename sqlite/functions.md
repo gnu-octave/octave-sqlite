@@ -3,7 +3,7 @@ layout: "function_list"
 permalink: "/functions/"
 title: "Sqlite Toolkit - Functions"
 pkg_name: "sqlite"
-version: "0.1.3"
+version: "0.1.4"
 description: "Basic Octave implementation of sqlite toolkit"
 categories:
 - id: "17_SQLITEconnection"

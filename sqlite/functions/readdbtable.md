@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/11_readdbtable/"
 pkg_name: "sqlite"
-pkg_version: "0.1.3"
+pkg_version: "0.1.4"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - readdbtable"
 category: "Support Functions"

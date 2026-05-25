@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_struct2dbtable/"
 pkg_name: "sqlite"
-pkg_version: "0.1.3"
+pkg_version: "0.1.4"
 pkg_description: "Basic Octave implementation of sqlite toolkit"
 title: "Sqlite Toolkit - struct2dbtable"
 category: "Support Functions"
